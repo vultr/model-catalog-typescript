@@ -1,0 +1,42 @@
+{
+  "name": "@vultr/model-catalog",
+  "version": "0.0.1",
+  "description": "Fetch and normalize a Model Document 2.4 catalog (Vultr Inference /v1/models)",
+  "author": "Matt Harris <mharris@vultr.com>",
+  "maintainers": ["Matt Harris <mharris@vultr.com>"],
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepare": "npm run build",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "node --test \"test/**/*.test.ts\"",
+    "prepublishOnly": "npm run typecheck && npm test"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vultr/model-catalog-typescript.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

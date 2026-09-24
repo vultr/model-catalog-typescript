@@ -1,0 +1,811 @@
+[
+  {
+    "id": "bge-reranker-v2-m3",
+    "name": "BGE M3",
+    "description": "BAAI bge-reranker-v2-m3 is a 0.6B-parameter multilingual reranking model built on bge-m3. It scores query-document relevance for retrieval and RAG pipelines with an 8,192-token input window and fast inference.",
+    "created": 1789490421,
+    "hugging_face_id": "BAAI/bge-reranker-v2-m3",
+    "quantization": "fp16",
+    "context_window": 8192,
+    "max_prompt_tokens": null,
+    "max_output_tokens": null,
+    "input_modalities": [
+      "text"
+    ],
+    "output_modalities": [
+      "rerank"
+    ],
+    "pricing": {
+      "prompt": null,
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": null,
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": false,
+    "structured_outputs": false,
+    "streaming": false,
+    "supported_parameters": [],
+    "reasoning": null,
+    "is_ready": true,
+    "deprecation_date": null
+  },
+  {
+    "id": "deepseek-v4-flash-0731",
+    "name": "DeepSeek V4 Flash 0731",
+    "description": "DeepSeek's official V4 Flash release with substantially enhanced agentic capabilities and a built-in speculative decoding module. A 304B-parameter MoE with ~13B active per token, it outperforms DeepSeek-V4-Pro (Preview) on agentic benchmarks at a fraction of the compute, with a 1M-token context window.",
+    "created": 1786979709,
+    "hugging_face_id": "deepseek-ai/DeepSeek-V4-Flash-0731",
+    "quantization": "fp8",
+    "context_window": 1048576,
+    "max_prompt_tokens": null,
+    "max_output_tokens": 1048576,
+    "input_modalities": [
+      "text",
+      "image"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "pricing": {
+      "prompt": "0.0000001",
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": "0.00000025",
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": true,
+    "structured_outputs": false,
+    "streaming": true,
+    "supported_parameters": [
+      "temperature",
+      "top_p",
+      "frequency_penalty",
+      "presence_penalty",
+      "max_tokens",
+      "stop",
+      "seed",
+      "continue_final_message",
+      "tools"
+    ],
+    "reasoning": {
+      "mandatory": false,
+      "default_effort": null,
+      "default_enabled": null,
+      "supported_efforts": [
+        "ultra",
+        "max",
+        "xhigh",
+        "high",
+        "medium",
+        "low",
+        "minimal"
+      ],
+      "supports_max_tokens": false
+    },
+    "is_ready": true,
+    "deprecation_date": null
+  },
+  {
+    "id": "deepseek-v4.1-flash",
+    "name": "DeepSeek V4.1 Flash",
+    "description": "DeepSeek V4.1 Flash is a mixture-of-experts model with 552B backbone parameters, a one-million-token context window, and support for reasoning and tool calling.",
+    "created": 1789449526,
+    "hugging_face_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+    "quantization": "mxfp4",
+    "context_window": 1048576,
+    "max_prompt_tokens": null,
+    "max_output_tokens": 1048576,
+    "input_modalities": [
+      "text",
+      "image"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "pricing": {
+      "prompt": "0.00000015",
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": "0.0000006",
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": true,
+    "structured_outputs": false,
+    "streaming": true,
+    "supported_parameters": [
+      "temperature",
+      "top_p",
+      "frequency_penalty",
+      "presence_penalty",
+      "max_tokens",
+      "stop",
+      "seed",
+      "continue_final_message",
+      "tools"
+    ],
+    "reasoning": {
+      "mandatory": false,
+      "default_effort": null,
+      "default_enabled": null,
+      "supported_efforts": [
+        "ultra",
+        "max",
+        "xhigh",
+        "high",
+        "medium",
+        "low",
+        "minimal"
+      ],
+      "supports_max_tokens": true
+    },
+    "is_ready": true,
+    "deprecation_date": null
+  },
+  {
+    "id": "glm-5.2",
+    "name": "GLM 5.2",
+    "description": "GLM-5.2 is Z.ai's flagship model for long-horizon tasks, sustaining agentic work across a solid 1M-token context. It offers stronger coding with flexible thinking-effort levels and an improved MTP layer for faster speculative decoding, under an MIT license.",
+    "created": 1788472794,
+    "hugging_face_id": "nvidia/GLM-5.2-NVFP4",
+    "quantization": "nvfp4",
+    "context_window": 1048576,
+    "max_prompt_tokens": null,
+    "max_output_tokens": 1048576,
+    "input_modalities": [
+      "text",
+      "image"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "pricing": {
+      "prompt": "0.00000075",
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": "0.000003",
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": true,
+    "structured_outputs": false,
+    "streaming": true,
+    "supported_parameters": [
+      "temperature",
+      "top_p",
+      "frequency_penalty",
+      "presence_penalty",
+      "max_tokens",
+      "stop",
+      "seed",
+      "continue_final_message",
+      "tools"
+    ],
+    "reasoning": {
+      "mandatory": false,
+      "default_effort": null,
+      "default_enabled": null,
+      "supported_efforts": [
+        "ultra",
+        "max",
+        "xhigh",
+        "high",
+        "medium",
+        "low",
+        "minimal"
+      ],
+      "supports_max_tokens": true
+    },
+    "is_ready": true,
+    "deprecation_date": null
+  },
+  {
+    "id": "glm-5.3",
+    "name": "GLM 5.3",
+    "description": "GLM-5.3 shares its base model with GLM-5.2 and takes its gains from post-training, with substantially stronger complex coding and long-horizon agentic work. Served at NVFP4 across a 1M-token context.",
+    "created": 1788472794,
+    "hugging_face_id": "RadixArk/GLM-5.3-NVFP4",
+    "quantization": "nvfp4",
+    "context_window": 1048576,
+    "max_prompt_tokens": null,
+    "max_output_tokens": 1048576,
+    "input_modalities": [
+      "text",
+      "image"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "pricing": {
+      "prompt": "0.00000075",
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": "0.000003",
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": true,
+    "structured_outputs": false,
+    "streaming": true,
+    "supported_parameters": [
+      "temperature",
+      "top_p",
+      "frequency_penalty",
+      "presence_penalty",
+      "max_tokens",
+      "stop",
+      "seed",
+      "continue_final_message",
+      "tools"
+    ],
+    "reasoning": {
+      "mandatory": false,
+      "default_effort": null,
+      "default_enabled": null,
+      "supported_efforts": [
+        "ultra",
+        "max",
+        "xhigh",
+        "high",
+        "medium",
+        "low",
+        "minimal"
+      ],
+      "supports_max_tokens": true
+    },
+    "is_ready": true,
+    "deprecation_date": null
+  },
+  {
+    "id": "glm-5.3-flash",
+    "name": "GLM 5.3 Flash",
+    "description": "Z.ai's first natively multimodal GLM-5 model: a 320B-parameter MoE with ~18B active per token, combining sparse and linear attention for cheap long-context serving across a 1M-token window. Outperforms GLM-5.2 on coding and agentic work at a fraction of the price, with three-level reasoning-effort control, under an MIT license.",
+    "created": 1788837087,
+    "hugging_face_id": "RedHatAI/GLM-5.3-Flash-NVFP4",
+    "quantization": "nvfp4",
+    "context_window": 1048576,
+    "max_prompt_tokens": null,
+    "max_output_tokens": 1048576,
+    "input_modalities": [
+      "text",
+      "image",
+      "video"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "pricing": {
+      "prompt": "0.0000001",
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": "0.00000035",
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": true,
+    "structured_outputs": false,
+    "streaming": true,
+    "supported_parameters": [
+      "temperature",
+      "top_p",
+      "frequency_penalty",
+      "presence_penalty",
+      "max_tokens",
+      "stop",
+      "seed",
+      "continue_final_message",
+      "tools"
+    ],
+    "reasoning": {
+      "mandatory": false,
+      "default_effort": null,
+      "default_enabled": null,
+      "supported_efforts": [
+        "ultra",
+        "max",
+        "xhigh",
+        "high",
+        "medium",
+        "low",
+        "minimal"
+      ],
+      "supports_max_tokens": true
+    },
+    "is_ready": true,
+    "deprecation_date": null
+  },
+  {
+    "id": "glm-5.x-menthol",
+    "name": "GLM 5",
+    "description": "Z.ai's GLM-5, a 744B-parameter MoE flagship for agentic reasoning and coding, served in FP8.",
+    "created": 1788837089,
+    "hugging_face_id": "zai-org/GLM-5",
+    "quantization": "fp8",
+    "context_window": 202752,
+    "max_prompt_tokens": null,
+    "max_output_tokens": 202752,
+    "input_modalities": [
+      "text",
+      "image"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "pricing": {
+      "prompt": "0.0000004",
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": "0.00000175",
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": true,
+    "structured_outputs": false,
+    "streaming": true,
+    "supported_parameters": [
+      "temperature",
+      "top_p",
+      "frequency_penalty",
+      "presence_penalty",
+      "max_tokens",
+      "stop",
+      "seed",
+      "continue_final_message",
+      "tools"
+    ],
+    "reasoning": {
+      "mandatory": false,
+      "default_effort": null,
+      "default_enabled": null,
+      "supported_efforts": [
+        "ultra",
+        "max",
+        "xhigh",
+        "high",
+        "medium",
+        "low",
+        "minimal"
+      ],
+      "supports_max_tokens": true
+    },
+    "is_ready": true,
+    "deprecation_date": null
+  },
+  {
+    "id": "laguna-s-2.1",
+    "name": "Laguna S 2.1",
+    "description": "Laguna S 2.1 is a 118B total parameter Mixture-of-Experts model with 8B activated parameters per token, designed for agentic coding and long-horizon work. It sits between Laguna XS 2.1 (33B-A3B) and Laguna M.1 (225B-A23B) in the Laguna series and shares the family recipe: a token-choice router with softplus gating over 256 routed experts plus one shared expert, grouped-query attention, and interleaved full/sliding-window attention.",
+    "created": 1788837090,
+    "hugging_face_id": "poolside/Laguna-S-2.1-FP8",
+    "quantization": "fp8",
+    "context_window": 1048576,
+    "max_prompt_tokens": null,
+    "max_output_tokens": 1048576,
+    "input_modalities": [
+      "text",
+      "image"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "pricing": {
+      "prompt": "0.00000009",
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": "0.00000018",
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": true,
+    "structured_outputs": false,
+    "streaming": true,
+    "supported_parameters": [
+      "temperature",
+      "top_p",
+      "frequency_penalty",
+      "presence_penalty",
+      "max_tokens",
+      "stop",
+      "seed",
+      "continue_final_message",
+      "tools"
+    ],
+    "reasoning": {
+      "mandatory": false,
+      "default_effort": null,
+      "default_enabled": null,
+      "supported_efforts": [
+        "ultra",
+        "max",
+        "xhigh",
+        "high",
+        "medium",
+        "low",
+        "minimal"
+      ],
+      "supports_max_tokens": false
+    },
+    "is_ready": true,
+    "deprecation_date": null
+  },
+  {
+    "id": "minimax-m3",
+    "name": "MiniMax M3",
+    "description": "MiniMax M3 is a natively multimodal MoE model (~428B parameters, ~23B active) with a 1M-token context. MiniMax Sparse Attention delivers up to 9x prefill and 15x decode speedups at long context, with frontier-level performance on long-horizon coding and agentic benchmarks.",
+    "created": 1787633092,
+    "hugging_face_id": "MiniMaxAI/MiniMax-M3",
+    "quantization": "fp8",
+    "context_window": 524288,
+    "max_prompt_tokens": null,
+    "max_output_tokens": 524288,
+    "input_modalities": [
+      "text",
+      "image",
+      "video"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "pricing": {
+      "prompt": "0.0000002",
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": "0.0000009",
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": true,
+    "structured_outputs": false,
+    "streaming": true,
+    "supported_parameters": [
+      "temperature",
+      "top_p",
+      "frequency_penalty",
+      "presence_penalty",
+      "max_tokens",
+      "stop",
+      "seed",
+      "continue_final_message",
+      "tools"
+    ],
+    "reasoning": {
+      "mandatory": false,
+      "default_effort": null,
+      "default_enabled": null,
+      "supported_efforts": [
+        "ultra",
+        "max",
+        "xhigh",
+        "high",
+        "medium",
+        "low",
+        "minimal"
+      ],
+      "supports_max_tokens": true
+    },
+    "is_ready": true,
+    "deprecation_date": null
+  },
+  {
+    "id": "muse-glimmer-30b",
+    "name": "Muse Glimmer 30B",
+    "description": "Muse Glimmer 30B is a dense multimodal model for reasoning, coding, and tool use, with a 131072-token context. Supports text and image input, and video processed as individual frames, with text output.",
+    "created": 1789531165,
+    "hugging_face_id": "nvidia/Muse-Glimmer-30B-NVFP4",
+    "quantization": "nvfp4",
+    "context_window": 131072,
+    "max_prompt_tokens": null,
+    "max_output_tokens": 131072,
+    "input_modalities": [
+      "text",
+      "image",
+      "video"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "pricing": {
+      "prompt": "0.00000025",
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": "0.000001",
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": true,
+    "structured_outputs": false,
+    "streaming": true,
+    "supported_parameters": [
+      "temperature",
+      "top_p",
+      "frequency_penalty",
+      "presence_penalty",
+      "max_tokens",
+      "stop",
+      "seed",
+      "continue_final_message",
+      "tools"
+    ],
+    "reasoning": {
+      "mandatory": false,
+      "default_effort": null,
+      "default_enabled": null,
+      "supported_efforts": [
+        "ultra",
+        "max",
+        "xhigh",
+        "high",
+        "medium",
+        "low",
+        "minimal"
+      ],
+      "supports_max_tokens": true
+    },
+    "is_ready": true,
+    "deprecation_date": null
+  },
+  {
+    "id": "nemotron-3.5-content-safety",
+    "name": "Nemotron 3.5 Content Safety",
+    "description": "NVIDIA's Nemotron 3.5 Content Safety model is a small language model fine-tuned from Gemma-3-4B-it for multimodal, multilingual content moderation. It classifies prompts, images, and responses against a standard safety taxonomy or a user-supplied custom policy, with optional reasoning traces.",
+    "created": 1780598852,
+    "hugging_face_id": "nvidia/Nemotron-3.5-Content-Safety",
+    "quantization": "bf16",
+    "context_window": 131072,
+    "max_prompt_tokens": null,
+    "max_output_tokens": 131072,
+    "input_modalities": [
+      "text",
+      "image"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "pricing": {
+      "prompt": "0.00000005",
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": "0.00000015",
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": true,
+    "structured_outputs": false,
+    "streaming": true,
+    "supported_parameters": [
+      "temperature",
+      "top_p",
+      "frequency_penalty",
+      "presence_penalty",
+      "max_tokens",
+      "stop",
+      "seed",
+      "continue_final_message",
+      "tools"
+    ],
+    "reasoning": {
+      "mandatory": false,
+      "default_effort": null,
+      "default_enabled": null,
+      "supported_efforts": null,
+      "supports_max_tokens": true
+    },
+    "is_ready": true,
+    "deprecation_date": null
+  },
+  {
+    "id": "qwen3.8-27b",
+    "name": "Qwen 3.8 27B",
+    "description": "Qwen3.8-27B is the most capable compact dense model in the Qwen open-model family: a native vision-language model that understands images and video, with flexible thinking control and substantial gains in coding, research, and long-horizon agentic tasks.",
+    "created": 1787624247,
+    "hugging_face_id": "Qwen/Qwen3.8-27B-FP8",
+    "quantization": "fp8",
+    "context_window": 262144,
+    "max_prompt_tokens": null,
+    "max_output_tokens": 262144,
+    "input_modalities": [
+      "text",
+      "image",
+      "video"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "pricing": {
+      "prompt": "0.00000015",
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": "0.000001",
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": true,
+    "structured_outputs": false,
+    "streaming": true,
+    "supported_parameters": [
+      "temperature",
+      "top_p",
+      "frequency_penalty",
+      "presence_penalty",
+      "max_tokens",
+      "stop",
+      "seed",
+      "continue_final_message",
+      "tools"
+    ],
+    "reasoning": {
+      "mandatory": false,
+      "default_effort": null,
+      "default_enabled": null,
+      "supported_efforts": [
+        "ultra",
+        "max",
+        "xhigh",
+        "high",
+        "medium",
+        "low",
+        "minimal"
+      ],
+      "supports_max_tokens": true
+    },
+    "is_ready": true,
+    "deprecation_date": null
+  },
+  {
+    "id": "qwen3.8-flash-next",
+    "name": "Qwen 3.8 Flash Next",
+    "description": "Qwen3.8 Flash Next with NVFP4 weights, a 262,144-token context window, reasoning, and tool calling.",
+    "created": 1789485493,
+    "hugging_face_id": "nvidia/Qwen3.8-Flash-Next-NVFP4",
+    "quantization": "nvfp4",
+    "context_window": 262144,
+    "max_prompt_tokens": null,
+    "max_output_tokens": 262144,
+    "input_modalities": [
+      "text",
+      "image",
+      "video"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "pricing": {
+      "prompt": "0.0000001",
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": "0.0000002",
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": true,
+    "structured_outputs": false,
+    "streaming": true,
+    "supported_parameters": [
+      "temperature",
+      "top_p",
+      "frequency_penalty",
+      "presence_penalty",
+      "max_tokens",
+      "stop",
+      "seed",
+      "continue_final_message",
+      "tools"
+    ],
+    "reasoning": {
+      "mandatory": false,
+      "default_effort": null,
+      "default_enabled": null,
+      "supported_efforts": [
+        "ultra",
+        "max",
+        "xhigh",
+        "high",
+        "medium",
+        "low",
+        "minimal"
+      ],
+      "supports_max_tokens": true
+    },
+    "is_ready": true,
+    "deprecation_date": null
+  },
+  {
+    "id": "vultron-retriever-core-qwen3.5-4.5b",
+    "name": "Vultron Retriever Core 4.5B",
+    "description": "Vultr's Vultron Retriever Core is a 4.5B-parameter reranking model built on Qwen3.5. It scores query-document relevance for retrieval and RAG pipelines, balancing accuracy and throughput with a 262k-token context.",
+    "created": 1783002744,
+    "hugging_face_id": "vultr/VultronRetrieverCore-Qwen3.5-4.5B",
+    "quantization": "bf16",
+    "context_window": 262144,
+    "max_prompt_tokens": null,
+    "max_output_tokens": null,
+    "input_modalities": [
+      "text"
+    ],
+    "output_modalities": [
+      "rerank"
+    ],
+    "pricing": {
+      "prompt": null,
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": null,
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": false,
+    "structured_outputs": false,
+    "streaming": false,
+    "supported_parameters": [],
+    "reasoning": null,
+    "is_ready": true,
+    "deprecation_date": null
+  },
+  {
+    "id": "vultron-retriever-flash-qwen3.5-0.8b",
+    "name": "Vultron Retriever Flash 0.8B",
+    "description": "Vultr's Vultron Retriever Flash is a lightweight 0.8B-parameter reranking model built on Qwen3.5, optimized for low-latency, high-volume query-document relevance scoring in retrieval and RAG pipelines.",
+    "created": 1783002800,
+    "hugging_face_id": "vultr/VultronRetrieverFlash-Qwen3.5-0.8B",
+    "quantization": "bf16",
+    "context_window": 262144,
+    "max_prompt_tokens": null,
+    "max_output_tokens": null,
+    "input_modalities": [
+      "text"
+    ],
+    "output_modalities": [
+      "rerank"
+    ],
+    "pricing": {
+      "prompt": null,
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": null,
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": false,
+    "structured_outputs": false,
+    "streaming": false,
+    "supported_parameters": [],
+    "reasoning": null,
+    "is_ready": true,
+    "deprecation_date": null
+  },
+  {
+    "id": "z-image-turbo",
+    "name": "Z-Image Turbo",
+    "description": "Z-Image Turbo is Tongyi-MAI's efficient 6B-parameter single-stream diffusion transformer for text-to-image generation, producing high-quality images in as few as 8 steps for very low latency.",
+    "created": 1787526201,
+    "hugging_face_id": "Tongyi-MAI/Z-Image-Turbo",
+    "quantization": "bf16",
+    "context_window": null,
+    "max_prompt_tokens": null,
+    "max_output_tokens": null,
+    "input_modalities": [
+      "text"
+    ],
+    "output_modalities": [
+      "image"
+    ],
+    "pricing": {
+      "prompt": null,
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": null,
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": false,
+    "structured_outputs": false,
+    "streaming": false,
+    "supported_parameters": [],
+    "reasoning": null,
+    "is_ready": true,
+    "deprecation_date": null
+  }
+]

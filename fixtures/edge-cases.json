@@ -1,0 +1,67 @@
+{
+  "data": [
+    {
+      "schema_version": "2.4",
+      "id": "windowed-pricing",
+      "name": "Windowed Pricing",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_context_length": { "value": 32768, "unit": "token" },
+            "max_prompt_length": { "value": 30000, "unit": "token" }
+          },
+          "pricing": [
+            { "type": "prompt", "unit": "token", "cost_usd": "0.0000005", "utc_start": 0, "utc_end": 6 },
+            { "type": "prompt", "unit": "token", "cost_usd": "0.000001" },
+            { "type": "cached_prompt", "unit": "token", "cost_usd": "0.0000001" },
+            { "type": "cache_write", "unit": "token", "cost_usd": "0.00000125" }
+          ]
+        },
+        { "type": "file" }
+      ],
+      "output_modalities": [
+        {
+          "type": "text",
+          "streaming": false,
+          "max_length": { "value": 4096, "unit": "token" },
+          "supported_parameters": {
+            "response_format": { "type": "object" },
+            "tools": { "type": "boolean" }
+          },
+          "pricing": [
+            { "type": "completion", "unit": "token", "cost_usd": "0.000003" },
+            { "type": "internal_reasoning", "unit": "token", "cost_usd": "0.000004" }
+          ]
+        }
+      ],
+      "pricing": [{ "type": "request", "unit": "request", "cost_usd": "0.001" }],
+      "reasoning": {
+        "mandatory": true,
+        "default_effort": "medium",
+        "default_enabled": true,
+        "supported_efforts": ["high", "medium", "low"],
+        "supports_max_tokens": true
+      },
+      "is_ready": false,
+      "deprecation_date": "2027-01-01"
+    },
+    {
+      "schema_version": "2.4",
+      "id": "bare-minimum",
+      "name": "Bare Minimum",
+      "input_modalities": [{ "type": "text" }],
+      "output_modalities": [{ "type": "text", "supported_parameters": {} }]
+    },
+    {
+      "schema_version": "9.9",
+      "id": "future-schema",
+      "name": "Future Schema",
+      "input_modalities": [{ "type": "text" }, { "type": "hologram" }],
+      "output_modalities": [{ "type": "text", "supported_parameters": {} }]
+    },
+    { "schema_version": "2.4", "name": "No Id", "input_modalities": [], "output_modalities": [] },
+    { "schema_version": "2.4", "id": "no-modalities", "name": "No Modalities" },
+    "not-an-object"
+  ]
+}

@@ -1,0 +1,113 @@
+[
+  {
+    "id": "windowed-pricing",
+    "name": "Windowed Pricing",
+    "description": null,
+    "created": null,
+    "hugging_face_id": null,
+    "quantization": null,
+    "context_window": 32768,
+    "max_prompt_tokens": 30000,
+    "max_output_tokens": 4096,
+    "input_modalities": [
+      "text",
+      "file"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "pricing": {
+      "prompt": "0.000001",
+      "cached_prompt": "0.0000001",
+      "cache_write": "0.00000125",
+      "completion": "0.000003",
+      "internal_reasoning": "0.000004",
+      "request": "0.001"
+    },
+    "tools": true,
+    "structured_outputs": true,
+    "streaming": false,
+    "supported_parameters": [
+      "response_format",
+      "tools"
+    ],
+    "reasoning": {
+      "mandatory": true,
+      "default_effort": "medium",
+      "default_enabled": true,
+      "supported_efforts": [
+        "high",
+        "medium",
+        "low"
+      ],
+      "supports_max_tokens": true
+    },
+    "is_ready": false,
+    "deprecation_date": "2027-01-01"
+  },
+  {
+    "id": "bare-minimum",
+    "name": "Bare Minimum",
+    "description": null,
+    "created": null,
+    "hugging_face_id": null,
+    "quantization": null,
+    "context_window": null,
+    "max_prompt_tokens": null,
+    "max_output_tokens": null,
+    "input_modalities": [
+      "text"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "pricing": {
+      "prompt": null,
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": null,
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": false,
+    "structured_outputs": false,
+    "streaming": false,
+    "supported_parameters": [],
+    "reasoning": null,
+    "is_ready": true,
+    "deprecation_date": null
+  },
+  {
+    "id": "future-schema",
+    "name": "Future Schema",
+    "description": null,
+    "created": null,
+    "hugging_face_id": null,
+    "quantization": null,
+    "context_window": null,
+    "max_prompt_tokens": null,
+    "max_output_tokens": null,
+    "input_modalities": [
+      "text",
+      "hologram"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "pricing": {
+      "prompt": null,
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": null,
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": false,
+    "structured_outputs": false,
+    "streaming": false,
+    "supported_parameters": [],
+    "reasoning": null,
+    "is_ready": true,
+    "deprecation_date": null
+  }
+]
