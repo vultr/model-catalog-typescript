@@ -5,6 +5,11 @@
   "author": "Matt Harris <mharris@vultr.com>",
   "maintainers": ["Matt Harris <mharris@vultr.com>"],
   "license": "MIT",
+  "homepage": "https://github.com/vultr/model-catalog-typescript",
+  "bugs": {
+    "url": "https://github.com/vultr/model-catalog-typescript/issues"
+  },
+  "keywords": ["vultr", "model-catalog", "llm", "openai-compatible"],
   "type": "module",
   "engines": {
     "node": ">=20"

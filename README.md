@@ -5,6 +5,12 @@ entry into a flat `CatalogModel`. This is the base the TypeScript harness
 integrations (Pi, OpenClaw, OpenCode) build on. The Python twin is
 `model-catalog-python`; both produce the same output for the same input.
 
+## Install
+
+```bash
+npm install @vultr/model-catalog
+```
+
 No runtime dependencies. Node 20+ or Bun.
 
 ```ts
