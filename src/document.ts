@@ -14,6 +14,7 @@ export type OutputModalityType =
   | "transcription"
   | "embeddings"
   | "rerank"
+  | "decision"
   | "audio";
 
 export type PricingUnit = "token" | "image" | "megapixel" | "second" | "character" | "request" | "search";
