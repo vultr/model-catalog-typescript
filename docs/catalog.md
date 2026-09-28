@@ -40,6 +40,17 @@ reason has `reasoning: null`.
 
 Missing values are `null`. Nothing is guessed.
 
+## Model kinds
+
+The catalog holds every model the endpoint lists, whatever it outputs:
+`text`, `embeddings`, `rerank`, `image`, `transcription`, `decision`.
+
+- A chat model (`isChatModel` / `is_chat`) outputs `text`
+- An agent model (`isAgentModel` / `is_agent`) is a chat model a coding
+  harness can drive: `is_ready`, `tools`, and a known `context_window`. A
+  safety classifier outputs text but calls no tools: a chat model, not an
+  agent model
+
 ## Tolerance
 
 An entry is dropped, with an issue, when it is not an object, has no `id`, or

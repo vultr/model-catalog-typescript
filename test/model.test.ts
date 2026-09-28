@@ -4,6 +4,7 @@ import { test } from "node:test";
 
 import {
   acceptsInput,
+  isAgentModel,
   isChatModel,
   normalizeModel,
   parseCatalog,
@@ -50,12 +51,27 @@ test("live catalog: chat model fields come out of the nested modalities", () => 
   assert.ok(!acceptsInput(model, "video"));
 });
 
-test("live catalog: rerankers and image generators are not chat models", () => {
+test("live catalog: rerankers, embedders, image, transcription and decision models are not chat models", () => {
   const all = models("vultr-catalog.json");
   const skipped = all.filter((model) => !isChatModel(model)).map((model) => model.id);
-  assert.ok(skipped.includes("bge-reranker-v2-m3"));
-  assert.ok(skipped.includes("z-image-turbo"));
+  for (const id of ["bge-reranker-v2-m3", "qwen3-embedding-4b", "z-image-turbo", "whisper-large-v3-turbo", "mica-v0.1-4b"]) {
+    assert.ok(skipped.includes(id), id);
+  }
+  assert.deepEqual(all.find((model) => model.id === "mica-v0.1-4b")?.outputModalities, ["decision"]);
   assert.ok(all.filter(isChatModel).every((model) => model.contextWindow !== null));
+});
+
+test("live catalog: agent models are the chat models that call tools", () => {
+  const all = models("vultr-catalog.json");
+  const classifier = all.find((model) => model.id === "nemotron-3.5-content-safety");
+  assert.ok(classifier);
+  assert.ok(isChatModel(classifier));
+  assert.equal(classifier.tools, false);
+  assert.ok(!isAgentModel(classifier));
+  const agents = all.filter(isAgentModel);
+  assert.ok(agents.some((model) => model.id === "deepseek-v4-flash-0731"));
+  assert.ok(agents.every((model) => isChatModel(model) && model.isReady && model.tools && model.contextWindow !== null));
+  assert.equal(agents.length, all.filter(isChatModel).length - 1);
 });
 
 test("pricing prefers the entry without a UTC window", () => {
@@ -93,6 +109,7 @@ test("a document with nothing optional still normalizes", () => {
   assert.equal(model.tools, false);
   assert.equal(model.isReady, true);
   assert.ok(isChatModel(model));
+  assert.ok(!isAgentModel(model));
 });
 
 test("bad entries are skipped and reported, not fatal", () => {

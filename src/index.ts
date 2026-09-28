@@ -21,7 +21,7 @@ export type {
   PricingEntry,
   PricingUnit,
 } from "./document.ts";
-export { acceptsInput, isChatModel, normalizeModel, pricePerMillion, toCanonical } from "./model.ts";
+export { acceptsInput, isAgentModel, isChatModel, normalizeModel, pricePerMillion, toCanonical } from "./model.ts";
 export type { CatalogModel, ModelPricing, ReasoningSupport } from "./model.ts";
 export { parseCatalog } from "./parse.ts";
 export type { CatalogIssue, ParsedCatalog } from "./parse.ts";

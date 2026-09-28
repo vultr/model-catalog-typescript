@@ -107,6 +107,12 @@ export function isChatModel(model: CatalogModel): boolean {
   return model.outputModalities.includes("text");
 }
 
+// An agent model can drive a coding harness: it chats, is ready, calls tools and states its
+// context window. A classifier can produce text without calling tools.
+export function isAgentModel(model: CatalogModel): boolean {
+  return isChatModel(model) && model.isReady && model.tools && model.contextWindow !== null;
+}
+
 export function acceptsInput(model: CatalogModel, modality: string): boolean {
   return model.inputModalities.includes(modality);
 }

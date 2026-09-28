@@ -32,14 +32,18 @@ for (const model of catalog.models.filter(isChatModel)) {
 - `parseCatalog(payload)`: documents plus `issues`. A bad entry is skipped
   and reported, it never fails the catalog
 - `normalizeModel(document)`: one `CatalogModel`
-- `isChatModel`, `acceptsInput`, `pricePerMillion`, `usdPerMillion`
+- `isChatModel`, `isAgentModel`, `acceptsInput`, `pricePerMillion`, `usdPerMillion`
 - `toCanonical(model)`: the snake_case form shared with the Python library
 
 `CatalogModel` carries `contextWindow`, `maxOutputTokens`, `inputModalities`,
 `outputModalities`, `pricing` (exact USD per token strings), `tools`,
 `structuredOutputs`, `streaming`, `supportedParameters`, `parameters`,
-`reasoning`, `isReady`, `deprecationDate`. Rerankers and image generators are
-in the catalog too; `isChatModel` keeps the ones that output text.
+`reasoning`, `isReady`, `deprecationDate`. Rerankers, embedders, image
+generators, transcription and decision models are in the catalog too;
+`isChatModel` keeps the ones that output text. `isAgentModel` keeps the chat
+models a coding harness can drive: ready, with tool calling and a known context
+window. A safety classifier outputs text but calls no tools, so it is a chat
+model and not an agent model.
 
 See `docs/catalog.md` for the field mapping and the cache format.
 
