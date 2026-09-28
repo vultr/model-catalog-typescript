@@ -93,8 +93,8 @@
     "name": "DeepSeek V4.1 Flash",
     "description": "DeepSeek V4.1 Flash is a mixture-of-experts model with 552B backbone parameters, a one-million-token context window, and support for reasoning and tool calling.",
     "created": 1789449526,
-    "hugging_face_id": "deepseek-ai/DeepSeek-V4.1-Flash",
-    "quantization": "mxfp4",
+    "hugging_face_id": "nvidia/DeepSeek-V4.1-Flash-NVFP4",
+    "quantization": "nvfp4",
     "context_window": 1048576,
     "max_prompt_tokens": null,
     "max_output_tokens": 1048576,
@@ -432,6 +432,188 @@
     "deprecation_date": null
   },
   {
+    "id": "laya",
+    "name": "Laya",
+    "description": "Laya is a decision model: a ModernBERT encoder with a decision head that scores every allowed answer in a single forward pass, without generating text. Given a state and typed questions (yes/no, a choice among options, or a score on 2 to 10 levels), it returns a calibrated probability for every answer. Served on /v1/systemone, compatible with TypeSafe's decision API. English states are read up to 512 tokens; states in other languages go to its multilingual checkpoint automatically, read up to 1,024 tokens. Longer states are truncated.",
+    "created": 1790499824,
+    "hugging_face_id": "convaiinnovations/laya",
+    "quantization": "fp32",
+    "context_window": 512,
+    "max_prompt_tokens": null,
+    "max_output_tokens": null,
+    "input_modalities": [
+      "text"
+    ],
+    "output_modalities": [
+      "decision"
+    ],
+    "pricing": {
+      "prompt": null,
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": null,
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": false,
+    "structured_outputs": false,
+    "streaming": false,
+    "supported_parameters": [],
+    "reasoning": null,
+    "is_ready": true,
+    "deprecation_date": null
+  },
+  {
+    "id": "mica-v0.1-4b",
+    "name": "Mica v0.1 4B",
+    "description": "Mica v0.1 4B is a 4B-parameter decision model built on Qwen3.5-4B. Given a state and typed questions (yes/no, a choice among up to 255 options, or a score on 2 to 10 levels), it returns a calibrated probability for every allowed answer from a single read of the input, without generating text. Served on /v1/systemone, compatible with TypeSafe's decision API. Trained on English and Korean; inputs up to 8,192 tokens.",
+    "created": 1790486959,
+    "hugging_face_id": "sky7350/Mica-v0.1-4B",
+    "quantization": "bf16",
+    "context_window": 8192,
+    "max_prompt_tokens": null,
+    "max_output_tokens": null,
+    "input_modalities": [
+      "text"
+    ],
+    "output_modalities": [
+      "decision"
+    ],
+    "pricing": {
+      "prompt": null,
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": null,
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": false,
+    "structured_outputs": false,
+    "streaming": false,
+    "supported_parameters": [],
+    "reasoning": null,
+    "is_ready": true,
+    "deprecation_date": null
+  },
+  {
+    "id": "mimo-v2.6-flash-rl",
+    "name": "MiMo V2.6 Flash RL",
+    "description": "MiMo V2.6 Flash RL is Xiaomi's efficiency-balanced mixture-of-experts model with 309B total and 15B active parameters, hybrid sliding-window attention, and a 1M-token context. Supports reasoning and tool calling, served at FP8.",
+    "created": 1790240998,
+    "hugging_face_id": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
+    "quantization": "fp8",
+    "context_window": 1048576,
+    "max_prompt_tokens": null,
+    "max_output_tokens": 1048576,
+    "input_modalities": [
+      "text",
+      "image",
+      "audio",
+      "video"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "pricing": {
+      "prompt": "0.0000001",
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": "0.00000025",
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": true,
+    "structured_outputs": false,
+    "streaming": true,
+    "supported_parameters": [
+      "temperature",
+      "top_p",
+      "frequency_penalty",
+      "presence_penalty",
+      "max_tokens",
+      "stop",
+      "seed",
+      "continue_final_message",
+      "tools"
+    ],
+    "reasoning": {
+      "mandatory": false,
+      "default_effort": null,
+      "default_enabled": null,
+      "supported_efforts": [
+        "ultra",
+        "max",
+        "xhigh",
+        "high",
+        "medium",
+        "low",
+        "minimal"
+      ],
+      "supports_max_tokens": false
+    },
+    "is_ready": true,
+    "deprecation_date": null
+  },
+  {
+    "id": "mimo-v2.6-pro-rl",
+    "name": "MiMo V2.6 Pro RL",
+    "description": "MiMo V2.6 Pro RL is Xiaomi's mixture-of-experts model with 1.02T total and 42B active parameters, hybrid sliding-window attention, and a 1M-token context. Supports reasoning and tool calling, served at FP8.",
+    "created": 1790201164,
+    "hugging_face_id": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
+    "quantization": "fp8",
+    "context_window": 1048576,
+    "max_prompt_tokens": null,
+    "max_output_tokens": 1048576,
+    "input_modalities": [
+      "text",
+      "image",
+      "audio",
+      "video"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "pricing": {
+      "prompt": "0.0000004",
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": "0.0000008",
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": true,
+    "structured_outputs": false,
+    "streaming": true,
+    "supported_parameters": [
+      "temperature",
+      "top_p",
+      "frequency_penalty",
+      "presence_penalty",
+      "max_tokens",
+      "stop",
+      "seed",
+      "continue_final_message",
+      "tools"
+    ],
+    "reasoning": {
+      "mandatory": false,
+      "default_effort": null,
+      "default_enabled": null,
+      "supported_efforts": [
+        "ultra",
+        "max",
+        "xhigh",
+        "high",
+        "medium",
+        "low",
+        "minimal"
+      ],
+      "supports_max_tokens": false
+    },
+    "is_ready": true,
+    "deprecation_date": null
+  },
+  {
     "id": "minimax-m3",
     "name": "MiniMax M3",
     "description": "MiniMax M3 is a natively multimodal MoE model (~428B parameters, ~23B active) with a 1M-token context. MiniMax Sparse Attention delivers up to 9x prefill and 15x decode speedups at long context, with frontier-level performance on long-horizon coding and agentic benchmarks.",
@@ -548,27 +730,29 @@
     "deprecation_date": null
   },
   {
-    "id": "nemotron-3.5-content-safety",
-    "name": "Nemotron 3.5 Content Safety",
-    "description": "NVIDIA's Nemotron 3.5 Content Safety model is a small language model fine-tuned from Gemma-3-4B-it for multimodal, multilingual content moderation. It classifies prompts, images, and responses against a standard safety taxonomy or a user-supplied custom policy, with optional reasoning traces.",
-    "created": 1780598852,
-    "hugging_face_id": "nvidia/Nemotron-3.5-Content-Safety",
+    "id": "nemotron-3-nano-omni-30b-a3b-reasoning",
+    "name": "Nemotron 3 Nano Omni",
+    "description": "NVIDIA Nemotron 3 Nano Omni is a multimodal large language model that unifies video, audio, image, and text understanding to support enterprise-grade Q&A, summarization, transcription, and document intelligence workflows.",
+    "created": 1773258474,
+    "hugging_face_id": "nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16",
     "quantization": "bf16",
-    "context_window": 131072,
+    "context_window": 262144,
     "max_prompt_tokens": null,
-    "max_output_tokens": 131072,
+    "max_output_tokens": 262144,
     "input_modalities": [
       "text",
-      "image"
+      "image",
+      "audio",
+      "video"
     ],
     "output_modalities": [
       "text"
     ],
     "pricing": {
-      "prompt": "0.00000005",
+      "prompt": "0.0000001",
       "cached_prompt": null,
       "cache_write": null,
-      "completion": "0.00000015",
+      "completion": "0.00000025",
       "internal_reasoning": null,
       "request": null
     },
@@ -593,6 +777,86 @@
       "supported_efforts": null,
       "supports_max_tokens": true
     },
+    "is_ready": true,
+    "deprecation_date": null
+  },
+  {
+    "id": "nemotron-3.5-content-safety",
+    "name": "Nemotron 3.5 Content Safety",
+    "description": "NVIDIA's Nemotron 3.5 Content Safety model is a small language model fine-tuned from Gemma-3-4B-it for multimodal, multilingual content moderation. It classifies prompts, images, and responses against a standard safety taxonomy or a user-supplied custom policy, with optional reasoning traces.",
+    "created": 1780598852,
+    "hugging_face_id": "nvidia/Nemotron-3.5-Content-Safety",
+    "quantization": "bf16",
+    "context_window": 131072,
+    "max_prompt_tokens": null,
+    "max_output_tokens": 131072,
+    "input_modalities": [
+      "text",
+      "image"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "pricing": {
+      "prompt": "0.00000005",
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": "0.00000015",
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": false,
+    "structured_outputs": false,
+    "streaming": true,
+    "supported_parameters": [
+      "temperature",
+      "top_p",
+      "frequency_penalty",
+      "presence_penalty",
+      "max_tokens",
+      "stop",
+      "seed",
+      "continue_final_message"
+    ],
+    "reasoning": {
+      "mandatory": false,
+      "default_effort": null,
+      "default_enabled": null,
+      "supported_efforts": null,
+      "supports_max_tokens": true
+    },
+    "is_ready": true,
+    "deprecation_date": null
+  },
+  {
+    "id": "qwen3-embedding-4b",
+    "name": "Qwen3 Embedding 4B",
+    "description": "Qwen3 Embedding 4B is a 4B-parameter multilingual text embedding model built on Qwen3. It produces 2,560-dimension embeddings, truncatable to fewer dimensions, for retrieval and RAG pipelines with a 32k-token context. Set input_type to search_query on queries for its query instruction.",
+    "created": 1790476080,
+    "hugging_face_id": "Qwen/Qwen3-Embedding-4B",
+    "quantization": "fp16",
+    "context_window": 32768,
+    "max_prompt_tokens": null,
+    "max_output_tokens": null,
+    "input_modalities": [
+      "text"
+    ],
+    "output_modalities": [
+      "embeddings"
+    ],
+    "pricing": {
+      "prompt": null,
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": null,
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": false,
+    "structured_outputs": false,
+    "streaming": false,
+    "supported_parameters": [],
+    "reasoning": null,
     "is_ready": true,
     "deprecation_date": null
   },
@@ -713,9 +977,41 @@
     "deprecation_date": null
   },
   {
+    "id": "semif-qwen3.5-4b",
+    "name": "SemIf (Qwen 3.5 4B)",
+    "description": "SemIf reads stock Qwen3.5-4B as a decision model: given a state and typed questions (yes/no, a choice among up to 16 options, or a score on 2 to 10 levels), it returns a probability for every allowed answer from a single read of the input, without generating text. Ranked second on JevBench, the best open decision system there. Served on /v1/systemone, compatible with TypeSafe's decision API. Inputs up to 4,096 tokens.",
+    "created": 1790541553,
+    "hugging_face_id": null,
+    "quantization": "bf16",
+    "context_window": 4096,
+    "max_prompt_tokens": null,
+    "max_output_tokens": null,
+    "input_modalities": [
+      "text"
+    ],
+    "output_modalities": [
+      "decision"
+    ],
+    "pricing": {
+      "prompt": null,
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": null,
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": false,
+    "structured_outputs": false,
+    "streaming": false,
+    "supported_parameters": [],
+    "reasoning": null,
+    "is_ready": true,
+    "deprecation_date": null
+  },
+  {
     "id": "vultron-retriever-core-qwen3.5-4.5b",
     "name": "Vultron Retriever Core 4.5B",
-    "description": "Vultr's Vultron Retriever Core is a 4.5B-parameter reranking model built on Qwen3.5. It scores query-document relevance for retrieval and RAG pipelines, balancing accuracy and throughput with a 262k-token context.",
+    "description": "Vultr's Vultron Retriever Core is a 4.5B-parameter reranking model built on Qwen 3.5. It scores query-document relevance for retrieval and RAG pipelines, balancing accuracy and throughput with a 262k-token context.",
     "created": 1783002744,
     "hugging_face_id": "vultr/VultronRetrieverCore-Qwen3.5-4.5B",
     "quantization": "bf16",
@@ -747,7 +1043,7 @@
   {
     "id": "vultron-retriever-flash-qwen3.5-0.8b",
     "name": "Vultron Retriever Flash 0.8B",
-    "description": "Vultr's Vultron Retriever Flash is a lightweight 0.8B-parameter reranking model built on Qwen3.5, optimized for low-latency, high-volume query-document relevance scoring in retrieval and RAG pipelines.",
+    "description": "Vultr's Vultron Retriever Flash is a lightweight 0.8B-parameter reranking model built on Qwen 3.5, optimized for low-latency, high-volume query-document relevance scoring in retrieval and RAG pipelines.",
     "created": 1783002800,
     "hugging_face_id": "vultr/VultronRetrieverFlash-Qwen3.5-0.8B",
     "quantization": "bf16",
@@ -759,6 +1055,38 @@
     ],
     "output_modalities": [
       "rerank"
+    ],
+    "pricing": {
+      "prompt": null,
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": null,
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": false,
+    "structured_outputs": false,
+    "streaming": false,
+    "supported_parameters": [],
+    "reasoning": null,
+    "is_ready": true,
+    "deprecation_date": null
+  },
+  {
+    "id": "whisper-large-v3-turbo",
+    "name": "Whisper Large V3 Turbo",
+    "description": "Whisper Large V3 Turbo is OpenAI's 809M-parameter speech recognition model, a pruned large-v3 with a 4-layer decoder for fast multilingual transcription. Send audio up to 25 MB and 10 minutes to /v1/audio/transcriptions. Priced per second of audio.",
+    "created": 1790558212,
+    "hugging_face_id": "openai/whisper-large-v3-turbo",
+    "quantization": "fp16",
+    "context_window": null,
+    "max_prompt_tokens": null,
+    "max_output_tokens": null,
+    "input_modalities": [
+      "audio"
+    ],
+    "output_modalities": [
+      "transcription"
     ],
     "pricing": {
       "prompt": null,

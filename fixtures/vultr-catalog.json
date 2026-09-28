@@ -144,7 +144,7 @@
               "max_items": 4
             },
             "seed": {
-              "type": "boolean"
+              "type": "integer"
             },
             "continue_final_message": {
               "type": "boolean"
@@ -190,8 +190,8 @@
           "region": "atl"
         }
       ],
-      "hugging_face_id": "deepseek-ai/DeepSeek-V4.1-Flash",
-      "quantization": "mxfp4",
+      "hugging_face_id": "nvidia/DeepSeek-V4.1-Flash-NVFP4",
+      "quantization": "nvfp4",
       "input_modalities": [
         {
           "type": "text",
@@ -274,7 +274,7 @@
               "max_items": 4
             },
             "seed": {
-              "type": "boolean"
+              "type": "integer"
             },
             "continue_final_message": {
               "type": "boolean"
@@ -404,7 +404,7 @@
               "max_items": 4
             },
             "seed": {
-              "type": "boolean"
+              "type": "integer"
             },
             "continue_final_message": {
               "type": "boolean"
@@ -534,7 +534,7 @@
               "max_items": 4
             },
             "seed": {
-              "type": "boolean"
+              "type": "integer"
             },
             "continue_final_message": {
               "type": "boolean"
@@ -683,7 +683,7 @@
               "max_items": 4
             },
             "seed": {
-              "type": "boolean"
+              "type": "integer"
             },
             "continue_final_message": {
               "type": "boolean"
@@ -813,7 +813,7 @@
               "max_items": 4
             },
             "seed": {
-              "type": "boolean"
+              "type": "integer"
             },
             "continue_final_message": {
               "type": "boolean"
@@ -943,7 +943,7 @@
               "max_items": 4
             },
             "seed": {
-              "type": "boolean"
+              "type": "integer"
             },
             "continue_final_message": {
               "type": "boolean"
@@ -957,6 +957,438 @@
               "type": "completion",
               "unit": "token",
               "cost_usd": "0.00000018"
+            }
+          ]
+        }
+      ],
+      "reasoning": {
+        "mandatory": false,
+        "default_effort": null,
+        "default_enabled": null,
+        "supported_efforts": [
+          "ultra",
+          "max",
+          "xhigh",
+          "high",
+          "medium",
+          "low",
+          "minimal"
+        ],
+        "supports_max_tokens": false
+      }
+    },
+    {
+      "schema_version": "2.4",
+      "id": "laya",
+      "name": "Laya",
+      "created": 1790499824,
+      "description": "Laya is a decision model: a ModernBERT encoder with a decision head that scores every allowed answer in a single forward pass, without generating text. Given a state and typed questions (yes/no, a choice among options, or a score on 2 to 10 levels), it returns a calibrated probability for every answer. Served on /v1/systemone, compatible with TypeSafe's decision API. English states are read up to 512 tokens; states in other languages go to its multilingual checkpoint automatically, read up to 1,024 tokens. Longer states are truncated.",
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "atl"
+        }
+      ],
+      "hugging_face_id": "convaiinnovations/laya",
+      "quantization": "fp32",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_context_length": {
+              "value": 512,
+              "unit": "token"
+            }
+          }
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "decision",
+          "supported_parameters": {
+            "question_type": {
+              "type": "enum",
+              "values": [
+                "noul",
+                "choice",
+                "score"
+              ]
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "token",
+              "cost_usd": "0.00000005"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
+      "id": "mica-v0.1-4b",
+      "name": "Mica v0.1 4B",
+      "created": 1790486959,
+      "description": "Mica v0.1 4B is a 4B-parameter decision model built on Qwen3.5-4B. Given a state and typed questions (yes/no, a choice among up to 255 options, or a score on 2 to 10 levels), it returns a calibrated probability for every allowed answer from a single read of the input, without generating text. Served on /v1/systemone, compatible with TypeSafe's decision API. Trained on English and Korean; inputs up to 8,192 tokens.",
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "atl"
+        }
+      ],
+      "hugging_face_id": "sky7350/Mica-v0.1-4B",
+      "quantization": "bf16",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_context_length": {
+              "value": 8192,
+              "unit": "token"
+            }
+          }
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "decision",
+          "supported_parameters": {
+            "question_type": {
+              "type": "enum",
+              "values": [
+                "noul",
+                "choice",
+                "score"
+              ]
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "token",
+              "cost_usd": "0.00000005"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
+      "id": "mimo-v2.6-flash-rl",
+      "name": "MiMo V2.6 Flash RL",
+      "created": 1790240998,
+      "description": "MiMo V2.6 Flash RL is Xiaomi's efficiency-balanced mixture-of-experts model with 309B total and 15B active parameters, hybrid sliding-window attention, and a 1M-token context. Supports reasoning and tool calling, served at FP8.",
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "atl"
+        }
+      ],
+      "hugging_face_id": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "quantization": "fp8",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_context_length": {
+              "value": 1048576,
+              "unit": "token"
+            }
+          },
+          "pricing": [
+            {
+              "type": "prompt",
+              "unit": "token",
+              "cost_usd": "0.0000001"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "image/png",
+                "image/jpeg",
+                "image/webp",
+                "image/gif"
+              ]
+            }
+          }
+        },
+        {
+          "type": "audio",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "audio/wav",
+                "audio/mpeg"
+              ]
+            }
+          }
+        },
+        {
+          "type": "video",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "video/mp4",
+                "video/webm"
+              ]
+            }
+          }
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "text",
+          "streaming": true,
+          "max_length": {
+            "value": 1048576,
+            "unit": "token"
+          },
+          "supported_parameters": {
+            "temperature": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "top_p": {
+              "type": "range",
+              "min": 0,
+              "max": 1
+            },
+            "frequency_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "presence_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "max_tokens": {
+              "type": "integer",
+              "min": 1,
+              "max": 1048576,
+              "unit": "token"
+            },
+            "stop": {
+              "type": "array",
+              "items": {
+                "type": "unknown"
+              },
+              "max_items": 4
+            },
+            "seed": {
+              "type": "integer"
+            },
+            "continue_final_message": {
+              "type": "boolean"
+            },
+            "tools": {
+              "type": "boolean"
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "token",
+              "cost_usd": "0.00000025"
+            }
+          ]
+        }
+      ],
+      "reasoning": {
+        "mandatory": false,
+        "default_effort": null,
+        "default_enabled": null,
+        "supported_efforts": [
+          "ultra",
+          "max",
+          "xhigh",
+          "high",
+          "medium",
+          "low",
+          "minimal"
+        ],
+        "supports_max_tokens": false
+      }
+    },
+    {
+      "schema_version": "2.4",
+      "id": "mimo-v2.6-pro-rl",
+      "name": "MiMo V2.6 Pro RL",
+      "created": 1790201164,
+      "description": "MiMo V2.6 Pro RL is Xiaomi's mixture-of-experts model with 1.02T total and 42B active parameters, hybrid sliding-window attention, and a 1M-token context. Supports reasoning and tool calling, served at FP8.",
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "atl"
+        }
+      ],
+      "hugging_face_id": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
+      "quantization": "fp8",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_context_length": {
+              "value": 1048576,
+              "unit": "token"
+            }
+          },
+          "pricing": [
+            {
+              "type": "prompt",
+              "unit": "token",
+              "cost_usd": "0.0000004"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "image/png",
+                "image/jpeg",
+                "image/webp",
+                "image/gif"
+              ]
+            }
+          }
+        },
+        {
+          "type": "audio",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "audio/wav",
+                "audio/mpeg"
+              ]
+            }
+          }
+        },
+        {
+          "type": "video",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "video/mp4",
+                "video/webm"
+              ]
+            }
+          }
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "text",
+          "streaming": true,
+          "max_length": {
+            "value": 1048576,
+            "unit": "token"
+          },
+          "supported_parameters": {
+            "temperature": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "top_p": {
+              "type": "range",
+              "min": 0,
+              "max": 1
+            },
+            "frequency_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "presence_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "max_tokens": {
+              "type": "integer",
+              "min": 1,
+              "max": 1048576,
+              "unit": "token"
+            },
+            "stop": {
+              "type": "array",
+              "items": {
+                "type": "unknown"
+              },
+              "max_items": 4
+            },
+            "seed": {
+              "type": "integer"
+            },
+            "continue_final_message": {
+              "type": "boolean"
+            },
+            "tools": {
+              "type": "boolean"
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "token",
+              "cost_usd": "0.0000008"
             }
           ]
         }
@@ -1092,7 +1524,7 @@
               "max_items": 4
             },
             "seed": {
-              "type": "boolean"
+              "type": "integer"
             },
             "continue_final_message": {
               "type": "boolean"
@@ -1241,7 +1673,7 @@
               "max_items": 4
             },
             "seed": {
-              "type": "boolean"
+              "type": "integer"
             },
             "continue_final_message": {
               "type": "boolean"
@@ -1272,6 +1704,166 @@
           "low",
           "minimal"
         ],
+        "supports_max_tokens": true
+      }
+    },
+    {
+      "schema_version": "2.4",
+      "id": "nemotron-3-nano-omni-30b-a3b-reasoning",
+      "name": "Nemotron 3 Nano Omni",
+      "created": 1773258474,
+      "description": "NVIDIA Nemotron 3 Nano Omni is a multimodal large language model that unifies video, audio, image, and text understanding to support enterprise-grade Q&A, summarization, transcription, and document intelligence workflows.",
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "atl"
+        }
+      ],
+      "hugging_face_id": "nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16",
+      "quantization": "bf16",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_context_length": {
+              "value": 262144,
+              "unit": "token"
+            }
+          },
+          "pricing": [
+            {
+              "type": "prompt",
+              "unit": "token",
+              "cost_usd": "0.0000001"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "image/png",
+                "image/jpeg",
+                "image/webp",
+                "image/gif"
+              ]
+            }
+          }
+        },
+        {
+          "type": "audio",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "audio/wav",
+                "audio/mpeg"
+              ]
+            }
+          }
+        },
+        {
+          "type": "video",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "video/mp4",
+                "video/webm"
+              ]
+            }
+          }
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "text",
+          "streaming": true,
+          "max_length": {
+            "value": 262144,
+            "unit": "token"
+          },
+          "supported_parameters": {
+            "temperature": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "top_p": {
+              "type": "range",
+              "min": 0,
+              "max": 1
+            },
+            "frequency_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "presence_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "max_tokens": {
+              "type": "integer",
+              "min": 1,
+              "max": 262144,
+              "unit": "token"
+            },
+            "stop": {
+              "type": "array",
+              "items": {
+                "type": "unknown"
+              },
+              "max_items": 4
+            },
+            "seed": {
+              "type": "integer"
+            },
+            "continue_final_message": {
+              "type": "boolean"
+            },
+            "tools": {
+              "type": "boolean"
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "token",
+              "cost_usd": "0.00000025"
+            }
+          ]
+        }
+      ],
+      "reasoning": {
+        "mandatory": false,
+        "default_effort": null,
+        "default_enabled": null,
+        "supported_efforts": null,
         "supports_max_tokens": true
       }
     },
@@ -1371,12 +1963,9 @@
               "max_items": 4
             },
             "seed": {
-              "type": "boolean"
+              "type": "integer"
             },
             "continue_final_message": {
-              "type": "boolean"
-            },
-            "tools": {
               "type": "boolean"
             }
           },
@@ -1396,6 +1985,64 @@
         "supported_efforts": null,
         "supports_max_tokens": true
       }
+    },
+    {
+      "schema_version": "2.4",
+      "id": "qwen3-embedding-4b",
+      "name": "Qwen3 Embedding 4B",
+      "created": 1790476080,
+      "description": "Qwen3 Embedding 4B is a 4B-parameter multilingual text embedding model built on Qwen3. It produces 2,560-dimension embeddings, truncatable to fewer dimensions, for retrieval and RAG pipelines with a 32k-token context. Set input_type to search_query on queries for its query instruction.",
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "atl"
+        }
+      ],
+      "hugging_face_id": "Qwen/Qwen3-Embedding-4B",
+      "quantization": "fp16",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_context_length": {
+              "value": 32768,
+              "unit": "token"
+            }
+          }
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "embeddings",
+          "supported_parameters": {
+            "encoding_format": {
+              "type": "enum",
+              "values": [
+                "float",
+                "base64"
+              ]
+            },
+            "dimensions": {
+              "type": "integer",
+              "min": 1
+            },
+            "input_type": {
+              "type": "enum",
+              "values": [
+                "search_query",
+                "search_document"
+              ]
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "token",
+              "cost_usd": "0.00000005"
+            }
+          ]
+        }
+      ]
     },
     {
       "schema_version": "2.4",
@@ -1512,7 +2159,7 @@
               "max_items": 4
             },
             "seed": {
-              "type": "boolean"
+              "type": "integer"
             },
             "continue_final_message": {
               "type": "boolean"
@@ -1661,7 +2308,7 @@
               "max_items": 4
             },
             "seed": {
-              "type": "boolean"
+              "type": "integer"
             },
             "continue_final_message": {
               "type": "boolean"
@@ -1697,10 +2344,57 @@
     },
     {
       "schema_version": "2.4",
+      "id": "semif-qwen3.5-4b",
+      "name": "SemIf (Qwen 3.5 4B)",
+      "created": 1790541553,
+      "description": "SemIf reads stock Qwen3.5-4B as a decision model: given a state and typed questions (yes/no, a choice among up to 16 options, or a score on 2 to 10 levels), it returns a probability for every allowed answer from a single read of the input, without generating text. Ranked second on JevBench, the best open decision system there. Served on /v1/systemone, compatible with TypeSafe's decision API. Inputs up to 4,096 tokens.",
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "atl"
+        }
+      ],
+      "quantization": "bf16",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_context_length": {
+              "value": 4096,
+              "unit": "token"
+            }
+          }
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "decision",
+          "supported_parameters": {
+            "question_type": {
+              "type": "enum",
+              "values": [
+                "noul",
+                "choice",
+                "score"
+              ]
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "token",
+              "cost_usd": "0.00000005"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
       "id": "vultron-retriever-core-qwen3.5-4.5b",
       "name": "Vultron Retriever Core 4.5B",
       "created": 1783002744,
-      "description": "Vultr's Vultron Retriever Core is a 4.5B-parameter reranking model built on Qwen3.5. It scores query-document relevance for retrieval and RAG pipelines, balancing accuracy and throughput with a 262k-token context.",
+      "description": "Vultr's Vultron Retriever Core is a 4.5B-parameter reranking model built on Qwen 3.5. It scores query-document relevance for retrieval and RAG pipelines, balancing accuracy and throughput with a 262k-token context.",
       "datacenters": [
         {
           "country_code": "US",
@@ -1748,7 +2442,7 @@
       "id": "vultron-retriever-flash-qwen3.5-0.8b",
       "name": "Vultron Retriever Flash 0.8B",
       "created": 1783002800,
-      "description": "Vultr's Vultron Retriever Flash is a lightweight 0.8B-parameter reranking model built on Qwen3.5, optimized for low-latency, high-volume query-document relevance scoring in retrieval and RAG pipelines.",
+      "description": "Vultr's Vultron Retriever Flash is a lightweight 0.8B-parameter reranking model built on Qwen 3.5, optimized for low-latency, high-volume query-document relevance scoring in retrieval and RAG pipelines.",
       "datacenters": [
         {
           "country_code": "US",
@@ -1788,6 +2482,82 @@
               "cost_usd": "0.00000005"
             }
           ]
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
+      "id": "whisper-large-v3-turbo",
+      "name": "Whisper Large V3 Turbo",
+      "created": 1790558212,
+      "description": "Whisper Large V3 Turbo is OpenAI's 809M-parameter speech recognition model, a pruned large-v3 with a 4-layer decoder for fast multilingual transcription. Send audio up to 25 MB and 10 minutes to /v1/audio/transcriptions. Priced per second of audio.",
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "atl"
+        }
+      ],
+      "hugging_face_id": "openai/whisper-large-v3-turbo",
+      "quantization": "fp16",
+      "input_modalities": [
+        {
+          "type": "audio",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "audio/wav",
+                "audio/mpeg"
+              ]
+            },
+            "max_duration_seconds": {
+              "value": 14400,
+              "unit": "second"
+            },
+            "max_content_size_bytes": {
+              "value": 26214400,
+              "unit": "byte"
+            }
+          },
+          "pricing": [
+            {
+              "type": "prompt",
+              "unit": "second",
+              "cost_usd": "0.00001111"
+            }
+          ]
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "transcription",
+          "streaming": false,
+          "supported_parameters": {
+            "language": {
+              "type": "unknown"
+            },
+            "prompt": {
+              "type": "unknown"
+            },
+            "temperature": {
+              "type": "range",
+              "min": 0,
+              "max": 1
+            },
+            "response_format": {
+              "type": "enum",
+              "values": [
+                "json",
+                "text"
+              ]
+            }
+          }
         }
       ]
     },
