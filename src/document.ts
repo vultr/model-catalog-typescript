@@ -15,6 +15,7 @@ export type OutputModalityType =
   | "embeddings"
   | "rerank"
   | "decision"
+  | "decisions"
   | "audio";
 
 export type PricingUnit = "token" | "image" | "megapixel" | "second" | "character" | "request" | "search";
@@ -42,6 +43,7 @@ export interface ParameterDescriptor {
   values?: unknown[];
   unit?: string;
   max_items?: number;
+  properties?: Record<string, ParameterDescriptor>;
   [key: string]: unknown;
 }
 
@@ -65,6 +67,7 @@ export interface OutputModality {
   [key: string]: unknown;
 }
 
+// Temporary root extension: supported_parameters carries the same facts (see reasoningSupport).
 export interface ModelReasoning {
   mandatory: boolean;
   default_effort?: string | null;

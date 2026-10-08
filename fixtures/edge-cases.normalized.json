@@ -109,5 +109,253 @@
     "reasoning": null,
     "is_ready": true,
     "deprecation_date": null
+  },
+  {
+    "id": "params-capped-budget",
+    "name": "Parameters, Capped Budget",
+    "description": null,
+    "created": null,
+    "hugging_face_id": null,
+    "quantization": null,
+    "context_window": null,
+    "max_prompt_tokens": null,
+    "max_output_tokens": null,
+    "input_modalities": [
+      "text"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "pricing": {
+      "prompt": null,
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": null,
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": false,
+    "structured_outputs": false,
+    "streaming": false,
+    "supported_parameters": [
+      "reasoning_effort",
+      "reasoning"
+    ],
+    "reasoning": {
+      "mandatory": false,
+      "default_effort": null,
+      "default_enabled": null,
+      "supported_efforts": [
+        "high",
+        "low"
+      ],
+      "supports_max_tokens": true
+    },
+    "is_ready": true,
+    "deprecation_date": null
+  },
+  {
+    "id": "params-unrestricted-effort",
+    "name": "Parameters, Unrestricted Effort",
+    "description": null,
+    "created": null,
+    "hugging_face_id": null,
+    "quantization": null,
+    "context_window": null,
+    "max_prompt_tokens": null,
+    "max_output_tokens": null,
+    "input_modalities": [
+      "text"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "pricing": {
+      "prompt": null,
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": null,
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": false,
+    "structured_outputs": false,
+    "streaming": false,
+    "supported_parameters": [
+      "reasoning_effort",
+      "reasoning"
+    ],
+    "reasoning": {
+      "mandatory": false,
+      "default_effort": null,
+      "default_enabled": null,
+      "supported_efforts": null,
+      "supports_max_tokens": false
+    },
+    "is_ready": true,
+    "deprecation_date": null
+  },
+  {
+    "id": "params-win-over-root",
+    "name": "Parameters Win Over Root",
+    "description": null,
+    "created": null,
+    "hugging_face_id": null,
+    "quantization": null,
+    "context_window": null,
+    "max_prompt_tokens": null,
+    "max_output_tokens": null,
+    "input_modalities": [
+      "text"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "pricing": {
+      "prompt": null,
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": null,
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": false,
+    "structured_outputs": false,
+    "streaming": false,
+    "supported_parameters": [
+      "reasoning_effort",
+      "reasoning"
+    ],
+    "reasoning": {
+      "mandatory": true,
+      "default_effort": "medium",
+      "default_enabled": true,
+      "supported_efforts": [
+        "medium",
+        "low"
+      ],
+      "supports_max_tokens": false
+    },
+    "is_ready": true,
+    "deprecation_date": null
+  },
+  {
+    "id": "params-effort-only",
+    "name": "Parameters, Effort Only",
+    "description": null,
+    "created": null,
+    "hugging_face_id": null,
+    "quantization": null,
+    "context_window": null,
+    "max_prompt_tokens": null,
+    "max_output_tokens": null,
+    "input_modalities": [
+      "text"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "pricing": {
+      "prompt": null,
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": null,
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": false,
+    "structured_outputs": false,
+    "streaming": false,
+    "supported_parameters": [
+      "reasoning_effort"
+    ],
+    "reasoning": {
+      "mandatory": false,
+      "default_effort": null,
+      "default_enabled": null,
+      "supported_efforts": [
+        "high",
+        "low"
+      ],
+      "supports_max_tokens": true
+    },
+    "is_ready": true,
+    "deprecation_date": null
+  },
+  {
+    "id": "params-unreadable-use-root",
+    "name": "Unreadable Parameters Use Root",
+    "description": null,
+    "created": null,
+    "hugging_face_id": null,
+    "quantization": null,
+    "context_window": null,
+    "max_prompt_tokens": null,
+    "max_output_tokens": null,
+    "input_modalities": [
+      "text"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "pricing": {
+      "prompt": null,
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": null,
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": false,
+    "structured_outputs": false,
+    "streaming": false,
+    "supported_parameters": [
+      "reasoning_effort",
+      "reasoning"
+    ],
+    "reasoning": {
+      "mandatory": false,
+      "default_effort": null,
+      "default_enabled": null,
+      "supported_efforts": [
+        "high",
+        "low"
+      ],
+      "supports_max_tokens": true
+    },
+    "is_ready": true,
+    "deprecation_date": null
+  },
+  {
+    "id": "decisions-modality",
+    "name": "Decisions Modality",
+    "description": null,
+    "created": null,
+    "hugging_face_id": null,
+    "quantization": null,
+    "context_window": null,
+    "max_prompt_tokens": null,
+    "max_output_tokens": null,
+    "input_modalities": [
+      "text"
+    ],
+    "output_modalities": [
+      "decisions"
+    ],
+    "pricing": {
+      "prompt": null,
+      "cached_prompt": null,
+      "cache_write": null,
+      "completion": null,
+      "internal_reasoning": null,
+      "request": null
+    },
+    "tools": false,
+    "structured_outputs": false,
+    "streaming": false,
+    "supported_parameters": [],
+    "reasoning": null,
+    "is_ready": true,
+    "deprecation_date": null
   }
 ]

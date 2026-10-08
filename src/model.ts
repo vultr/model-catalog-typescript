@@ -1,4 +1,4 @@
-import type { Limit, ModelDocument, ParameterDescriptor, PricingEntry } from "./document.ts";
+import type { Limit, ModelDocument, ModelReasoning, ParameterDescriptor, PricingEntry } from "./document.ts";
 import { usdPerMillion } from "./price.ts";
 
 // Exact decimal strings, USD per token (request: USD per request). null when unpriced.
@@ -59,11 +59,53 @@ function price(entries: PricingEntry[] | undefined, type: string, unit: string):
   return (matches.find((entry) => !isWindowed(entry)) ?? matches[0])?.cost_usd ?? null;
 }
 
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+// undefined: the descriptor does not say. null: any effort is accepted. Otherwise the allowlist.
+function effortValues(descriptor: unknown): string[] | null | undefined {
+  if (!isRecord(descriptor)) return undefined;
+  if (descriptor["type"] === "unknown") return null;
+  if (descriptor["type"] === "enum" && Array.isArray(descriptor["values"])) {
+    return descriptor["values"].filter((value): value is string => typeof value === "string");
+  }
+  return undefined;
+}
+
+// The text output's supported_parameters carry the facts: reasoning_effort (enum, or unknown when
+// unrestricted) and reasoning (object whose properties hold effort, and max_tokens only when the
+// budget is enforced). The root reasoning object is a temporary extension that will go away, so it
+// only answers what the parameters do not: mandatory, the defaults, and any model whose parameters
+// name no reasoning at all.
+function reasoningSupport(
+  parameters: Record<string, ParameterDescriptor>,
+  root: ModelReasoning | null | undefined,
+): ReasoningSupport | null {
+  const effort = parameters["reasoning_effort"];
+  const object = parameters["reasoning"];
+  if (!isRecord(effort) && !isRecord(object) && !isRecord(root)) return null;
+
+  const properties = isRecord(object) && isRecord(object["properties"]) ? object["properties"] : undefined;
+  // null is an answer (unrestricted), so the second source is asked only on undefined
+  let efforts = effortValues(effort);
+  if (efforts === undefined) efforts = effortValues(properties?.["effort"]);
+  const maxTokens = properties === undefined ? undefined : "max_tokens" in properties;
+  const fallback = isRecord(root) ? root : undefined;
+
+  return {
+    mandatory: fallback?.mandatory === true,
+    defaultEffort: fallback?.default_effort ?? null,
+    defaultEnabled: fallback?.default_enabled ?? null,
+    supportedEfforts: efforts !== undefined ? efforts : (fallback?.supported_efforts ?? null),
+    supportsMaxTokens: maxTokens ?? fallback?.supports_max_tokens === true,
+  };
+}
+
 export function normalizeModel(document: ModelDocument): CatalogModel {
   const textIn = document.input_modalities.find((modality) => modality.type === "text");
   const textOut = document.output_modalities.find((modality) => modality.type === "text");
   const parameters = textOut?.supported_parameters ?? {};
-  const reasoning = document.reasoning ?? null;
 
   return {
     id: document.id,
@@ -90,13 +132,7 @@ export function normalizeModel(document: ModelDocument): CatalogModel {
     streaming: textOut?.streaming === true,
     supportedParameters: Object.keys(parameters),
     parameters,
-    reasoning: reasoning && {
-      mandatory: reasoning.mandatory === true,
-      defaultEffort: reasoning.default_effort ?? null,
-      defaultEnabled: reasoning.default_enabled ?? null,
-      supportedEfforts: reasoning.supported_efforts ?? null,
-      supportsMaxTokens: reasoning.supports_max_tokens === true,
-    },
+    reasoning: reasoningSupport(parameters, document.reasoning),
     isReady: document.is_ready !== false,
     deprecationDate: document.deprecation_date ?? null,
   };

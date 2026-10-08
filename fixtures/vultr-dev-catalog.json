@@ -1,0 +1,3454 @@
+{
+  "data": [
+    {
+      "schema_version": "2.4",
+      "id": "autojev-27b",
+      "name": "AutoJev 27B",
+      "created": 1790898496,
+      "description": "High-accuracy decision model that returns calibrated answer probabilities in a single read.",
+      "hugging_face_id": "denis-pplx/autojev-27b",
+      "quantization": "bf16",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_context_length": {
+              "value": 262143,
+              "unit": "token"
+            }
+          }
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "decisions",
+          "supported_parameters": {
+            "question_type": {
+              "type": "enum",
+              "values": [
+                "noul",
+                "choice",
+                "score"
+              ]
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "token",
+              "cost_usd": "0.0000001"
+            }
+          ]
+        }
+      ],
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "atl"
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
+      "id": "bge-reranker-v2-m3",
+      "name": "BGE M3",
+      "created": 1788137291,
+      "description": "Multilingual reranker that scores query-document relevance with an 8K-token input window. Input longer than the context length is silently truncated by the engine and billed as truncated, not rejected.",
+      "hugging_face_id": "BAAI/bge-reranker-v2-m3",
+      "quantization": "fp16",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_context_length": {
+              "value": 8192,
+              "unit": "token"
+            }
+          }
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "rerank",
+          "supported_parameters": {
+            "top_n": {
+              "type": "integer",
+              "min": 1,
+              "max": 100
+            },
+            "return_documents": {
+              "type": "boolean"
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "token",
+              "cost_usd": "0.00000005"
+            }
+          ]
+        }
+      ],
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "sjc"
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
+      "id": "clef",
+      "name": "Clef",
+      "created": 1791164973,
+      "description": "Joint decision model that returns answer probabilities for every question in a single read.",
+      "hugging_face_id": "Cloudflare/clef",
+      "quantization": "bf16",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_context_length": {
+              "value": 262144,
+              "unit": "token"
+            }
+          }
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "decisions",
+          "supported_parameters": {
+            "question_type": {
+              "type": "enum",
+              "values": [
+                "noul",
+                "choice",
+                "score"
+              ]
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "token",
+              "cost_usd": "0.0000001"
+            }
+          ]
+        }
+      ],
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "atl"
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
+      "id": "clef-flash",
+      "name": "Clef Flash",
+      "created": 1791164973,
+      "description": "Fast joint decision model that returns answer probabilities for every question in a single read.",
+      "hugging_face_id": "Cloudflare/clef-flash",
+      "quantization": "bf16",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_context_length": {
+              "value": 262144,
+              "unit": "token"
+            }
+          }
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "decisions",
+          "supported_parameters": {
+            "question_type": {
+              "type": "enum",
+              "values": [
+                "noul",
+                "choice",
+                "score"
+              ]
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "token",
+              "cost_usd": "0.00000005"
+            }
+          ]
+        }
+      ],
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "atl"
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
+      "id": "deepseek-v4-flash-0731",
+      "name": "DeepSeek V4 Flash 0731",
+      "created": 1786979709,
+      "description": "Fast agentic MoE that rivals far larger models on agentic benchmarks, with a 1M-token context.",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V4-Flash-0731",
+      "quantization": "fp8",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_context_length": {
+              "value": 1048576,
+              "unit": "token"
+            }
+          },
+          "pricing": [
+            {
+              "type": "prompt",
+              "unit": "token",
+              "cost_usd": "0.0000001"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "image/png",
+                "image/jpeg",
+                "image/webp",
+                "image/gif"
+              ]
+            }
+          }
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "text",
+          "streaming": true,
+          "max_length": {
+            "value": 1048576,
+            "unit": "token"
+          },
+          "supported_parameters": {
+            "temperature": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "top_p": {
+              "type": "range",
+              "min": 0,
+              "max": 1
+            },
+            "frequency_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "presence_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "max_tokens": {
+              "type": "integer",
+              "min": 1,
+              "max": 1048576,
+              "unit": "token"
+            },
+            "stop": {
+              "type": "array",
+              "items": {
+                "type": "unknown"
+              },
+              "max_items": 4
+            },
+            "seed": {
+              "type": "integer"
+            },
+            "continue_final_message": {
+              "type": "boolean"
+            },
+            "top_k": {
+              "type": "integer",
+              "min": 0
+            },
+            "repetition_penalty": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "n": {
+              "type": "integer",
+              "min": 1
+            },
+            "logprobs": {
+              "type": "boolean"
+            },
+            "top_logprobs": {
+              "type": "integer",
+              "min": 0,
+              "max": 20
+            },
+            "response_format": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "enum",
+                  "values": [
+                    "text",
+                    "json_object",
+                    "json_schema"
+                  ]
+                }
+              }
+            },
+            "structured_outputs": {
+              "type": "boolean"
+            },
+            "reasoning_effort": {
+              "type": "enum",
+              "values": [
+                "ultra",
+                "max",
+                "xhigh",
+                "high",
+                "medium",
+                "low",
+                "minimal"
+              ]
+            },
+            "reasoning": {
+              "type": "object",
+              "properties": {
+                "effort": {
+                  "type": "enum",
+                  "values": [
+                    "ultra",
+                    "max",
+                    "xhigh",
+                    "high",
+                    "medium",
+                    "low",
+                    "minimal"
+                  ]
+                }
+              }
+            },
+            "tools": {
+              "type": "boolean"
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "token",
+              "cost_usd": "0.00000025"
+            }
+          ]
+        }
+      ],
+      "reasoning": {
+        "mandatory": false,
+        "default_effort": null,
+        "default_enabled": null,
+        "supported_efforts": [
+          "ultra",
+          "max",
+          "xhigh",
+          "high",
+          "medium",
+          "low",
+          "minimal"
+        ],
+        "supports_max_tokens": false
+      },
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "atl"
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
+      "id": "deepseek-v4.1-flash",
+      "name": "DeepSeek V4.1 Flash",
+      "created": 1789449517,
+      "description": "Mixture-of-experts model with a 1M-token context, reasoning, and tool calling.",
+      "hugging_face_id": "nvidia/DeepSeek-V4.1-Flash-NVFP4",
+      "quantization": "nvfp4",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_context_length": {
+              "value": 1048576,
+              "unit": "token"
+            }
+          },
+          "pricing": [
+            {
+              "type": "prompt",
+              "unit": "token",
+              "cost_usd": "0.00000015"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "image/png",
+                "image/jpeg",
+                "image/webp",
+                "image/gif"
+              ]
+            }
+          }
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "text",
+          "streaming": true,
+          "max_length": {
+            "value": 1048576,
+            "unit": "token"
+          },
+          "supported_parameters": {
+            "temperature": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "top_p": {
+              "type": "range",
+              "min": 0,
+              "max": 1
+            },
+            "frequency_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "presence_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "max_tokens": {
+              "type": "integer",
+              "min": 1,
+              "max": 1048576,
+              "unit": "token"
+            },
+            "stop": {
+              "type": "array",
+              "items": {
+                "type": "unknown"
+              },
+              "max_items": 4
+            },
+            "seed": {
+              "type": "integer"
+            },
+            "continue_final_message": {
+              "type": "boolean"
+            },
+            "top_k": {
+              "type": "integer",
+              "min": 0
+            },
+            "repetition_penalty": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "n": {
+              "type": "integer",
+              "min": 1
+            },
+            "logprobs": {
+              "type": "boolean"
+            },
+            "top_logprobs": {
+              "type": "integer",
+              "min": 0,
+              "max": 20
+            },
+            "response_format": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "enum",
+                  "values": [
+                    "text",
+                    "json_object",
+                    "json_schema"
+                  ]
+                }
+              }
+            },
+            "structured_outputs": {
+              "type": "boolean"
+            },
+            "reasoning_effort": {
+              "type": "enum",
+              "values": [
+                "ultra",
+                "max",
+                "xhigh",
+                "high",
+                "medium",
+                "low",
+                "minimal"
+              ]
+            },
+            "reasoning": {
+              "type": "object",
+              "properties": {
+                "effort": {
+                  "type": "enum",
+                  "values": [
+                    "ultra",
+                    "max",
+                    "xhigh",
+                    "high",
+                    "medium",
+                    "low",
+                    "minimal"
+                  ]
+                },
+                "max_tokens": {
+                  "type": "integer",
+                  "min": 1,
+                  "unit": "token"
+                }
+              }
+            },
+            "tools": {
+              "type": "boolean"
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "token",
+              "cost_usd": "0.0000006"
+            }
+          ]
+        }
+      ],
+      "reasoning": {
+        "mandatory": false,
+        "default_effort": null,
+        "default_enabled": null,
+        "supported_efforts": [
+          "ultra",
+          "max",
+          "xhigh",
+          "high",
+          "medium",
+          "low",
+          "minimal"
+        ],
+        "supports_max_tokens": true
+      },
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "sea"
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
+      "id": "glm-5.3",
+      "name": "GLM 5.3",
+      "created": 1788472643,
+      "description": "Post-trained for substantially stronger complex coding and long-horizon agentic work across a 1M-token context.",
+      "hugging_face_id": "RadixArk/GLM-5.3-NVFP4",
+      "quantization": "nvfp4",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_context_length": {
+              "value": 1048576,
+              "unit": "token"
+            }
+          },
+          "pricing": [
+            {
+              "type": "prompt",
+              "unit": "token",
+              "cost_usd": "0.00000075"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "image/png",
+                "image/jpeg",
+                "image/webp",
+                "image/gif"
+              ]
+            }
+          }
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "text",
+          "streaming": true,
+          "max_length": {
+            "value": 1048576,
+            "unit": "token"
+          },
+          "supported_parameters": {
+            "temperature": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "top_p": {
+              "type": "range",
+              "min": 0,
+              "max": 1
+            },
+            "frequency_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "presence_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "max_tokens": {
+              "type": "integer",
+              "min": 1,
+              "max": 1048576,
+              "unit": "token"
+            },
+            "stop": {
+              "type": "array",
+              "items": {
+                "type": "unknown"
+              },
+              "max_items": 4
+            },
+            "seed": {
+              "type": "integer"
+            },
+            "continue_final_message": {
+              "type": "boolean"
+            },
+            "top_k": {
+              "type": "integer",
+              "min": 0
+            },
+            "repetition_penalty": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "n": {
+              "type": "integer",
+              "min": 1
+            },
+            "logprobs": {
+              "type": "boolean"
+            },
+            "top_logprobs": {
+              "type": "integer",
+              "min": 0,
+              "max": 20
+            },
+            "response_format": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "enum",
+                  "values": [
+                    "text",
+                    "json_object",
+                    "json_schema"
+                  ]
+                }
+              }
+            },
+            "structured_outputs": {
+              "type": "boolean"
+            },
+            "reasoning_effort": {
+              "type": "enum",
+              "values": [
+                "ultra",
+                "max",
+                "xhigh",
+                "high",
+                "medium",
+                "low",
+                "minimal"
+              ]
+            },
+            "reasoning": {
+              "type": "object",
+              "properties": {
+                "effort": {
+                  "type": "enum",
+                  "values": [
+                    "ultra",
+                    "max",
+                    "xhigh",
+                    "high",
+                    "medium",
+                    "low",
+                    "minimal"
+                  ]
+                },
+                "max_tokens": {
+                  "type": "integer",
+                  "min": 1,
+                  "unit": "token"
+                }
+              }
+            },
+            "tools": {
+              "type": "boolean"
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "token",
+              "cost_usd": "0.000003"
+            }
+          ]
+        }
+      ],
+      "reasoning": {
+        "mandatory": false,
+        "default_effort": null,
+        "default_enabled": null,
+        "supported_efforts": [
+          "ultra",
+          "max",
+          "xhigh",
+          "high",
+          "medium",
+          "low",
+          "minimal"
+        ],
+        "supports_max_tokens": true
+      },
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "sea"
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
+      "id": "glm-5.3-flash",
+      "name": "GLM 5.3 Flash",
+      "created": 1788836858,
+      "description": "Z.ai's natively multimodal MoE for fast, low-cost coding and agentic work over a 1M-token context.",
+      "hugging_face_id": "zai-org/GLM-5.3-Flash",
+      "quantization": "fp8",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_context_length": {
+              "value": 1048576,
+              "unit": "token"
+            }
+          },
+          "pricing": [
+            {
+              "type": "prompt",
+              "unit": "token",
+              "cost_usd": "0.0000001"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "image/png",
+                "image/jpeg",
+                "image/webp",
+                "image/gif"
+              ]
+            }
+          }
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "text",
+          "streaming": true,
+          "max_length": {
+            "value": 1048576,
+            "unit": "token"
+          },
+          "supported_parameters": {
+            "temperature": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "top_p": {
+              "type": "range",
+              "min": 0,
+              "max": 1
+            },
+            "frequency_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "presence_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "max_tokens": {
+              "type": "integer",
+              "min": 1,
+              "max": 1048576,
+              "unit": "token"
+            },
+            "stop": {
+              "type": "array",
+              "items": {
+                "type": "unknown"
+              },
+              "max_items": 4
+            },
+            "seed": {
+              "type": "integer"
+            },
+            "continue_final_message": {
+              "type": "boolean"
+            },
+            "top_k": {
+              "type": "integer",
+              "min": 0
+            },
+            "repetition_penalty": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "n": {
+              "type": "integer",
+              "min": 1
+            },
+            "logprobs": {
+              "type": "boolean"
+            },
+            "top_logprobs": {
+              "type": "integer",
+              "min": 0,
+              "max": 20
+            },
+            "response_format": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "enum",
+                  "values": [
+                    "text",
+                    "json_object",
+                    "json_schema"
+                  ]
+                }
+              }
+            },
+            "structured_outputs": {
+              "type": "boolean"
+            },
+            "reasoning_effort": {
+              "type": "enum",
+              "values": [
+                "ultra",
+                "max",
+                "xhigh",
+                "high",
+                "medium",
+                "low",
+                "minimal"
+              ]
+            },
+            "reasoning": {
+              "type": "object",
+              "properties": {
+                "effort": {
+                  "type": "enum",
+                  "values": [
+                    "ultra",
+                    "max",
+                    "xhigh",
+                    "high",
+                    "medium",
+                    "low",
+                    "minimal"
+                  ]
+                },
+                "max_tokens": {
+                  "type": "integer",
+                  "min": 1,
+                  "unit": "token"
+                }
+              }
+            },
+            "tools": {
+              "type": "boolean"
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "token",
+              "cost_usd": "0.00000035"
+            }
+          ]
+        }
+      ],
+      "reasoning": {
+        "mandatory": false,
+        "default_effort": null,
+        "default_enabled": null,
+        "supported_efforts": [
+          "ultra",
+          "max",
+          "xhigh",
+          "high",
+          "medium",
+          "low",
+          "minimal"
+        ],
+        "supports_max_tokens": true
+      },
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "sea"
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
+      "id": "laguna-s-2.1",
+      "name": "Laguna S 2.1",
+      "created": 1786979709,
+      "description": "Mid-sized MoE designed for agentic coding and long-horizon work.",
+      "hugging_face_id": "poolside/Laguna-S-2.1-FP8",
+      "quantization": "fp8",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_context_length": {
+              "value": 1048576,
+              "unit": "token"
+            }
+          },
+          "pricing": [
+            {
+              "type": "prompt",
+              "unit": "token",
+              "cost_usd": "0.0000001"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "image/png",
+                "image/jpeg",
+                "image/webp",
+                "image/gif"
+              ]
+            }
+          }
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "text",
+          "streaming": true,
+          "max_length": {
+            "value": 1048576,
+            "unit": "token"
+          },
+          "supported_parameters": {
+            "temperature": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "top_p": {
+              "type": "range",
+              "min": 0,
+              "max": 1
+            },
+            "frequency_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "presence_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "max_tokens": {
+              "type": "integer",
+              "min": 1,
+              "max": 1048576,
+              "unit": "token"
+            },
+            "stop": {
+              "type": "array",
+              "items": {
+                "type": "unknown"
+              },
+              "max_items": 4
+            },
+            "seed": {
+              "type": "integer"
+            },
+            "continue_final_message": {
+              "type": "boolean"
+            },
+            "top_k": {
+              "type": "integer",
+              "min": 0
+            },
+            "repetition_penalty": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "n": {
+              "type": "integer",
+              "min": 1
+            },
+            "logprobs": {
+              "type": "boolean"
+            },
+            "top_logprobs": {
+              "type": "integer",
+              "min": 0,
+              "max": 20
+            },
+            "response_format": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "enum",
+                  "values": [
+                    "text",
+                    "json_object",
+                    "json_schema"
+                  ]
+                }
+              }
+            },
+            "structured_outputs": {
+              "type": "boolean"
+            },
+            "reasoning_effort": {
+              "type": "enum",
+              "values": [
+                "ultra",
+                "max",
+                "xhigh",
+                "high",
+                "medium",
+                "low",
+                "minimal"
+              ]
+            },
+            "reasoning": {
+              "type": "object",
+              "properties": {
+                "effort": {
+                  "type": "enum",
+                  "values": [
+                    "ultra",
+                    "max",
+                    "xhigh",
+                    "high",
+                    "medium",
+                    "low",
+                    "minimal"
+                  ]
+                }
+              }
+            },
+            "tools": {
+              "type": "boolean"
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "token",
+              "cost_usd": "0.0000002"
+            }
+          ]
+        }
+      ],
+      "reasoning": {
+        "mandatory": false,
+        "default_effort": null,
+        "default_enabled": null,
+        "supported_efforts": [
+          "ultra",
+          "max",
+          "xhigh",
+          "high",
+          "medium",
+          "low",
+          "minimal"
+        ],
+        "supports_max_tokens": false
+      },
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "atl"
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
+      "id": "mimo-v2.6-flash-rl",
+      "name": "MiMo V2.6 Flash RL",
+      "created": 1790240871,
+      "description": "Xiaomi's efficiency-balanced MoE with a 1M-token context, reasoning, and tool calling.",
+      "hugging_face_id": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "quantization": "fp8",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_context_length": {
+              "value": 1048576,
+              "unit": "token"
+            }
+          },
+          "pricing": [
+            {
+              "type": "prompt",
+              "unit": "token",
+              "cost_usd": "0.0000001"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "image/png",
+                "image/jpeg",
+                "image/webp",
+                "image/gif"
+              ]
+            }
+          }
+        },
+        {
+          "type": "audio",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "audio/wav",
+                "audio/mpeg"
+              ]
+            }
+          }
+        },
+        {
+          "type": "video",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "video/mp4",
+                "video/webm"
+              ]
+            }
+          }
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "text",
+          "streaming": true,
+          "max_length": {
+            "value": 1048576,
+            "unit": "token"
+          },
+          "supported_parameters": {
+            "temperature": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "top_p": {
+              "type": "range",
+              "min": 0,
+              "max": 1
+            },
+            "frequency_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "presence_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "max_tokens": {
+              "type": "integer",
+              "min": 1,
+              "max": 1048576,
+              "unit": "token"
+            },
+            "stop": {
+              "type": "array",
+              "items": {
+                "type": "unknown"
+              },
+              "max_items": 4
+            },
+            "seed": {
+              "type": "integer"
+            },
+            "continue_final_message": {
+              "type": "boolean"
+            },
+            "top_k": {
+              "type": "integer",
+              "min": 0
+            },
+            "repetition_penalty": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "n": {
+              "type": "integer",
+              "min": 1
+            },
+            "logprobs": {
+              "type": "boolean"
+            },
+            "top_logprobs": {
+              "type": "integer",
+              "min": 0,
+              "max": 20
+            },
+            "response_format": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "enum",
+                  "values": [
+                    "text",
+                    "json_object",
+                    "json_schema"
+                  ]
+                }
+              }
+            },
+            "structured_outputs": {
+              "type": "boolean"
+            },
+            "reasoning_effort": {
+              "type": "enum",
+              "values": [
+                "ultra",
+                "max",
+                "xhigh",
+                "high",
+                "medium",
+                "low",
+                "minimal"
+              ]
+            },
+            "reasoning": {
+              "type": "object",
+              "properties": {
+                "effort": {
+                  "type": "enum",
+                  "values": [
+                    "ultra",
+                    "max",
+                    "xhigh",
+                    "high",
+                    "medium",
+                    "low",
+                    "minimal"
+                  ]
+                }
+              }
+            },
+            "tools": {
+              "type": "boolean"
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "token",
+              "cost_usd": "0.00000025"
+            }
+          ]
+        }
+      ],
+      "reasoning": {
+        "mandatory": false,
+        "default_effort": null,
+        "default_enabled": null,
+        "supported_efforts": [
+          "ultra",
+          "max",
+          "xhigh",
+          "high",
+          "medium",
+          "low",
+          "minimal"
+        ],
+        "supports_max_tokens": false
+      },
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "atl"
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
+      "id": "mimo-v2.6-pro-rl",
+      "name": "MiMo V2.6 Pro RL",
+      "created": 1790193684,
+      "description": "Xiaomi's flagship MoE with a 1M-token context, reasoning, and tool calling.",
+      "hugging_face_id": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
+      "quantization": "fp8",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_context_length": {
+              "value": 1048576,
+              "unit": "token"
+            }
+          },
+          "pricing": [
+            {
+              "type": "prompt",
+              "unit": "token",
+              "cost_usd": "0.0000004"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "image/png",
+                "image/jpeg",
+                "image/webp",
+                "image/gif"
+              ]
+            }
+          }
+        },
+        {
+          "type": "audio",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "audio/wav",
+                "audio/mpeg"
+              ]
+            }
+          }
+        },
+        {
+          "type": "video",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "video/mp4",
+                "video/webm"
+              ]
+            }
+          }
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "text",
+          "streaming": true,
+          "max_length": {
+            "value": 1048576,
+            "unit": "token"
+          },
+          "supported_parameters": {
+            "temperature": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "top_p": {
+              "type": "range",
+              "min": 0,
+              "max": 1
+            },
+            "frequency_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "presence_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "max_tokens": {
+              "type": "integer",
+              "min": 1,
+              "max": 1048576,
+              "unit": "token"
+            },
+            "stop": {
+              "type": "array",
+              "items": {
+                "type": "unknown"
+              },
+              "max_items": 4
+            },
+            "seed": {
+              "type": "integer"
+            },
+            "continue_final_message": {
+              "type": "boolean"
+            },
+            "top_k": {
+              "type": "integer",
+              "min": 0
+            },
+            "repetition_penalty": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "n": {
+              "type": "integer",
+              "min": 1
+            },
+            "logprobs": {
+              "type": "boolean"
+            },
+            "top_logprobs": {
+              "type": "integer",
+              "min": 0,
+              "max": 20
+            },
+            "response_format": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "enum",
+                  "values": [
+                    "text",
+                    "json_object",
+                    "json_schema"
+                  ]
+                }
+              }
+            },
+            "structured_outputs": {
+              "type": "boolean"
+            },
+            "reasoning_effort": {
+              "type": "enum",
+              "values": [
+                "ultra",
+                "max",
+                "xhigh",
+                "high",
+                "medium",
+                "low",
+                "minimal"
+              ]
+            },
+            "reasoning": {
+              "type": "object",
+              "properties": {
+                "effort": {
+                  "type": "enum",
+                  "values": [
+                    "ultra",
+                    "max",
+                    "xhigh",
+                    "high",
+                    "medium",
+                    "low",
+                    "minimal"
+                  ]
+                }
+              }
+            },
+            "tools": {
+              "type": "boolean"
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "token",
+              "cost_usd": "0.0000008"
+            }
+          ]
+        }
+      ],
+      "reasoning": {
+        "mandatory": false,
+        "default_effort": null,
+        "default_enabled": null,
+        "supported_efforts": [
+          "ultra",
+          "max",
+          "xhigh",
+          "high",
+          "medium",
+          "low",
+          "minimal"
+        ],
+        "supports_max_tokens": false
+      },
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "atl"
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
+      "id": "minimax-h3",
+      "name": "MiniMax H3",
+      "created": 1791159509,
+      "description": "Text, frames or reference media to video with a generated soundtrack, 4-15 seconds at 768p.",
+      "input_modalities": [
+        {
+          "type": "text"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "video"
+        },
+        {
+          "type": "audio"
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "video",
+          "streaming": false,
+          "supported_parameters": {
+            "duration": {
+              "type": "enum",
+              "values": [
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+              ]
+            },
+            "resolution": {
+              "type": "enum",
+              "values": [
+                "768p"
+              ]
+            },
+            "aspect_ratio": {
+              "type": "enum",
+              "values": [
+                "16:9",
+                "9:16",
+                "4:3",
+                "3:4",
+                "1:1",
+                "21:9"
+              ]
+            },
+            "size": {
+              "type": "enum",
+              "values": [
+                "1344x768",
+                "768x1344",
+                "1024x768",
+                "768x1024",
+                "768x768",
+                "1536x672"
+              ]
+            },
+            "generate_audio": {
+              "type": "boolean",
+              "default": true
+            },
+            "seed": {
+              "type": "integer"
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "second",
+              "cost_usd": "0.08"
+            }
+          ]
+        }
+      ],
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "atl"
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
+      "id": "minimax-m3",
+      "name": "MiniMax M3",
+      "created": 1787632970,
+      "description": "Natively multimodal MoE with a 1M-token context and frontier-level long-horizon coding and agentic performance.",
+      "hugging_face_id": "MiniMaxAI/MiniMax-M3",
+      "quantization": "fp8",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_context_length": {
+              "value": 524288,
+              "unit": "token"
+            }
+          },
+          "pricing": [
+            {
+              "type": "prompt",
+              "unit": "token",
+              "cost_usd": "0.0000002"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "image/png",
+                "image/jpeg",
+                "image/webp",
+                "image/gif"
+              ]
+            }
+          }
+        },
+        {
+          "type": "video",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "video/mp4",
+                "video/webm"
+              ]
+            }
+          }
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "text",
+          "streaming": true,
+          "max_length": {
+            "value": 524288,
+            "unit": "token"
+          },
+          "supported_parameters": {
+            "temperature": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "top_p": {
+              "type": "range",
+              "min": 0,
+              "max": 1
+            },
+            "frequency_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "presence_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "max_tokens": {
+              "type": "integer",
+              "min": 1,
+              "max": 524288,
+              "unit": "token"
+            },
+            "stop": {
+              "type": "array",
+              "items": {
+                "type": "unknown"
+              },
+              "max_items": 4
+            },
+            "seed": {
+              "type": "integer"
+            },
+            "continue_final_message": {
+              "type": "boolean"
+            },
+            "top_k": {
+              "type": "integer",
+              "min": 0
+            },
+            "repetition_penalty": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "n": {
+              "type": "integer",
+              "min": 1
+            },
+            "logprobs": {
+              "type": "boolean"
+            },
+            "top_logprobs": {
+              "type": "integer",
+              "min": 0,
+              "max": 20
+            },
+            "response_format": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "enum",
+                  "values": [
+                    "text",
+                    "json_object",
+                    "json_schema"
+                  ]
+                }
+              }
+            },
+            "structured_outputs": {
+              "type": "boolean"
+            },
+            "reasoning_effort": {
+              "type": "enum",
+              "values": [
+                "ultra",
+                "max",
+                "xhigh",
+                "high",
+                "medium",
+                "low",
+                "minimal"
+              ]
+            },
+            "reasoning": {
+              "type": "object",
+              "properties": {
+                "effort": {
+                  "type": "enum",
+                  "values": [
+                    "ultra",
+                    "max",
+                    "xhigh",
+                    "high",
+                    "medium",
+                    "low",
+                    "minimal"
+                  ]
+                },
+                "max_tokens": {
+                  "type": "integer",
+                  "min": 1,
+                  "unit": "token"
+                }
+              }
+            },
+            "tools": {
+              "type": "boolean"
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "token",
+              "cost_usd": "0.0000009"
+            }
+          ]
+        }
+      ],
+      "reasoning": {
+        "mandatory": false,
+        "default_effort": null,
+        "default_enabled": null,
+        "supported_efforts": [
+          "ultra",
+          "max",
+          "xhigh",
+          "high",
+          "medium",
+          "low",
+          "minimal"
+        ],
+        "supports_max_tokens": true
+      },
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "sea"
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
+      "id": "muse-glimmer-30b",
+      "name": "Muse Glimmer 30B",
+      "created": 1789531164,
+      "description": "Dense multimodal model for reasoning, coding, and tool use with a 131K-token context.",
+      "hugging_face_id": "nvidia/Muse-Glimmer-30B-NVFP4",
+      "quantization": "nvfp4",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_context_length": {
+              "value": 131072,
+              "unit": "token"
+            }
+          },
+          "pricing": [
+            {
+              "type": "prompt",
+              "unit": "token",
+              "cost_usd": "0.00000025"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "image/png",
+                "image/jpeg",
+                "image/webp",
+                "image/gif"
+              ]
+            }
+          }
+        },
+        {
+          "type": "video",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "video/mp4",
+                "video/webm"
+              ]
+            }
+          }
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "text",
+          "streaming": true,
+          "max_length": {
+            "value": 131072,
+            "unit": "token"
+          },
+          "supported_parameters": {
+            "temperature": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "top_p": {
+              "type": "range",
+              "min": 0,
+              "max": 1
+            },
+            "frequency_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "presence_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "max_tokens": {
+              "type": "integer",
+              "min": 1,
+              "max": 131072,
+              "unit": "token"
+            },
+            "stop": {
+              "type": "array",
+              "items": {
+                "type": "unknown"
+              },
+              "max_items": 4
+            },
+            "seed": {
+              "type": "integer"
+            },
+            "continue_final_message": {
+              "type": "boolean"
+            },
+            "top_k": {
+              "type": "integer",
+              "min": 0
+            },
+            "repetition_penalty": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "n": {
+              "type": "integer",
+              "min": 1
+            },
+            "logprobs": {
+              "type": "boolean"
+            },
+            "top_logprobs": {
+              "type": "integer",
+              "min": 0,
+              "max": 20
+            },
+            "response_format": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "enum",
+                  "values": [
+                    "text",
+                    "json_object",
+                    "json_schema"
+                  ]
+                }
+              }
+            },
+            "structured_outputs": {
+              "type": "boolean"
+            },
+            "reasoning_effort": {
+              "type": "enum",
+              "values": [
+                "ultra",
+                "max",
+                "xhigh",
+                "high",
+                "medium",
+                "low",
+                "minimal"
+              ]
+            },
+            "reasoning": {
+              "type": "object",
+              "properties": {
+                "effort": {
+                  "type": "enum",
+                  "values": [
+                    "ultra",
+                    "max",
+                    "xhigh",
+                    "high",
+                    "medium",
+                    "low",
+                    "minimal"
+                  ]
+                },
+                "max_tokens": {
+                  "type": "integer",
+                  "min": 1,
+                  "unit": "token"
+                }
+              }
+            },
+            "tools": {
+              "type": "boolean"
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "token",
+              "cost_usd": "0.000001"
+            }
+          ]
+        }
+      ],
+      "reasoning": {
+        "mandatory": false,
+        "default_effort": null,
+        "default_enabled": null,
+        "supported_efforts": [
+          "ultra",
+          "max",
+          "xhigh",
+          "high",
+          "medium",
+          "low",
+          "minimal"
+        ],
+        "supports_max_tokens": true
+      },
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "sea"
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
+      "id": "nemotron-3-nano-omni-30b-a3b-reasoning",
+      "name": "Nemotron 3 Nano Omni",
+      "created": 1777481569,
+      "description": "Unified video, audio, image, and text understanding for enterprise Q&A, summarization, and document intelligence.",
+      "hugging_face_id": "nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16",
+      "quantization": "bf16",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_context_length": {
+              "value": 262144,
+              "unit": "token"
+            }
+          },
+          "pricing": [
+            {
+              "type": "prompt",
+              "unit": "token",
+              "cost_usd": "0.0000001"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "image/png",
+                "image/jpeg",
+                "image/webp",
+                "image/gif"
+              ]
+            }
+          }
+        },
+        {
+          "type": "audio",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "audio/wav",
+                "audio/mpeg"
+              ]
+            }
+          }
+        },
+        {
+          "type": "video",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "video/mp4",
+                "video/webm"
+              ]
+            }
+          }
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "text",
+          "streaming": true,
+          "max_length": {
+            "value": 262144,
+            "unit": "token"
+          },
+          "supported_parameters": {
+            "temperature": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "top_p": {
+              "type": "range",
+              "min": 0,
+              "max": 1
+            },
+            "frequency_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "presence_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "max_tokens": {
+              "type": "integer",
+              "min": 1,
+              "max": 262144,
+              "unit": "token"
+            },
+            "stop": {
+              "type": "array",
+              "items": {
+                "type": "unknown"
+              },
+              "max_items": 4
+            },
+            "seed": {
+              "type": "integer"
+            },
+            "continue_final_message": {
+              "type": "boolean"
+            },
+            "top_k": {
+              "type": "integer",
+              "min": 0
+            },
+            "repetition_penalty": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "n": {
+              "type": "integer",
+              "min": 1
+            },
+            "logprobs": {
+              "type": "boolean"
+            },
+            "top_logprobs": {
+              "type": "integer",
+              "min": 0,
+              "max": 20
+            },
+            "response_format": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "enum",
+                  "values": [
+                    "text",
+                    "json_object",
+                    "json_schema"
+                  ]
+                }
+              }
+            },
+            "structured_outputs": {
+              "type": "boolean"
+            },
+            "reasoning_effort": {
+              "type": "enum",
+              "values": [
+                "max",
+                "xhigh",
+                "high",
+                "medium",
+                "low",
+                "minimal"
+              ]
+            },
+            "reasoning": {
+              "type": "object",
+              "properties": {
+                "effort": {
+                  "type": "enum",
+                  "values": [
+                    "max",
+                    "xhigh",
+                    "high",
+                    "medium",
+                    "low",
+                    "minimal"
+                  ]
+                },
+                "max_tokens": {
+                  "type": "integer",
+                  "min": 1,
+                  "unit": "token"
+                }
+              }
+            },
+            "tools": {
+              "type": "boolean"
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "token",
+              "cost_usd": "0.00000025"
+            }
+          ]
+        }
+      ],
+      "reasoning": {
+        "mandatory": false,
+        "default_effort": null,
+        "default_enabled": null,
+        "supported_efforts": [
+          "max",
+          "xhigh",
+          "high",
+          "medium",
+          "low",
+          "minimal"
+        ],
+        "supports_max_tokens": true
+      },
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "atl"
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
+      "id": "nemotron-3.5-content-safety",
+      "name": "Nemotron 3.5 Content Safety",
+      "created": 1787863231,
+      "description": "Small multimodal, multilingual moderation model that classifies prompts, images, and responses against safety policies.",
+      "hugging_face_id": "nvidia/Nemotron-3.5-Content-Safety",
+      "quantization": "bf16",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_context_length": {
+              "value": 131072,
+              "unit": "token"
+            }
+          },
+          "pricing": [
+            {
+              "type": "prompt",
+              "unit": "token",
+              "cost_usd": "0.00000005"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "image/png",
+                "image/jpeg",
+                "image/webp",
+                "image/gif"
+              ]
+            }
+          }
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "text",
+          "streaming": true,
+          "max_length": {
+            "value": 131072,
+            "unit": "token"
+          },
+          "supported_parameters": {
+            "temperature": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "top_p": {
+              "type": "range",
+              "min": 0,
+              "max": 1
+            },
+            "frequency_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "presence_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "max_tokens": {
+              "type": "integer",
+              "min": 1,
+              "max": 131072,
+              "unit": "token"
+            },
+            "stop": {
+              "type": "array",
+              "items": {
+                "type": "unknown"
+              },
+              "max_items": 4
+            },
+            "seed": {
+              "type": "integer"
+            },
+            "continue_final_message": {
+              "type": "boolean"
+            },
+            "top_k": {
+              "type": "integer",
+              "min": 0
+            },
+            "repetition_penalty": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "n": {
+              "type": "integer",
+              "min": 1
+            },
+            "logprobs": {
+              "type": "boolean"
+            },
+            "top_logprobs": {
+              "type": "integer",
+              "min": 0,
+              "max": 20
+            },
+            "response_format": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "enum",
+                  "values": [
+                    "text",
+                    "json_object",
+                    "json_schema"
+                  ]
+                }
+              }
+            },
+            "structured_outputs": {
+              "type": "boolean"
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "token",
+              "cost_usd": "0.00000015"
+            }
+          ]
+        }
+      ],
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "sjc"
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
+      "id": "qwen3-embedding-4b",
+      "name": "Qwen 3 Embedding 4B",
+      "created": 1790475286,
+      "description": "Multilingual text embedding model with truncatable dimensions for retrieval and RAG. Input longer than the context length is rejected with a 400 (context_length_exceeded).",
+      "hugging_face_id": "Qwen/Qwen3-Embedding-4B",
+      "quantization": "fp16",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_context_length": {
+              "value": 32768,
+              "unit": "token"
+            }
+          }
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "embeddings",
+          "supported_parameters": {
+            "encoding_format": {
+              "type": "enum",
+              "values": [
+                "float",
+                "base64"
+              ]
+            },
+            "dimensions": {
+              "type": "integer",
+              "min": 1
+            },
+            "input_type": {
+              "type": "enum",
+              "values": [
+                "search_query",
+                "search_document"
+              ]
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "token",
+              "cost_usd": "0.00000005"
+            }
+          ]
+        }
+      ],
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "sjc"
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
+      "id": "qwen3-tts-12hz-1.7b",
+      "name": "Qwen 3 TTS 12Hz 1.7B",
+      "created": 1790852055,
+      "description": "Text-to-speech in 10 languages with built-in speakers, voice design, and voice cloning.",
+      "hugging_face_id": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_prompt_length": {
+              "value": 6000,
+              "unit": "character"
+            }
+          }
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "speech",
+          "streaming": true,
+          "supported_parameters": {
+            "voice": {
+              "type": "enum",
+              "values": [
+                "vivian",
+                "serena",
+                "uncle_fu",
+                "dylan",
+                "eric",
+                "ryan",
+                "aiden",
+                "ono_anna",
+                "sohee",
+                "design",
+                "clone"
+              ]
+            },
+            "instructions": {
+              "type": "unknown"
+            },
+            "language": {
+              "type": "unknown"
+            },
+            "input_references": {
+              "type": "array",
+              "max_items": 2,
+              "items": {
+                "type": "unknown"
+              }
+            },
+            "response_format": {
+              "type": "enum",
+              "values": [
+                "mp3",
+                "opus",
+                "flac",
+                "wav",
+                "pcm"
+              ],
+              "default": "mp3"
+            },
+            "stream_format": {
+              "type": "enum",
+              "values": [
+                "audio",
+                "sse"
+              ],
+              "default": "audio"
+            },
+            "speed": {
+              "type": "range",
+              "min": 0.25,
+              "max": 4,
+              "default": 1
+            },
+            "seed": {
+              "type": "integer"
+            },
+            "temperature": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "top_p": {
+              "type": "range",
+              "min": 0,
+              "max": 1
+            },
+            "top_k": {
+              "type": "integer"
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "second",
+              "cost_usd": "0.00028"
+            }
+          ]
+        }
+      ],
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "atl"
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
+      "id": "qwen3.8-27b",
+      "name": "Qwen 3.8 27B",
+      "created": 1786979709,
+      "description": "Compact dense vision-language model with flexible thinking and strong coding and agentic skills.",
+      "hugging_face_id": "Qwen/Qwen3.8-27B-FP8",
+      "quantization": "fp8",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_context_length": {
+              "value": 262144,
+              "unit": "token"
+            }
+          },
+          "pricing": [
+            {
+              "type": "prompt",
+              "unit": "token",
+              "cost_usd": "0.0000003"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "image/png",
+                "image/jpeg",
+                "image/webp",
+                "image/gif"
+              ]
+            }
+          }
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "text",
+          "streaming": true,
+          "max_length": {
+            "value": 262144,
+            "unit": "token"
+          },
+          "supported_parameters": {
+            "temperature": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "top_p": {
+              "type": "range",
+              "min": 0,
+              "max": 1
+            },
+            "frequency_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "presence_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "max_tokens": {
+              "type": "integer",
+              "min": 1,
+              "max": 262144,
+              "unit": "token"
+            },
+            "stop": {
+              "type": "array",
+              "items": {
+                "type": "unknown"
+              },
+              "max_items": 4
+            },
+            "seed": {
+              "type": "integer"
+            },
+            "continue_final_message": {
+              "type": "boolean"
+            },
+            "top_k": {
+              "type": "integer",
+              "min": 0
+            },
+            "repetition_penalty": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "n": {
+              "type": "integer",
+              "min": 1
+            },
+            "logprobs": {
+              "type": "boolean"
+            },
+            "top_logprobs": {
+              "type": "integer",
+              "min": 0,
+              "max": 20
+            },
+            "response_format": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "enum",
+                  "values": [
+                    "text",
+                    "json_object",
+                    "json_schema"
+                  ]
+                }
+              }
+            },
+            "structured_outputs": {
+              "type": "boolean"
+            },
+            "reasoning_effort": {
+              "type": "enum",
+              "values": [
+                "ultra",
+                "max",
+                "xhigh",
+                "high",
+                "medium",
+                "low",
+                "minimal"
+              ]
+            },
+            "reasoning": {
+              "type": "object",
+              "properties": {
+                "effort": {
+                  "type": "enum",
+                  "values": [
+                    "ultra",
+                    "max",
+                    "xhigh",
+                    "high",
+                    "medium",
+                    "low",
+                    "minimal"
+                  ]
+                },
+                "max_tokens": {
+                  "type": "integer",
+                  "min": 1,
+                  "unit": "token"
+                }
+              }
+            },
+            "tools": {
+              "type": "boolean"
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "token",
+              "cost_usd": "0.000002"
+            }
+          ]
+        }
+      ],
+      "reasoning": {
+        "mandatory": false,
+        "default_effort": null,
+        "default_enabled": null,
+        "supported_efforts": [
+          "ultra",
+          "max",
+          "xhigh",
+          "high",
+          "medium",
+          "low",
+          "minimal"
+        ],
+        "supports_max_tokens": true
+      },
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "sea"
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
+      "id": "qwen3.8-flash-next",
+      "name": "Qwen 3.8 Flash Next",
+      "created": 1789485493,
+      "description": "Fast multimodal model with a 262K-token context, reasoning, and tool calling.",
+      "hugging_face_id": "nvidia/Qwen3.8-Flash-Next-NVFP4",
+      "quantization": "nvfp4",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_context_length": {
+              "value": 262144,
+              "unit": "token"
+            }
+          },
+          "pricing": [
+            {
+              "type": "prompt",
+              "unit": "token",
+              "cost_usd": "0.0000001"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "image/png",
+                "image/jpeg",
+                "image/webp",
+                "image/gif"
+              ]
+            }
+          }
+        },
+        {
+          "type": "video",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "url",
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "video/mp4",
+                "video/webm"
+              ]
+            }
+          }
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "text",
+          "streaming": true,
+          "max_length": {
+            "value": 262144,
+            "unit": "token"
+          },
+          "supported_parameters": {
+            "temperature": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "top_p": {
+              "type": "range",
+              "min": 0,
+              "max": 1
+            },
+            "frequency_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "presence_penalty": {
+              "type": "range",
+              "min": -2,
+              "max": 2
+            },
+            "max_tokens": {
+              "type": "integer",
+              "min": 1,
+              "max": 262144,
+              "unit": "token"
+            },
+            "stop": {
+              "type": "array",
+              "items": {
+                "type": "unknown"
+              },
+              "max_items": 4
+            },
+            "seed": {
+              "type": "integer"
+            },
+            "continue_final_message": {
+              "type": "boolean"
+            },
+            "top_k": {
+              "type": "integer",
+              "min": 0
+            },
+            "repetition_penalty": {
+              "type": "range",
+              "min": 0,
+              "max": 2
+            },
+            "n": {
+              "type": "integer",
+              "min": 1
+            },
+            "logprobs": {
+              "type": "boolean"
+            },
+            "top_logprobs": {
+              "type": "integer",
+              "min": 0,
+              "max": 20
+            },
+            "response_format": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "enum",
+                  "values": [
+                    "text",
+                    "json_object",
+                    "json_schema"
+                  ]
+                }
+              }
+            },
+            "structured_outputs": {
+              "type": "boolean"
+            },
+            "reasoning_effort": {
+              "type": "enum",
+              "values": [
+                "ultra",
+                "max",
+                "xhigh",
+                "high",
+                "medium",
+                "low",
+                "minimal"
+              ]
+            },
+            "reasoning": {
+              "type": "object",
+              "properties": {
+                "effort": {
+                  "type": "enum",
+                  "values": [
+                    "ultra",
+                    "max",
+                    "xhigh",
+                    "high",
+                    "medium",
+                    "low",
+                    "minimal"
+                  ]
+                },
+                "max_tokens": {
+                  "type": "integer",
+                  "min": 1,
+                  "unit": "token"
+                }
+              }
+            },
+            "tools": {
+              "type": "boolean"
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "token",
+              "cost_usd": "0.0000002"
+            }
+          ]
+        }
+      ],
+      "reasoning": {
+        "mandatory": false,
+        "default_effort": null,
+        "default_enabled": null,
+        "supported_efforts": [
+          "ultra",
+          "max",
+          "xhigh",
+          "high",
+          "medium",
+          "low",
+          "minimal"
+        ],
+        "supports_max_tokens": true
+      },
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "sea"
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
+      "id": "rune-26b-a4b-v3",
+      "name": "Rune 26B-A4B v3",
+      "created": 1790850861,
+      "description": "Large-context decision model that returns calibrated answer probabilities in a single read.",
+      "hugging_face_id": "surogate/rune-26b-a4b-GGUF",
+      "quantization": "bf16",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_context_length": {
+              "value": 262143,
+              "unit": "token"
+            }
+          }
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "decisions",
+          "supported_parameters": {
+            "question_type": {
+              "type": "enum",
+              "values": [
+                "noul",
+                "choice",
+                "score"
+              ]
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "token",
+              "cost_usd": "0.00000005"
+            }
+          ]
+        }
+      ],
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "atl"
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
+      "id": "vultron-retriever-core-qwen3.5-4.5b",
+      "name": "Vultron Retriever Core 4.5B",
+      "created": 1783002744,
+      "description": "Vultr's reranker balancing accuracy and throughput for retrieval and RAG, with a 262K-token context. Input longer than the context length is rejected with a 400 (context_length_exceeded).",
+      "hugging_face_id": "vultr/VultronRetrieverCore-Qwen3.5-4.5B",
+      "quantization": "bf16",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_context_length": {
+              "value": 262144,
+              "unit": "token"
+            }
+          }
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "rerank",
+          "supported_parameters": {
+            "top_n": {
+              "type": "integer",
+              "min": 1,
+              "max": 100
+            },
+            "return_documents": {
+              "type": "boolean"
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "token",
+              "cost_usd": "0.0000001"
+            }
+          ]
+        }
+      ],
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "atl"
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
+      "id": "vultron-retriever-flash-qwen3.5-0.8b",
+      "name": "Vultron Retriever Flash 0.8B",
+      "created": 1783002800,
+      "description": "Vultr's lightweight reranker for low-latency, high-volume relevance scoring in retrieval and RAG. Input longer than the context length is rejected with a 400 (context_length_exceeded).",
+      "hugging_face_id": "vultr/VultronRetrieverFlash-Qwen3.5-0.8B",
+      "quantization": "bf16",
+      "input_modalities": [
+        {
+          "type": "text",
+          "supported_inputs": {
+            "max_context_length": {
+              "value": 262144,
+              "unit": "token"
+            }
+          }
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "rerank",
+          "supported_parameters": {
+            "top_n": {
+              "type": "integer",
+              "min": 1,
+              "max": 100
+            },
+            "return_documents": {
+              "type": "boolean"
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "token",
+              "cost_usd": "0.00000005"
+            }
+          ]
+        }
+      ],
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "atl"
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
+      "id": "whisper-large-v3-turbo",
+      "name": "Whisper Large V3 Turbo",
+      "created": 1790556641,
+      "description": "OpenAI's fast multilingual speech recognition model.",
+      "hugging_face_id": "openai/whisper-large-v3-turbo",
+      "quantization": "fp16",
+      "input_modalities": [
+        {
+          "type": "audio",
+          "supported_inputs": {
+            "sources": {
+              "type": "enum",
+              "values": [
+                "base64"
+              ]
+            },
+            "formats": {
+              "type": "enum",
+              "values": [
+                "audio/wav",
+                "audio/mpeg"
+              ]
+            },
+            "max_duration_seconds": {
+              "value": 14400,
+              "unit": "second"
+            },
+            "max_content_size_bytes": {
+              "value": 26214400,
+              "unit": "byte"
+            }
+          },
+          "pricing": [
+            {
+              "type": "prompt",
+              "unit": "second",
+              "cost_usd": "0.00001111"
+            }
+          ]
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "transcription",
+          "streaming": true,
+          "supported_parameters": {
+            "language": {
+              "type": "unknown"
+            },
+            "prompt": {
+              "type": "unknown"
+            },
+            "temperature": {
+              "type": "range",
+              "min": 0,
+              "max": 1
+            },
+            "response_format": {
+              "type": "enum",
+              "values": [
+                "json",
+                "text"
+              ]
+            }
+          }
+        }
+      ],
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "sjc"
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
+      "id": "z-image-turbo",
+      "name": "Z-Image Turbo",
+      "created": 1787518332,
+      "description": "Efficient text-to-image diffusion model that produces quality images in as few as 8 steps.",
+      "hugging_face_id": "Tongyi-MAI/Z-Image-Turbo",
+      "quantization": "bf16",
+      "input_modalities": [
+        {
+          "type": "text"
+        }
+      ],
+      "output_modalities": [
+        {
+          "type": "image",
+          "streaming": false,
+          "supported_parameters": {
+            "n": {
+              "type": "integer",
+              "min": 1,
+              "max": 4
+            },
+            "size": {
+              "type": "enum",
+              "values": [
+                "512x512",
+                "768x768",
+                "1024x1024"
+              ]
+            },
+            "response_format": {
+              "type": "enum",
+              "values": [
+                "b64_json",
+                "url"
+              ]
+            },
+            "steps": {
+              "type": "integer",
+              "min": 1,
+              "max": 50,
+              "default": 8
+            },
+            "guidance_scale": {
+              "type": "range",
+              "min": 0,
+              "max": 20,
+              "default": 0
+            }
+          },
+          "pricing": [
+            {
+              "type": "completion",
+              "unit": "megapixel",
+              "cost_usd": "0.02"
+            }
+          ]
+        }
+      ],
+      "datacenters": [
+        {
+          "country_code": "US",
+          "region": "atl"
+        }
+      ]
+    }
+  ]
+}

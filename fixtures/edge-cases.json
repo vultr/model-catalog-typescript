@@ -62,6 +62,97 @@
     },
     { "schema_version": "2.4", "name": "No Id", "input_modalities": [], "output_modalities": [] },
     { "schema_version": "2.4", "id": "no-modalities", "name": "No Modalities" },
-    "not-an-object"
+    "not-an-object",
+    {
+      "schema_version": "2.4",
+      "id": "params-capped-budget",
+      "name": "Parameters, Capped Budget",
+      "input_modalities": [{ "type": "text" }],
+      "output_modalities": [
+        {
+          "type": "text",
+          "supported_parameters": {
+            "reasoning_effort": { "type": "enum", "values": ["high", "low"] },
+            "reasoning": {
+              "type": "object",
+              "properties": {
+                "effort": { "type": "enum", "values": ["high", "low"] },
+                "max_tokens": { "type": "integer", "min": 1, "unit": "token" }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
+      "id": "params-unrestricted-effort",
+      "name": "Parameters, Unrestricted Effort",
+      "input_modalities": [{ "type": "text" }],
+      "output_modalities": [
+        {
+          "type": "text",
+          "supported_parameters": {
+            "reasoning_effort": { "type": "unknown" },
+            "reasoning": { "type": "object", "properties": { "effort": { "type": "enum", "values": ["high"] } } }
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": "2.4",
+      "id": "params-win-over-root",
+      "name": "Parameters Win Over Root",
+      "input_modalities": [{ "type": "text" }],
+      "output_modalities": [
+        {
+          "type": "text",
+          "supported_parameters": {
+            "reasoning_effort": { "type": "enum", "values": ["medium", "low"] },
+            "reasoning": { "type": "object", "properties": { "effort": { "type": "enum", "values": ["medium", "low"] } } }
+          }
+        }
+      ],
+      "reasoning": {
+        "mandatory": true,
+        "default_effort": "medium",
+        "default_enabled": true,
+        "supported_efforts": ["high", "medium", "low"],
+        "supports_max_tokens": true
+      }
+    },
+    {
+      "schema_version": "2.4",
+      "id": "params-effort-only",
+      "name": "Parameters, Effort Only",
+      "input_modalities": [{ "type": "text" }],
+      "output_modalities": [
+        { "type": "text", "supported_parameters": { "reasoning_effort": { "type": "enum", "values": ["high", "low"] } } }
+      ],
+      "reasoning": { "mandatory": false, "supported_efforts": ["high"], "supports_max_tokens": true }
+    },
+    {
+      "schema_version": "2.4",
+      "id": "params-unreadable-use-root",
+      "name": "Unreadable Parameters Use Root",
+      "input_modalities": [{ "type": "text" }],
+      "output_modalities": [
+        {
+          "type": "text",
+          "supported_parameters": {
+            "reasoning_effort": { "type": "range", "min": 0, "max": 1 },
+            "reasoning": { "type": "unknown" }
+          }
+        }
+      ],
+      "reasoning": { "mandatory": false, "supported_efforts": ["high", "low"], "supports_max_tokens": true }
+    },
+    {
+      "schema_version": "2.4",
+      "id": "decisions-modality",
+      "name": "Decisions Modality",
+      "input_modalities": [{ "type": "text" }],
+      "output_modalities": [{ "type": "decisions" }]
+    }
   ]
 }
