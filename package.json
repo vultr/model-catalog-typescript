@@ -1,6 +1,6 @@
 {
   "name": "@vultr/model-catalog",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Fetch and normalize a Model Document 2.4 catalog (Vultr Inference /v1/models)",
   "author": "Matt Harris <mharris@vultr.com>",
   "maintainers": ["Matt Harris <mharris@vultr.com>"],
