@@ -4,7 +4,9 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { test } from "node:test";
 
+import { USER_AGENT } from "../src/catalog.ts";
 import { CatalogError, fetchCatalog, loadCatalog, modelsUrl } from "../src/index.ts";
+import { VERSION } from "../src/version.ts";
 
 const payload = JSON.parse(readFileSync(new URL("../fixtures/vultr-catalog.json", import.meta.url), "utf8")) as {
   data: unknown[];
@@ -45,6 +47,45 @@ test("fetchCatalog sends no credentials unless given a key", async () => {
   await fetchCatalog({ fetch: keyed.fetch, apiKey: "secret", baseUrl: "https://example.test/v1/" });
   assert.equal(keyed.calls[0]?.url, "https://example.test/v1/models");
   assert.equal(keyed.calls[0]?.headers["authorization"], "Bearer secret");
+});
+
+test("fetchCatalog names the library version and platform", async () => {
+  const { fetch, calls } = fakeFetch(ok);
+  await fetchCatalog({ fetch });
+  const agent = /^vultr-model-catalog\/(?<version>\S+) \(typescript; (?<runtime>[^;]+); (?<system>[^)]+)\)$/.exec(
+    calls[0]?.headers["user-agent"] ?? "",
+  )?.groups;
+  const pkg = JSON.parse(readFileSync(new URL("../package.json", import.meta.url), "utf8")) as { version: string };
+  assert.equal(VERSION, pkg.version);
+  assert.equal(agent?.["version"], pkg.version);
+  assert.equal(agent?.["runtime"], process.versions.bun ? `Bun ${process.versions.bun}` : `Node.js ${process.versions.node}`);
+  assert.equal(agent?.["system"], `${process.platform} ${process.arch}`);
+});
+
+test("fetchCatalog and loadCatalog put the caller's product first", async () => {
+  const fetched = fakeFetch(ok);
+  await fetchCatalog({ fetch: fetched.fetch, userAgent: "example-app/1.2" });
+  assert.equal(fetched.calls[0]?.headers["user-agent"], `example-app/1.2 ${USER_AGENT}`);
+
+  const loaded = fakeFetch(ok);
+  await loadCatalog({ fetch: loaded.fetch, cachePath: cachePath(), userAgent: "example-app/1.2" });
+  assert.equal(loaded.calls[0]?.headers["user-agent"], `example-app/1.2 ${USER_AGENT}`);
+});
+
+test("fetchCatalog merges headers whatever their case", async () => {
+  const { fetch, calls } = fakeFetch(ok);
+  await fetchCatalog({
+    fetch,
+    apiKey: "secret",
+    userAgent: "example-app/1.2",
+    headers: { Accept: "text/plain", "User-Agent": "custom/1", Authorization: "Bearer other", "X-Extra": "1" },
+  });
+  assert.deepEqual(calls[0]?.headers, {
+    accept: "text/plain",
+    "user-agent": "custom/1",
+    authorization: "Bearer secret",
+    "x-extra": "1",
+  });
 });
 
 test("fetchCatalog turns HTTP and transport failures into CatalogError", async () => {

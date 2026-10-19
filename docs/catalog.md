@@ -11,6 +11,34 @@ removed.
 
 The endpoint needs no API key.
 
+## Request
+
+`GET {base_url}/models` goes out with `Accept: application/json` and a
+`User-Agent` that names the library, its version and the platform it runs on:
+
+```
+vultr-model-catalog/0.0.3 (python; CPython 3.12.14; linux x86_64)
+vultr-model-catalog/0.0.3 (typescript; Node.js 24.21.0; linux x64)
+```
+
+The comment holds the library (`python` or `typescript`), the runtime and
+its version (`CPython`, `PyPy`, `Node.js`, `Bun`), then the operating system
+and architecture as the runtime names them: `sys.platform` and
+`platform.machine()` in Python, `process.platform` and `process.arch` in
+TypeScript. The two libraries can spell the same machine differently.
+
+Python reads its version from the installed package metadata and sends
+`unknown` when the package is not installed. TypeScript compiles it in
+(`src/version.ts`, tested against `package.json`), because the harness
+plugins bundle the library and its `package.json` is not at hand there.
+
+`user_agent` / `userAgent` is the caller's own product token, sent first:
+`example-app/1.2 vultr-model-catalog/0.0.3 (...)`. `headers` is merged over
+the defaults with names compared case-insensitively, so a `User-Agent` there
+replaces the whole value, caller token included. `api_key` / `apiKey` is
+sent as `Authorization: Bearer <key>` and wins over an `Authorization` in
+`headers`.
+
 ## Field mapping
 
 Canonical names are shown. TypeScript uses the camelCase form of each.

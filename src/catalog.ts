@@ -3,9 +3,13 @@ import { dirname } from "node:path";
 
 import { normalizeModel, type CatalogModel } from "./model.ts";
 import { parseCatalog, type CatalogIssue } from "./parse.ts";
+import { VERSION } from "./version.ts";
 
 export const DEFAULT_BASE_URL = "https://api.vultrinference.com/v1";
 export const DEFAULT_TIMEOUT_MS = 8_000;
+
+const runtime = process.versions.bun ? `Bun ${process.versions.bun}` : `Node.js ${process.versions.node}`;
+export const USER_AGENT = `vultr-model-catalog/${VERSION} (typescript; ${runtime}; ${process.platform} ${process.arch})`;
 
 export class CatalogError extends Error {
   override name = "CatalogError";
@@ -19,6 +23,8 @@ export interface FetchOptions {
   signal?: AbortSignal;
   fetch?: typeof globalThis.fetch;
   headers?: Record<string, string>;
+  // The caller's product token, sent ahead of the library's own User-Agent.
+  userAgent?: string;
 }
 
 export interface LoadOptions extends FetchOptions {
@@ -49,15 +55,28 @@ export function modelsUrl(baseUrl: string = DEFAULT_BASE_URL): string {
   return `${baseUrl.replace(/\/+$/, "")}/models`;
 }
 
+// Header names are case-insensitive: a later layer replaces a name whatever its case.
+function mergeHeaders(...layers: Record<string, string>[]): Record<string, string> {
+  const merged: Record<string, string> = {};
+  for (const layer of layers) {
+    for (const [name, value] of Object.entries(layer)) {
+      merged[name.toLowerCase()] = value;
+    }
+  }
+  return merged;
+}
+
 // Returns the raw JSON payload. Throws CatalogError on any transport or HTTP failure.
 export async function fetchCatalog(options: FetchOptions = {}): Promise<unknown> {
   const url = modelsUrl(options.baseUrl);
   const timeout = AbortSignal.timeout(options.timeoutMs ?? DEFAULT_TIMEOUT_MS);
   const signal = options.signal ? AbortSignal.any([options.signal, timeout]) : timeout;
-  const headers: Record<string, string> = { accept: "application/json", ...options.headers };
-  if (options.apiKey) {
-    headers["authorization"] = `Bearer ${options.apiKey}`;
-  }
+  const agent = options.userAgent ? `${options.userAgent} ${USER_AGENT}` : USER_AGENT;
+  const headers = mergeHeaders(
+    { accept: "application/json", "user-agent": agent },
+    options.headers ?? {},
+    options.apiKey ? { authorization: `Bearer ${options.apiKey}` } : {},
+  );
 
   try {
     const response = await (options.fetch ?? globalThis.fetch)(url, { headers, signal });

@@ -28,7 +28,8 @@ for (const model of catalog.models.filter(isChatModel)) {
   payload when the network fails. `catalog.source` is `network`, `cache` or
   `stale-cache`. Throws `CatalogError` only when there is nothing to serve
 - `fetchCatalog(options)`: the raw JSON payload. The catalog is public;
-  `apiKey` is optional
+  `apiKey` is optional. `userAgent` puts the caller's product token ahead of
+  the library's own `User-Agent` (`docs/catalog.md`, Request)
 - `parseCatalog(payload)`: documents plus `issues`. A bad entry is skipped
   and reported, it never fails the catalog
 - `normalizeModel(document)`: one `CatalogModel`
