@@ -35,11 +35,19 @@ for (const model of catalog.models.filter(isChatModel)) {
 - `normalizeModel(document)`: one `CatalogModel`
 - `isChatModel`, `isAgentModel`, `acceptsInput`, `pricePerMillion`, `usdPerMillion`
 - `toCanonical(model)`: the snake_case form shared with the Python library
+- `outputOf(model, type)`, `inputOf(model, type)`: one modality of `outputs` /
+  `inputs`, or null
+- `loadMediaCatalog(options)`: the per-surface catalogs (image, video, music,
+  voices, tiers, price options and limits), one `ModelMedia` per model;
+  `fetchMediaPayloads`, `buildMediaCatalog`, `speechModelIds`,
+  `toCanonicalMedia` and `MEDIA_SOURCES` are its parts (`docs/catalog.md`,
+  Media catalog)
 
 `CatalogModel` carries `contextWindow`, `maxOutputTokens`, `inputModalities`,
 `outputModalities`, `pricing` (exact USD per token strings), `tools`,
 `structuredOutputs`, `streaming`, `supportedParameters`, `parameters`,
-`reasoning`, `isReady`, `deprecationDate`. Rerankers, embedders, image
+`reasoning`, `isReady`, `deprecationDate`, and every modality as `outputs` and
+`inputs`. Rerankers, embedders, image
 generators, transcription and decision models are in the catalog too;
 `isChatModel` keeps the ones that output text. `isAgentModel` keeps the chat
 models a coding harness can drive: ready, with tool calling and a known context

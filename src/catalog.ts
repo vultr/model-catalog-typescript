@@ -68,7 +68,12 @@ function mergeHeaders(...layers: Record<string, string>[]): Record<string, strin
 
 // Returns the raw JSON payload. Throws CatalogError on any transport or HTTP failure.
 export async function fetchCatalog(options: FetchOptions = {}): Promise<unknown> {
-  const url = modelsUrl(options.baseUrl);
+  return getJson(modelsUrl(options.baseUrl), options);
+}
+
+// GET a JSON document from the catalog's host with this library's headers. Throws CatalogError on
+// any transport or HTTP failure.
+export async function getJson(url: string, options: FetchOptions = {}): Promise<unknown> {
   const timeout = AbortSignal.timeout(options.timeoutMs ?? DEFAULT_TIMEOUT_MS);
   const signal = options.signal ? AbortSignal.any([options.signal, timeout]) : timeout;
   const agent = options.userAgent ? `${options.userAgent} ${USER_AGENT}` : USER_AGENT;

@@ -43,7 +43,82 @@
       "supports_max_tokens": true
     },
     "is_ready": false,
-    "deprecation_date": "2027-01-01"
+    "deprecation_date": "2027-01-01",
+    "outputs": [
+      {
+        "type": "text",
+        "streaming": false,
+        "max_length": {
+          "value": 4096,
+          "unit": "token"
+        },
+        "parameters": {
+          "response_format": {
+            "type": "object"
+          },
+          "tools": {
+            "type": "boolean"
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": [
+          {
+            "type": "completion",
+            "unit": "token",
+            "cost_usd": "0.000003"
+          },
+          {
+            "type": "internal_reasoning",
+            "unit": "token",
+            "cost_usd": "0.000004"
+          }
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {
+          "max_context_length": {
+            "value": 32768,
+            "unit": "token"
+          },
+          "max_prompt_length": {
+            "value": 30000,
+            "unit": "token"
+          }
+        },
+        "pricing": [
+          {
+            "type": "prompt",
+            "unit": "token",
+            "cost_usd": "0.0000005",
+            "utc_start": 0,
+            "utc_end": 6
+          },
+          {
+            "type": "prompt",
+            "unit": "token",
+            "cost_usd": "0.000001"
+          },
+          {
+            "type": "cached_prompt",
+            "unit": "token",
+            "cost_usd": "0.0000001"
+          },
+          {
+            "type": "cache_write",
+            "unit": "token",
+            "cost_usd": "0.00000125"
+          }
+        ]
+      },
+      {
+        "type": "file",
+        "supported_inputs": {},
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "bare-minimum",
@@ -75,7 +150,24 @@
     "supported_parameters": [],
     "reasoning": null,
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "text",
+        "streaming": null,
+        "max_length": null,
+        "parameters": {},
+        "passthrough_parameters": {},
+        "pricing": []
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {},
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "future-schema",
@@ -108,7 +200,29 @@
     "supported_parameters": [],
     "reasoning": null,
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "text",
+        "streaming": null,
+        "max_length": null,
+        "parameters": {},
+        "passthrough_parameters": {},
+        "pricing": []
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {},
+        "pricing": []
+      },
+      {
+        "type": "hologram",
+        "supported_inputs": {},
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "params-capped-budget",
@@ -152,7 +266,49 @@
       "supports_max_tokens": true
     },
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "text",
+        "streaming": null,
+        "max_length": null,
+        "parameters": {
+          "reasoning_effort": {
+            "type": "enum",
+            "values": [
+              "high",
+              "low"
+            ]
+          },
+          "reasoning": {
+            "type": "object",
+            "properties": {
+              "effort": {
+                "type": "enum",
+                "values": [
+                  "high",
+                  "low"
+                ]
+              },
+              "max_tokens": {
+                "type": "integer",
+                "min": 1,
+                "unit": "token"
+              }
+            }
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": []
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {},
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "params-unrestricted-effort",
@@ -193,7 +349,39 @@
       "supports_max_tokens": false
     },
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "text",
+        "streaming": null,
+        "max_length": null,
+        "parameters": {
+          "reasoning_effort": {
+            "type": "unknown"
+          },
+          "reasoning": {
+            "type": "object",
+            "properties": {
+              "effort": {
+                "type": "enum",
+                "values": [
+                  "high"
+                ]
+              }
+            }
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": []
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {},
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "params-win-over-root",
@@ -237,7 +425,44 @@
       "supports_max_tokens": false
     },
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "text",
+        "streaming": null,
+        "max_length": null,
+        "parameters": {
+          "reasoning_effort": {
+            "type": "enum",
+            "values": [
+              "medium",
+              "low"
+            ]
+          },
+          "reasoning": {
+            "type": "object",
+            "properties": {
+              "effort": {
+                "type": "enum",
+                "values": [
+                  "medium",
+                  "low"
+                ]
+              }
+            }
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": []
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {},
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "params-effort-only",
@@ -280,7 +505,32 @@
       "supports_max_tokens": true
     },
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "text",
+        "streaming": null,
+        "max_length": null,
+        "parameters": {
+          "reasoning_effort": {
+            "type": "enum",
+            "values": [
+              "high",
+              "low"
+            ]
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": []
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {},
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "params-unreadable-use-root",
@@ -324,7 +574,33 @@
       "supports_max_tokens": true
     },
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "text",
+        "streaming": null,
+        "max_length": null,
+        "parameters": {
+          "reasoning_effort": {
+            "type": "range",
+            "min": 0,
+            "max": 1
+          },
+          "reasoning": {
+            "type": "unknown"
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": []
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {},
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "decisions-modality",
@@ -356,6 +632,23 @@
     "supported_parameters": [],
     "reasoning": null,
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "decisions",
+        "streaming": null,
+        "max_length": null,
+        "parameters": {},
+        "passthrough_parameters": {},
+        "pricing": []
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {},
+        "pricing": []
+      }
+    ]
   }
 ]

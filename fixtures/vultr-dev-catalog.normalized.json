@@ -29,7 +29,44 @@
     "supported_parameters": [],
     "reasoning": null,
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "decisions",
+        "streaming": null,
+        "max_length": null,
+        "parameters": {
+          "question_type": {
+            "type": "enum",
+            "values": [
+              "noul",
+              "choice",
+              "score"
+            ]
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": [
+          {
+            "type": "completion",
+            "unit": "token",
+            "cost_usd": "0.0000001"
+          }
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {
+          "max_context_length": {
+            "value": 262143,
+            "unit": "token"
+          }
+        },
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "bge-reranker-v2-m3",
@@ -61,7 +98,44 @@
     "supported_parameters": [],
     "reasoning": null,
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "rerank",
+        "streaming": null,
+        "max_length": null,
+        "parameters": {
+          "top_n": {
+            "type": "integer",
+            "min": 1,
+            "max": 100
+          },
+          "return_documents": {
+            "type": "boolean"
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": [
+          {
+            "type": "completion",
+            "unit": "token",
+            "cost_usd": "0.00000005"
+          }
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {
+          "max_context_length": {
+            "value": 8192,
+            "unit": "token"
+          }
+        },
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "clef",
@@ -93,7 +167,44 @@
     "supported_parameters": [],
     "reasoning": null,
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "decisions",
+        "streaming": null,
+        "max_length": null,
+        "parameters": {
+          "question_type": {
+            "type": "enum",
+            "values": [
+              "noul",
+              "choice",
+              "score"
+            ]
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": [
+          {
+            "type": "completion",
+            "unit": "token",
+            "cost_usd": "0.0000001"
+          }
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {
+          "max_context_length": {
+            "value": 262144,
+            "unit": "token"
+          }
+        },
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "clef-flash",
@@ -125,7 +236,44 @@
     "supported_parameters": [],
     "reasoning": null,
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "decisions",
+        "streaming": null,
+        "max_length": null,
+        "parameters": {
+          "question_type": {
+            "type": "enum",
+            "values": [
+              "noul",
+              "choice",
+              "score"
+            ]
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": [
+          {
+            "type": "completion",
+            "unit": "token",
+            "cost_usd": "0.00000005"
+          }
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {
+          "max_context_length": {
+            "value": 262144,
+            "unit": "token"
+          }
+        },
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "deepseek-v4-flash-0731",
@@ -191,7 +339,175 @@
       "supports_max_tokens": false
     },
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "text",
+        "streaming": true,
+        "max_length": {
+          "value": 1048576,
+          "unit": "token"
+        },
+        "parameters": {
+          "temperature": {
+            "type": "range",
+            "min": 0,
+            "max": 2
+          },
+          "top_p": {
+            "type": "range",
+            "min": 0,
+            "max": 1
+          },
+          "frequency_penalty": {
+            "type": "range",
+            "min": -2,
+            "max": 2
+          },
+          "presence_penalty": {
+            "type": "range",
+            "min": -2,
+            "max": 2
+          },
+          "max_tokens": {
+            "type": "integer",
+            "min": 1,
+            "max": 1048576,
+            "unit": "token"
+          },
+          "stop": {
+            "type": "array",
+            "items": {
+              "type": "unknown"
+            },
+            "max_items": 4
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "continue_final_message": {
+            "type": "boolean"
+          },
+          "top_k": {
+            "type": "integer",
+            "min": 0
+          },
+          "repetition_penalty": {
+            "type": "range",
+            "min": 0,
+            "max": 2
+          },
+          "n": {
+            "type": "integer",
+            "min": 1
+          },
+          "logprobs": {
+            "type": "boolean"
+          },
+          "top_logprobs": {
+            "type": "integer",
+            "min": 0,
+            "max": 20
+          },
+          "response_format": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "enum",
+                "values": [
+                  "text",
+                  "json_object",
+                  "json_schema"
+                ]
+              }
+            }
+          },
+          "structured_outputs": {
+            "type": "boolean"
+          },
+          "reasoning_effort": {
+            "type": "enum",
+            "values": [
+              "ultra",
+              "max",
+              "xhigh",
+              "high",
+              "medium",
+              "low",
+              "minimal"
+            ]
+          },
+          "reasoning": {
+            "type": "object",
+            "properties": {
+              "effort": {
+                "type": "enum",
+                "values": [
+                  "ultra",
+                  "max",
+                  "xhigh",
+                  "high",
+                  "medium",
+                  "low",
+                  "minimal"
+                ]
+              }
+            }
+          },
+          "tools": {
+            "type": "boolean"
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": [
+          {
+            "type": "completion",
+            "unit": "token",
+            "cost_usd": "0.00000025"
+          }
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {
+          "max_context_length": {
+            "value": 1048576,
+            "unit": "token"
+          }
+        },
+        "pricing": [
+          {
+            "type": "prompt",
+            "unit": "token",
+            "cost_usd": "0.0000001"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "supported_inputs": {
+          "sources": {
+            "type": "enum",
+            "values": [
+              "url",
+              "base64"
+            ]
+          },
+          "formats": {
+            "type": "enum",
+            "values": [
+              "image/png",
+              "image/jpeg",
+              "image/webp",
+              "image/gif"
+            ]
+          }
+        },
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "deepseek-v4.1-flash",
@@ -257,7 +573,180 @@
       "supports_max_tokens": true
     },
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "text",
+        "streaming": true,
+        "max_length": {
+          "value": 1048576,
+          "unit": "token"
+        },
+        "parameters": {
+          "temperature": {
+            "type": "range",
+            "min": 0,
+            "max": 2
+          },
+          "top_p": {
+            "type": "range",
+            "min": 0,
+            "max": 1
+          },
+          "frequency_penalty": {
+            "type": "range",
+            "min": -2,
+            "max": 2
+          },
+          "presence_penalty": {
+            "type": "range",
+            "min": -2,
+            "max": 2
+          },
+          "max_tokens": {
+            "type": "integer",
+            "min": 1,
+            "max": 1048576,
+            "unit": "token"
+          },
+          "stop": {
+            "type": "array",
+            "items": {
+              "type": "unknown"
+            },
+            "max_items": 4
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "continue_final_message": {
+            "type": "boolean"
+          },
+          "top_k": {
+            "type": "integer",
+            "min": 0
+          },
+          "repetition_penalty": {
+            "type": "range",
+            "min": 0,
+            "max": 2
+          },
+          "n": {
+            "type": "integer",
+            "min": 1
+          },
+          "logprobs": {
+            "type": "boolean"
+          },
+          "top_logprobs": {
+            "type": "integer",
+            "min": 0,
+            "max": 20
+          },
+          "response_format": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "enum",
+                "values": [
+                  "text",
+                  "json_object",
+                  "json_schema"
+                ]
+              }
+            }
+          },
+          "structured_outputs": {
+            "type": "boolean"
+          },
+          "reasoning_effort": {
+            "type": "enum",
+            "values": [
+              "ultra",
+              "max",
+              "xhigh",
+              "high",
+              "medium",
+              "low",
+              "minimal"
+            ]
+          },
+          "reasoning": {
+            "type": "object",
+            "properties": {
+              "effort": {
+                "type": "enum",
+                "values": [
+                  "ultra",
+                  "max",
+                  "xhigh",
+                  "high",
+                  "medium",
+                  "low",
+                  "minimal"
+                ]
+              },
+              "max_tokens": {
+                "type": "integer",
+                "min": 1,
+                "unit": "token"
+              }
+            }
+          },
+          "tools": {
+            "type": "boolean"
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": [
+          {
+            "type": "completion",
+            "unit": "token",
+            "cost_usd": "0.0000006"
+          }
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {
+          "max_context_length": {
+            "value": 1048576,
+            "unit": "token"
+          }
+        },
+        "pricing": [
+          {
+            "type": "prompt",
+            "unit": "token",
+            "cost_usd": "0.00000015"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "supported_inputs": {
+          "sources": {
+            "type": "enum",
+            "values": [
+              "url",
+              "base64"
+            ]
+          },
+          "formats": {
+            "type": "enum",
+            "values": [
+              "image/png",
+              "image/jpeg",
+              "image/webp",
+              "image/gif"
+            ]
+          }
+        },
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "glm-5.3",
@@ -323,7 +812,180 @@
       "supports_max_tokens": true
     },
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "text",
+        "streaming": true,
+        "max_length": {
+          "value": 1048576,
+          "unit": "token"
+        },
+        "parameters": {
+          "temperature": {
+            "type": "range",
+            "min": 0,
+            "max": 2
+          },
+          "top_p": {
+            "type": "range",
+            "min": 0,
+            "max": 1
+          },
+          "frequency_penalty": {
+            "type": "range",
+            "min": -2,
+            "max": 2
+          },
+          "presence_penalty": {
+            "type": "range",
+            "min": -2,
+            "max": 2
+          },
+          "max_tokens": {
+            "type": "integer",
+            "min": 1,
+            "max": 1048576,
+            "unit": "token"
+          },
+          "stop": {
+            "type": "array",
+            "items": {
+              "type": "unknown"
+            },
+            "max_items": 4
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "continue_final_message": {
+            "type": "boolean"
+          },
+          "top_k": {
+            "type": "integer",
+            "min": 0
+          },
+          "repetition_penalty": {
+            "type": "range",
+            "min": 0,
+            "max": 2
+          },
+          "n": {
+            "type": "integer",
+            "min": 1
+          },
+          "logprobs": {
+            "type": "boolean"
+          },
+          "top_logprobs": {
+            "type": "integer",
+            "min": 0,
+            "max": 20
+          },
+          "response_format": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "enum",
+                "values": [
+                  "text",
+                  "json_object",
+                  "json_schema"
+                ]
+              }
+            }
+          },
+          "structured_outputs": {
+            "type": "boolean"
+          },
+          "reasoning_effort": {
+            "type": "enum",
+            "values": [
+              "ultra",
+              "max",
+              "xhigh",
+              "high",
+              "medium",
+              "low",
+              "minimal"
+            ]
+          },
+          "reasoning": {
+            "type": "object",
+            "properties": {
+              "effort": {
+                "type": "enum",
+                "values": [
+                  "ultra",
+                  "max",
+                  "xhigh",
+                  "high",
+                  "medium",
+                  "low",
+                  "minimal"
+                ]
+              },
+              "max_tokens": {
+                "type": "integer",
+                "min": 1,
+                "unit": "token"
+              }
+            }
+          },
+          "tools": {
+            "type": "boolean"
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": [
+          {
+            "type": "completion",
+            "unit": "token",
+            "cost_usd": "0.000003"
+          }
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {
+          "max_context_length": {
+            "value": 1048576,
+            "unit": "token"
+          }
+        },
+        "pricing": [
+          {
+            "type": "prompt",
+            "unit": "token",
+            "cost_usd": "0.00000075"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "supported_inputs": {
+          "sources": {
+            "type": "enum",
+            "values": [
+              "url",
+              "base64"
+            ]
+          },
+          "formats": {
+            "type": "enum",
+            "values": [
+              "image/png",
+              "image/jpeg",
+              "image/webp",
+              "image/gif"
+            ]
+          }
+        },
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "glm-5.3-flash",
@@ -389,7 +1051,180 @@
       "supports_max_tokens": true
     },
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "text",
+        "streaming": true,
+        "max_length": {
+          "value": 1048576,
+          "unit": "token"
+        },
+        "parameters": {
+          "temperature": {
+            "type": "range",
+            "min": 0,
+            "max": 2
+          },
+          "top_p": {
+            "type": "range",
+            "min": 0,
+            "max": 1
+          },
+          "frequency_penalty": {
+            "type": "range",
+            "min": -2,
+            "max": 2
+          },
+          "presence_penalty": {
+            "type": "range",
+            "min": -2,
+            "max": 2
+          },
+          "max_tokens": {
+            "type": "integer",
+            "min": 1,
+            "max": 1048576,
+            "unit": "token"
+          },
+          "stop": {
+            "type": "array",
+            "items": {
+              "type": "unknown"
+            },
+            "max_items": 4
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "continue_final_message": {
+            "type": "boolean"
+          },
+          "top_k": {
+            "type": "integer",
+            "min": 0
+          },
+          "repetition_penalty": {
+            "type": "range",
+            "min": 0,
+            "max": 2
+          },
+          "n": {
+            "type": "integer",
+            "min": 1
+          },
+          "logprobs": {
+            "type": "boolean"
+          },
+          "top_logprobs": {
+            "type": "integer",
+            "min": 0,
+            "max": 20
+          },
+          "response_format": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "enum",
+                "values": [
+                  "text",
+                  "json_object",
+                  "json_schema"
+                ]
+              }
+            }
+          },
+          "structured_outputs": {
+            "type": "boolean"
+          },
+          "reasoning_effort": {
+            "type": "enum",
+            "values": [
+              "ultra",
+              "max",
+              "xhigh",
+              "high",
+              "medium",
+              "low",
+              "minimal"
+            ]
+          },
+          "reasoning": {
+            "type": "object",
+            "properties": {
+              "effort": {
+                "type": "enum",
+                "values": [
+                  "ultra",
+                  "max",
+                  "xhigh",
+                  "high",
+                  "medium",
+                  "low",
+                  "minimal"
+                ]
+              },
+              "max_tokens": {
+                "type": "integer",
+                "min": 1,
+                "unit": "token"
+              }
+            }
+          },
+          "tools": {
+            "type": "boolean"
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": [
+          {
+            "type": "completion",
+            "unit": "token",
+            "cost_usd": "0.00000035"
+          }
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {
+          "max_context_length": {
+            "value": 1048576,
+            "unit": "token"
+          }
+        },
+        "pricing": [
+          {
+            "type": "prompt",
+            "unit": "token",
+            "cost_usd": "0.0000001"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "supported_inputs": {
+          "sources": {
+            "type": "enum",
+            "values": [
+              "url",
+              "base64"
+            ]
+          },
+          "formats": {
+            "type": "enum",
+            "values": [
+              "image/png",
+              "image/jpeg",
+              "image/webp",
+              "image/gif"
+            ]
+          }
+        },
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "laguna-s-2.1",
@@ -455,7 +1290,175 @@
       "supports_max_tokens": false
     },
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "text",
+        "streaming": true,
+        "max_length": {
+          "value": 1048576,
+          "unit": "token"
+        },
+        "parameters": {
+          "temperature": {
+            "type": "range",
+            "min": 0,
+            "max": 2
+          },
+          "top_p": {
+            "type": "range",
+            "min": 0,
+            "max": 1
+          },
+          "frequency_penalty": {
+            "type": "range",
+            "min": -2,
+            "max": 2
+          },
+          "presence_penalty": {
+            "type": "range",
+            "min": -2,
+            "max": 2
+          },
+          "max_tokens": {
+            "type": "integer",
+            "min": 1,
+            "max": 1048576,
+            "unit": "token"
+          },
+          "stop": {
+            "type": "array",
+            "items": {
+              "type": "unknown"
+            },
+            "max_items": 4
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "continue_final_message": {
+            "type": "boolean"
+          },
+          "top_k": {
+            "type": "integer",
+            "min": 0
+          },
+          "repetition_penalty": {
+            "type": "range",
+            "min": 0,
+            "max": 2
+          },
+          "n": {
+            "type": "integer",
+            "min": 1
+          },
+          "logprobs": {
+            "type": "boolean"
+          },
+          "top_logprobs": {
+            "type": "integer",
+            "min": 0,
+            "max": 20
+          },
+          "response_format": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "enum",
+                "values": [
+                  "text",
+                  "json_object",
+                  "json_schema"
+                ]
+              }
+            }
+          },
+          "structured_outputs": {
+            "type": "boolean"
+          },
+          "reasoning_effort": {
+            "type": "enum",
+            "values": [
+              "ultra",
+              "max",
+              "xhigh",
+              "high",
+              "medium",
+              "low",
+              "minimal"
+            ]
+          },
+          "reasoning": {
+            "type": "object",
+            "properties": {
+              "effort": {
+                "type": "enum",
+                "values": [
+                  "ultra",
+                  "max",
+                  "xhigh",
+                  "high",
+                  "medium",
+                  "low",
+                  "minimal"
+                ]
+              }
+            }
+          },
+          "tools": {
+            "type": "boolean"
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": [
+          {
+            "type": "completion",
+            "unit": "token",
+            "cost_usd": "0.0000002"
+          }
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {
+          "max_context_length": {
+            "value": 1048576,
+            "unit": "token"
+          }
+        },
+        "pricing": [
+          {
+            "type": "prompt",
+            "unit": "token",
+            "cost_usd": "0.0000001"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "supported_inputs": {
+          "sources": {
+            "type": "enum",
+            "values": [
+              "url",
+              "base64"
+            ]
+          },
+          "formats": {
+            "type": "enum",
+            "values": [
+              "image/png",
+              "image/jpeg",
+              "image/webp",
+              "image/gif"
+            ]
+          }
+        },
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "mimo-v2.6-flash-rl",
@@ -523,7 +1526,215 @@
       "supports_max_tokens": false
     },
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "text",
+        "streaming": true,
+        "max_length": {
+          "value": 1048576,
+          "unit": "token"
+        },
+        "parameters": {
+          "temperature": {
+            "type": "range",
+            "min": 0,
+            "max": 2
+          },
+          "top_p": {
+            "type": "range",
+            "min": 0,
+            "max": 1
+          },
+          "frequency_penalty": {
+            "type": "range",
+            "min": -2,
+            "max": 2
+          },
+          "presence_penalty": {
+            "type": "range",
+            "min": -2,
+            "max": 2
+          },
+          "max_tokens": {
+            "type": "integer",
+            "min": 1,
+            "max": 1048576,
+            "unit": "token"
+          },
+          "stop": {
+            "type": "array",
+            "items": {
+              "type": "unknown"
+            },
+            "max_items": 4
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "continue_final_message": {
+            "type": "boolean"
+          },
+          "top_k": {
+            "type": "integer",
+            "min": 0
+          },
+          "repetition_penalty": {
+            "type": "range",
+            "min": 0,
+            "max": 2
+          },
+          "n": {
+            "type": "integer",
+            "min": 1
+          },
+          "logprobs": {
+            "type": "boolean"
+          },
+          "top_logprobs": {
+            "type": "integer",
+            "min": 0,
+            "max": 20
+          },
+          "response_format": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "enum",
+                "values": [
+                  "text",
+                  "json_object",
+                  "json_schema"
+                ]
+              }
+            }
+          },
+          "structured_outputs": {
+            "type": "boolean"
+          },
+          "reasoning_effort": {
+            "type": "enum",
+            "values": [
+              "ultra",
+              "max",
+              "xhigh",
+              "high",
+              "medium",
+              "low",
+              "minimal"
+            ]
+          },
+          "reasoning": {
+            "type": "object",
+            "properties": {
+              "effort": {
+                "type": "enum",
+                "values": [
+                  "ultra",
+                  "max",
+                  "xhigh",
+                  "high",
+                  "medium",
+                  "low",
+                  "minimal"
+                ]
+              }
+            }
+          },
+          "tools": {
+            "type": "boolean"
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": [
+          {
+            "type": "completion",
+            "unit": "token",
+            "cost_usd": "0.00000025"
+          }
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {
+          "max_context_length": {
+            "value": 1048576,
+            "unit": "token"
+          }
+        },
+        "pricing": [
+          {
+            "type": "prompt",
+            "unit": "token",
+            "cost_usd": "0.0000001"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "supported_inputs": {
+          "sources": {
+            "type": "enum",
+            "values": [
+              "url",
+              "base64"
+            ]
+          },
+          "formats": {
+            "type": "enum",
+            "values": [
+              "image/png",
+              "image/jpeg",
+              "image/webp",
+              "image/gif"
+            ]
+          }
+        },
+        "pricing": []
+      },
+      {
+        "type": "audio",
+        "supported_inputs": {
+          "sources": {
+            "type": "enum",
+            "values": [
+              "url",
+              "base64"
+            ]
+          },
+          "formats": {
+            "type": "enum",
+            "values": [
+              "audio/wav",
+              "audio/mpeg"
+            ]
+          }
+        },
+        "pricing": []
+      },
+      {
+        "type": "video",
+        "supported_inputs": {
+          "sources": {
+            "type": "enum",
+            "values": [
+              "url",
+              "base64"
+            ]
+          },
+          "formats": {
+            "type": "enum",
+            "values": [
+              "video/mp4",
+              "video/webm"
+            ]
+          }
+        },
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "mimo-v2.6-pro-rl",
@@ -591,7 +1802,215 @@
       "supports_max_tokens": false
     },
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "text",
+        "streaming": true,
+        "max_length": {
+          "value": 1048576,
+          "unit": "token"
+        },
+        "parameters": {
+          "temperature": {
+            "type": "range",
+            "min": 0,
+            "max": 2
+          },
+          "top_p": {
+            "type": "range",
+            "min": 0,
+            "max": 1
+          },
+          "frequency_penalty": {
+            "type": "range",
+            "min": -2,
+            "max": 2
+          },
+          "presence_penalty": {
+            "type": "range",
+            "min": -2,
+            "max": 2
+          },
+          "max_tokens": {
+            "type": "integer",
+            "min": 1,
+            "max": 1048576,
+            "unit": "token"
+          },
+          "stop": {
+            "type": "array",
+            "items": {
+              "type": "unknown"
+            },
+            "max_items": 4
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "continue_final_message": {
+            "type": "boolean"
+          },
+          "top_k": {
+            "type": "integer",
+            "min": 0
+          },
+          "repetition_penalty": {
+            "type": "range",
+            "min": 0,
+            "max": 2
+          },
+          "n": {
+            "type": "integer",
+            "min": 1
+          },
+          "logprobs": {
+            "type": "boolean"
+          },
+          "top_logprobs": {
+            "type": "integer",
+            "min": 0,
+            "max": 20
+          },
+          "response_format": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "enum",
+                "values": [
+                  "text",
+                  "json_object",
+                  "json_schema"
+                ]
+              }
+            }
+          },
+          "structured_outputs": {
+            "type": "boolean"
+          },
+          "reasoning_effort": {
+            "type": "enum",
+            "values": [
+              "ultra",
+              "max",
+              "xhigh",
+              "high",
+              "medium",
+              "low",
+              "minimal"
+            ]
+          },
+          "reasoning": {
+            "type": "object",
+            "properties": {
+              "effort": {
+                "type": "enum",
+                "values": [
+                  "ultra",
+                  "max",
+                  "xhigh",
+                  "high",
+                  "medium",
+                  "low",
+                  "minimal"
+                ]
+              }
+            }
+          },
+          "tools": {
+            "type": "boolean"
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": [
+          {
+            "type": "completion",
+            "unit": "token",
+            "cost_usd": "0.0000008"
+          }
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {
+          "max_context_length": {
+            "value": 1048576,
+            "unit": "token"
+          }
+        },
+        "pricing": [
+          {
+            "type": "prompt",
+            "unit": "token",
+            "cost_usd": "0.0000004"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "supported_inputs": {
+          "sources": {
+            "type": "enum",
+            "values": [
+              "url",
+              "base64"
+            ]
+          },
+          "formats": {
+            "type": "enum",
+            "values": [
+              "image/png",
+              "image/jpeg",
+              "image/webp",
+              "image/gif"
+            ]
+          }
+        },
+        "pricing": []
+      },
+      {
+        "type": "audio",
+        "supported_inputs": {
+          "sources": {
+            "type": "enum",
+            "values": [
+              "url",
+              "base64"
+            ]
+          },
+          "formats": {
+            "type": "enum",
+            "values": [
+              "audio/wav",
+              "audio/mpeg"
+            ]
+          }
+        },
+        "pricing": []
+      },
+      {
+        "type": "video",
+        "supported_inputs": {
+          "sources": {
+            "type": "enum",
+            "values": [
+              "url",
+              "base64"
+            ]
+          },
+          "formats": {
+            "type": "enum",
+            "values": [
+              "video/mp4",
+              "video/webm"
+            ]
+          }
+        },
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "minimax-h3",
@@ -626,7 +2045,98 @@
     "supported_parameters": [],
     "reasoning": null,
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "video",
+        "streaming": false,
+        "max_length": null,
+        "parameters": {
+          "duration": {
+            "type": "enum",
+            "values": [
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ]
+          },
+          "resolution": {
+            "type": "enum",
+            "values": [
+              "768p"
+            ]
+          },
+          "aspect_ratio": {
+            "type": "enum",
+            "values": [
+              "16:9",
+              "9:16",
+              "4:3",
+              "3:4",
+              "1:1",
+              "21:9"
+            ]
+          },
+          "size": {
+            "type": "enum",
+            "values": [
+              "1344x768",
+              "768x1344",
+              "1024x768",
+              "768x1024",
+              "768x768",
+              "1536x672"
+            ]
+          },
+          "generate_audio": {
+            "type": "boolean",
+            "default": true
+          },
+          "seed": {
+            "type": "integer"
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": [
+          {
+            "type": "completion",
+            "unit": "second",
+            "cost_usd": "0.08"
+          }
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {},
+        "pricing": []
+      },
+      {
+        "type": "image",
+        "supported_inputs": {},
+        "pricing": []
+      },
+      {
+        "type": "video",
+        "supported_inputs": {},
+        "pricing": []
+      },
+      {
+        "type": "audio",
+        "supported_inputs": {},
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "minimax-m3",
@@ -693,7 +2203,200 @@
       "supports_max_tokens": true
     },
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "text",
+        "streaming": true,
+        "max_length": {
+          "value": 524288,
+          "unit": "token"
+        },
+        "parameters": {
+          "temperature": {
+            "type": "range",
+            "min": 0,
+            "max": 2
+          },
+          "top_p": {
+            "type": "range",
+            "min": 0,
+            "max": 1
+          },
+          "frequency_penalty": {
+            "type": "range",
+            "min": -2,
+            "max": 2
+          },
+          "presence_penalty": {
+            "type": "range",
+            "min": -2,
+            "max": 2
+          },
+          "max_tokens": {
+            "type": "integer",
+            "min": 1,
+            "max": 524288,
+            "unit": "token"
+          },
+          "stop": {
+            "type": "array",
+            "items": {
+              "type": "unknown"
+            },
+            "max_items": 4
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "continue_final_message": {
+            "type": "boolean"
+          },
+          "top_k": {
+            "type": "integer",
+            "min": 0
+          },
+          "repetition_penalty": {
+            "type": "range",
+            "min": 0,
+            "max": 2
+          },
+          "n": {
+            "type": "integer",
+            "min": 1
+          },
+          "logprobs": {
+            "type": "boolean"
+          },
+          "top_logprobs": {
+            "type": "integer",
+            "min": 0,
+            "max": 20
+          },
+          "response_format": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "enum",
+                "values": [
+                  "text",
+                  "json_object",
+                  "json_schema"
+                ]
+              }
+            }
+          },
+          "structured_outputs": {
+            "type": "boolean"
+          },
+          "reasoning_effort": {
+            "type": "enum",
+            "values": [
+              "ultra",
+              "max",
+              "xhigh",
+              "high",
+              "medium",
+              "low",
+              "minimal"
+            ]
+          },
+          "reasoning": {
+            "type": "object",
+            "properties": {
+              "effort": {
+                "type": "enum",
+                "values": [
+                  "ultra",
+                  "max",
+                  "xhigh",
+                  "high",
+                  "medium",
+                  "low",
+                  "minimal"
+                ]
+              },
+              "max_tokens": {
+                "type": "integer",
+                "min": 1,
+                "unit": "token"
+              }
+            }
+          },
+          "tools": {
+            "type": "boolean"
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": [
+          {
+            "type": "completion",
+            "unit": "token",
+            "cost_usd": "0.0000009"
+          }
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {
+          "max_context_length": {
+            "value": 524288,
+            "unit": "token"
+          }
+        },
+        "pricing": [
+          {
+            "type": "prompt",
+            "unit": "token",
+            "cost_usd": "0.0000002"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "supported_inputs": {
+          "sources": {
+            "type": "enum",
+            "values": [
+              "url",
+              "base64"
+            ]
+          },
+          "formats": {
+            "type": "enum",
+            "values": [
+              "image/png",
+              "image/jpeg",
+              "image/webp",
+              "image/gif"
+            ]
+          }
+        },
+        "pricing": []
+      },
+      {
+        "type": "video",
+        "supported_inputs": {
+          "sources": {
+            "type": "enum",
+            "values": [
+              "url",
+              "base64"
+            ]
+          },
+          "formats": {
+            "type": "enum",
+            "values": [
+              "video/mp4",
+              "video/webm"
+            ]
+          }
+        },
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "muse-glimmer-30b",
@@ -760,7 +2463,200 @@
       "supports_max_tokens": true
     },
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "text",
+        "streaming": true,
+        "max_length": {
+          "value": 131072,
+          "unit": "token"
+        },
+        "parameters": {
+          "temperature": {
+            "type": "range",
+            "min": 0,
+            "max": 2
+          },
+          "top_p": {
+            "type": "range",
+            "min": 0,
+            "max": 1
+          },
+          "frequency_penalty": {
+            "type": "range",
+            "min": -2,
+            "max": 2
+          },
+          "presence_penalty": {
+            "type": "range",
+            "min": -2,
+            "max": 2
+          },
+          "max_tokens": {
+            "type": "integer",
+            "min": 1,
+            "max": 131072,
+            "unit": "token"
+          },
+          "stop": {
+            "type": "array",
+            "items": {
+              "type": "unknown"
+            },
+            "max_items": 4
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "continue_final_message": {
+            "type": "boolean"
+          },
+          "top_k": {
+            "type": "integer",
+            "min": 0
+          },
+          "repetition_penalty": {
+            "type": "range",
+            "min": 0,
+            "max": 2
+          },
+          "n": {
+            "type": "integer",
+            "min": 1
+          },
+          "logprobs": {
+            "type": "boolean"
+          },
+          "top_logprobs": {
+            "type": "integer",
+            "min": 0,
+            "max": 20
+          },
+          "response_format": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "enum",
+                "values": [
+                  "text",
+                  "json_object",
+                  "json_schema"
+                ]
+              }
+            }
+          },
+          "structured_outputs": {
+            "type": "boolean"
+          },
+          "reasoning_effort": {
+            "type": "enum",
+            "values": [
+              "ultra",
+              "max",
+              "xhigh",
+              "high",
+              "medium",
+              "low",
+              "minimal"
+            ]
+          },
+          "reasoning": {
+            "type": "object",
+            "properties": {
+              "effort": {
+                "type": "enum",
+                "values": [
+                  "ultra",
+                  "max",
+                  "xhigh",
+                  "high",
+                  "medium",
+                  "low",
+                  "minimal"
+                ]
+              },
+              "max_tokens": {
+                "type": "integer",
+                "min": 1,
+                "unit": "token"
+              }
+            }
+          },
+          "tools": {
+            "type": "boolean"
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": [
+          {
+            "type": "completion",
+            "unit": "token",
+            "cost_usd": "0.000001"
+          }
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {
+          "max_context_length": {
+            "value": 131072,
+            "unit": "token"
+          }
+        },
+        "pricing": [
+          {
+            "type": "prompt",
+            "unit": "token",
+            "cost_usd": "0.00000025"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "supported_inputs": {
+          "sources": {
+            "type": "enum",
+            "values": [
+              "url",
+              "base64"
+            ]
+          },
+          "formats": {
+            "type": "enum",
+            "values": [
+              "image/png",
+              "image/jpeg",
+              "image/webp",
+              "image/gif"
+            ]
+          }
+        },
+        "pricing": []
+      },
+      {
+        "type": "video",
+        "supported_inputs": {
+          "sources": {
+            "type": "enum",
+            "values": [
+              "url",
+              "base64"
+            ]
+          },
+          "formats": {
+            "type": "enum",
+            "values": [
+              "video/mp4",
+              "video/webm"
+            ]
+          }
+        },
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "nemotron-3-nano-omni-30b-a3b-reasoning",
@@ -827,7 +2723,218 @@
       "supports_max_tokens": true
     },
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "text",
+        "streaming": true,
+        "max_length": {
+          "value": 262144,
+          "unit": "token"
+        },
+        "parameters": {
+          "temperature": {
+            "type": "range",
+            "min": 0,
+            "max": 2
+          },
+          "top_p": {
+            "type": "range",
+            "min": 0,
+            "max": 1
+          },
+          "frequency_penalty": {
+            "type": "range",
+            "min": -2,
+            "max": 2
+          },
+          "presence_penalty": {
+            "type": "range",
+            "min": -2,
+            "max": 2
+          },
+          "max_tokens": {
+            "type": "integer",
+            "min": 1,
+            "max": 262144,
+            "unit": "token"
+          },
+          "stop": {
+            "type": "array",
+            "items": {
+              "type": "unknown"
+            },
+            "max_items": 4
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "continue_final_message": {
+            "type": "boolean"
+          },
+          "top_k": {
+            "type": "integer",
+            "min": 0
+          },
+          "repetition_penalty": {
+            "type": "range",
+            "min": 0,
+            "max": 2
+          },
+          "n": {
+            "type": "integer",
+            "min": 1
+          },
+          "logprobs": {
+            "type": "boolean"
+          },
+          "top_logprobs": {
+            "type": "integer",
+            "min": 0,
+            "max": 20
+          },
+          "response_format": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "enum",
+                "values": [
+                  "text",
+                  "json_object",
+                  "json_schema"
+                ]
+              }
+            }
+          },
+          "structured_outputs": {
+            "type": "boolean"
+          },
+          "reasoning_effort": {
+            "type": "enum",
+            "values": [
+              "max",
+              "xhigh",
+              "high",
+              "medium",
+              "low",
+              "minimal"
+            ]
+          },
+          "reasoning": {
+            "type": "object",
+            "properties": {
+              "effort": {
+                "type": "enum",
+                "values": [
+                  "max",
+                  "xhigh",
+                  "high",
+                  "medium",
+                  "low",
+                  "minimal"
+                ]
+              },
+              "max_tokens": {
+                "type": "integer",
+                "min": 1,
+                "unit": "token"
+              }
+            }
+          },
+          "tools": {
+            "type": "boolean"
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": [
+          {
+            "type": "completion",
+            "unit": "token",
+            "cost_usd": "0.00000025"
+          }
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {
+          "max_context_length": {
+            "value": 262144,
+            "unit": "token"
+          }
+        },
+        "pricing": [
+          {
+            "type": "prompt",
+            "unit": "token",
+            "cost_usd": "0.0000001"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "supported_inputs": {
+          "sources": {
+            "type": "enum",
+            "values": [
+              "url",
+              "base64"
+            ]
+          },
+          "formats": {
+            "type": "enum",
+            "values": [
+              "image/png",
+              "image/jpeg",
+              "image/webp",
+              "image/gif"
+            ]
+          }
+        },
+        "pricing": []
+      },
+      {
+        "type": "audio",
+        "supported_inputs": {
+          "sources": {
+            "type": "enum",
+            "values": [
+              "url",
+              "base64"
+            ]
+          },
+          "formats": {
+            "type": "enum",
+            "values": [
+              "audio/wav",
+              "audio/mpeg"
+            ]
+          }
+        },
+        "pricing": []
+      },
+      {
+        "type": "video",
+        "supported_inputs": {
+          "sources": {
+            "type": "enum",
+            "values": [
+              "url",
+              "base64"
+            ]
+          },
+          "formats": {
+            "type": "enum",
+            "values": [
+              "video/mp4",
+              "video/webm"
+            ]
+          }
+        },
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "nemotron-3.5-content-safety",
@@ -876,7 +2983,143 @@
     ],
     "reasoning": null,
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "text",
+        "streaming": true,
+        "max_length": {
+          "value": 131072,
+          "unit": "token"
+        },
+        "parameters": {
+          "temperature": {
+            "type": "range",
+            "min": 0,
+            "max": 2
+          },
+          "top_p": {
+            "type": "range",
+            "min": 0,
+            "max": 1
+          },
+          "frequency_penalty": {
+            "type": "range",
+            "min": -2,
+            "max": 2
+          },
+          "presence_penalty": {
+            "type": "range",
+            "min": -2,
+            "max": 2
+          },
+          "max_tokens": {
+            "type": "integer",
+            "min": 1,
+            "max": 131072,
+            "unit": "token"
+          },
+          "stop": {
+            "type": "array",
+            "items": {
+              "type": "unknown"
+            },
+            "max_items": 4
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "continue_final_message": {
+            "type": "boolean"
+          },
+          "top_k": {
+            "type": "integer",
+            "min": 0
+          },
+          "repetition_penalty": {
+            "type": "range",
+            "min": 0,
+            "max": 2
+          },
+          "n": {
+            "type": "integer",
+            "min": 1
+          },
+          "logprobs": {
+            "type": "boolean"
+          },
+          "top_logprobs": {
+            "type": "integer",
+            "min": 0,
+            "max": 20
+          },
+          "response_format": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "enum",
+                "values": [
+                  "text",
+                  "json_object",
+                  "json_schema"
+                ]
+              }
+            }
+          },
+          "structured_outputs": {
+            "type": "boolean"
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": [
+          {
+            "type": "completion",
+            "unit": "token",
+            "cost_usd": "0.00000015"
+          }
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {
+          "max_context_length": {
+            "value": 131072,
+            "unit": "token"
+          }
+        },
+        "pricing": [
+          {
+            "type": "prompt",
+            "unit": "token",
+            "cost_usd": "0.00000005"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "supported_inputs": {
+          "sources": {
+            "type": "enum",
+            "values": [
+              "url",
+              "base64"
+            ]
+          },
+          "formats": {
+            "type": "enum",
+            "values": [
+              "image/png",
+              "image/jpeg",
+              "image/webp",
+              "image/gif"
+            ]
+          }
+        },
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "qwen3-embedding-4b",
@@ -908,7 +3151,54 @@
     "supported_parameters": [],
     "reasoning": null,
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "embeddings",
+        "streaming": null,
+        "max_length": null,
+        "parameters": {
+          "encoding_format": {
+            "type": "enum",
+            "values": [
+              "float",
+              "base64"
+            ]
+          },
+          "dimensions": {
+            "type": "integer",
+            "min": 1
+          },
+          "input_type": {
+            "type": "enum",
+            "values": [
+              "search_query",
+              "search_document"
+            ]
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": [
+          {
+            "type": "completion",
+            "unit": "token",
+            "cost_usd": "0.00000005"
+          }
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {
+          "max_context_length": {
+            "value": 32768,
+            "unit": "token"
+          }
+        },
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "qwen3-tts-12hz-1.7b",
@@ -940,7 +3230,106 @@
     "supported_parameters": [],
     "reasoning": null,
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "speech",
+        "streaming": true,
+        "max_length": null,
+        "parameters": {
+          "voice": {
+            "type": "enum",
+            "values": [
+              "vivian",
+              "serena",
+              "uncle_fu",
+              "dylan",
+              "eric",
+              "ryan",
+              "aiden",
+              "ono_anna",
+              "sohee",
+              "design",
+              "clone"
+            ]
+          },
+          "instructions": {
+            "type": "unknown"
+          },
+          "language": {
+            "type": "unknown"
+          },
+          "input_references": {
+            "type": "array",
+            "max_items": 2,
+            "items": {
+              "type": "unknown"
+            }
+          },
+          "response_format": {
+            "type": "enum",
+            "values": [
+              "mp3",
+              "opus",
+              "flac",
+              "wav",
+              "pcm"
+            ],
+            "default": "mp3"
+          },
+          "stream_format": {
+            "type": "enum",
+            "values": [
+              "audio",
+              "sse"
+            ],
+            "default": "audio"
+          },
+          "speed": {
+            "type": "range",
+            "min": 0.25,
+            "max": 4,
+            "default": 1
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "temperature": {
+            "type": "range",
+            "min": 0,
+            "max": 2
+          },
+          "top_p": {
+            "type": "range",
+            "min": 0,
+            "max": 1
+          },
+          "top_k": {
+            "type": "integer"
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": [
+          {
+            "type": "completion",
+            "unit": "second",
+            "cost_usd": "0.00028"
+          }
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {
+          "max_prompt_length": {
+            "value": 6000,
+            "unit": "character"
+          }
+        },
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "qwen3.8-27b",
@@ -1006,7 +3395,180 @@
       "supports_max_tokens": true
     },
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "text",
+        "streaming": true,
+        "max_length": {
+          "value": 262144,
+          "unit": "token"
+        },
+        "parameters": {
+          "temperature": {
+            "type": "range",
+            "min": 0,
+            "max": 2
+          },
+          "top_p": {
+            "type": "range",
+            "min": 0,
+            "max": 1
+          },
+          "frequency_penalty": {
+            "type": "range",
+            "min": -2,
+            "max": 2
+          },
+          "presence_penalty": {
+            "type": "range",
+            "min": -2,
+            "max": 2
+          },
+          "max_tokens": {
+            "type": "integer",
+            "min": 1,
+            "max": 262144,
+            "unit": "token"
+          },
+          "stop": {
+            "type": "array",
+            "items": {
+              "type": "unknown"
+            },
+            "max_items": 4
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "continue_final_message": {
+            "type": "boolean"
+          },
+          "top_k": {
+            "type": "integer",
+            "min": 0
+          },
+          "repetition_penalty": {
+            "type": "range",
+            "min": 0,
+            "max": 2
+          },
+          "n": {
+            "type": "integer",
+            "min": 1
+          },
+          "logprobs": {
+            "type": "boolean"
+          },
+          "top_logprobs": {
+            "type": "integer",
+            "min": 0,
+            "max": 20
+          },
+          "response_format": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "enum",
+                "values": [
+                  "text",
+                  "json_object",
+                  "json_schema"
+                ]
+              }
+            }
+          },
+          "structured_outputs": {
+            "type": "boolean"
+          },
+          "reasoning_effort": {
+            "type": "enum",
+            "values": [
+              "ultra",
+              "max",
+              "xhigh",
+              "high",
+              "medium",
+              "low",
+              "minimal"
+            ]
+          },
+          "reasoning": {
+            "type": "object",
+            "properties": {
+              "effort": {
+                "type": "enum",
+                "values": [
+                  "ultra",
+                  "max",
+                  "xhigh",
+                  "high",
+                  "medium",
+                  "low",
+                  "minimal"
+                ]
+              },
+              "max_tokens": {
+                "type": "integer",
+                "min": 1,
+                "unit": "token"
+              }
+            }
+          },
+          "tools": {
+            "type": "boolean"
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": [
+          {
+            "type": "completion",
+            "unit": "token",
+            "cost_usd": "0.000002"
+          }
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {
+          "max_context_length": {
+            "value": 262144,
+            "unit": "token"
+          }
+        },
+        "pricing": [
+          {
+            "type": "prompt",
+            "unit": "token",
+            "cost_usd": "0.0000003"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "supported_inputs": {
+          "sources": {
+            "type": "enum",
+            "values": [
+              "url",
+              "base64"
+            ]
+          },
+          "formats": {
+            "type": "enum",
+            "values": [
+              "image/png",
+              "image/jpeg",
+              "image/webp",
+              "image/gif"
+            ]
+          }
+        },
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "qwen3.8-flash-next",
@@ -1073,7 +3635,200 @@
       "supports_max_tokens": true
     },
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "text",
+        "streaming": true,
+        "max_length": {
+          "value": 262144,
+          "unit": "token"
+        },
+        "parameters": {
+          "temperature": {
+            "type": "range",
+            "min": 0,
+            "max": 2
+          },
+          "top_p": {
+            "type": "range",
+            "min": 0,
+            "max": 1
+          },
+          "frequency_penalty": {
+            "type": "range",
+            "min": -2,
+            "max": 2
+          },
+          "presence_penalty": {
+            "type": "range",
+            "min": -2,
+            "max": 2
+          },
+          "max_tokens": {
+            "type": "integer",
+            "min": 1,
+            "max": 262144,
+            "unit": "token"
+          },
+          "stop": {
+            "type": "array",
+            "items": {
+              "type": "unknown"
+            },
+            "max_items": 4
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "continue_final_message": {
+            "type": "boolean"
+          },
+          "top_k": {
+            "type": "integer",
+            "min": 0
+          },
+          "repetition_penalty": {
+            "type": "range",
+            "min": 0,
+            "max": 2
+          },
+          "n": {
+            "type": "integer",
+            "min": 1
+          },
+          "logprobs": {
+            "type": "boolean"
+          },
+          "top_logprobs": {
+            "type": "integer",
+            "min": 0,
+            "max": 20
+          },
+          "response_format": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "enum",
+                "values": [
+                  "text",
+                  "json_object",
+                  "json_schema"
+                ]
+              }
+            }
+          },
+          "structured_outputs": {
+            "type": "boolean"
+          },
+          "reasoning_effort": {
+            "type": "enum",
+            "values": [
+              "ultra",
+              "max",
+              "xhigh",
+              "high",
+              "medium",
+              "low",
+              "minimal"
+            ]
+          },
+          "reasoning": {
+            "type": "object",
+            "properties": {
+              "effort": {
+                "type": "enum",
+                "values": [
+                  "ultra",
+                  "max",
+                  "xhigh",
+                  "high",
+                  "medium",
+                  "low",
+                  "minimal"
+                ]
+              },
+              "max_tokens": {
+                "type": "integer",
+                "min": 1,
+                "unit": "token"
+              }
+            }
+          },
+          "tools": {
+            "type": "boolean"
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": [
+          {
+            "type": "completion",
+            "unit": "token",
+            "cost_usd": "0.0000002"
+          }
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {
+          "max_context_length": {
+            "value": 262144,
+            "unit": "token"
+          }
+        },
+        "pricing": [
+          {
+            "type": "prompt",
+            "unit": "token",
+            "cost_usd": "0.0000001"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "supported_inputs": {
+          "sources": {
+            "type": "enum",
+            "values": [
+              "url",
+              "base64"
+            ]
+          },
+          "formats": {
+            "type": "enum",
+            "values": [
+              "image/png",
+              "image/jpeg",
+              "image/webp",
+              "image/gif"
+            ]
+          }
+        },
+        "pricing": []
+      },
+      {
+        "type": "video",
+        "supported_inputs": {
+          "sources": {
+            "type": "enum",
+            "values": [
+              "url",
+              "base64"
+            ]
+          },
+          "formats": {
+            "type": "enum",
+            "values": [
+              "video/mp4",
+              "video/webm"
+            ]
+          }
+        },
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "rune-26b-a4b-v3",
@@ -1105,7 +3860,44 @@
     "supported_parameters": [],
     "reasoning": null,
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "decisions",
+        "streaming": null,
+        "max_length": null,
+        "parameters": {
+          "question_type": {
+            "type": "enum",
+            "values": [
+              "noul",
+              "choice",
+              "score"
+            ]
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": [
+          {
+            "type": "completion",
+            "unit": "token",
+            "cost_usd": "0.00000005"
+          }
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {
+          "max_context_length": {
+            "value": 262143,
+            "unit": "token"
+          }
+        },
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "vultron-retriever-core-qwen3.5-4.5b",
@@ -1137,7 +3929,44 @@
     "supported_parameters": [],
     "reasoning": null,
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "rerank",
+        "streaming": null,
+        "max_length": null,
+        "parameters": {
+          "top_n": {
+            "type": "integer",
+            "min": 1,
+            "max": 100
+          },
+          "return_documents": {
+            "type": "boolean"
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": [
+          {
+            "type": "completion",
+            "unit": "token",
+            "cost_usd": "0.0000001"
+          }
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {
+          "max_context_length": {
+            "value": 262144,
+            "unit": "token"
+          }
+        },
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "vultron-retriever-flash-qwen3.5-0.8b",
@@ -1169,7 +3998,44 @@
     "supported_parameters": [],
     "reasoning": null,
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "rerank",
+        "streaming": null,
+        "max_length": null,
+        "parameters": {
+          "top_n": {
+            "type": "integer",
+            "min": 1,
+            "max": 100
+          },
+          "return_documents": {
+            "type": "boolean"
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": [
+          {
+            "type": "completion",
+            "unit": "token",
+            "cost_usd": "0.00000005"
+          }
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {
+          "max_context_length": {
+            "value": 262144,
+            "unit": "token"
+          }
+        },
+        "pricing": []
+      }
+    ]
   },
   {
     "id": "whisper-large-v3-turbo",
@@ -1201,7 +4067,71 @@
     "supported_parameters": [],
     "reasoning": null,
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "transcription",
+        "streaming": true,
+        "max_length": null,
+        "parameters": {
+          "language": {
+            "type": "unknown"
+          },
+          "prompt": {
+            "type": "unknown"
+          },
+          "temperature": {
+            "type": "range",
+            "min": 0,
+            "max": 1
+          },
+          "response_format": {
+            "type": "enum",
+            "values": [
+              "json",
+              "text"
+            ]
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": []
+      }
+    ],
+    "inputs": [
+      {
+        "type": "audio",
+        "supported_inputs": {
+          "sources": {
+            "type": "enum",
+            "values": [
+              "base64"
+            ]
+          },
+          "formats": {
+            "type": "enum",
+            "values": [
+              "audio/wav",
+              "audio/mpeg"
+            ]
+          },
+          "max_duration_seconds": {
+            "value": 14400,
+            "unit": "second"
+          },
+          "max_content_size_bytes": {
+            "value": 26214400,
+            "unit": "byte"
+          }
+        },
+        "pricing": [
+          {
+            "type": "prompt",
+            "unit": "second",
+            "cost_usd": "0.00001111"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "z-image-turbo",
@@ -1233,6 +4163,62 @@
     "supported_parameters": [],
     "reasoning": null,
     "is_ready": true,
-    "deprecation_date": null
+    "deprecation_date": null,
+    "outputs": [
+      {
+        "type": "image",
+        "streaming": false,
+        "max_length": null,
+        "parameters": {
+          "n": {
+            "type": "integer",
+            "min": 1,
+            "max": 4
+          },
+          "size": {
+            "type": "enum",
+            "values": [
+              "512x512",
+              "768x768",
+              "1024x1024"
+            ]
+          },
+          "response_format": {
+            "type": "enum",
+            "values": [
+              "b64_json",
+              "url"
+            ]
+          },
+          "steps": {
+            "type": "integer",
+            "min": 1,
+            "max": 50,
+            "default": 8
+          },
+          "guidance_scale": {
+            "type": "range",
+            "min": 0,
+            "max": 20,
+            "default": 0
+          }
+        },
+        "passthrough_parameters": {},
+        "pricing": [
+          {
+            "type": "completion",
+            "unit": "megapixel",
+            "cost_usd": "0.02"
+          }
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "supported_inputs": {},
+        "pricing": []
+      }
+    ]
   }
 ]

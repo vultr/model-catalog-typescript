@@ -21,8 +21,39 @@ export type {
   PricingEntry,
   PricingUnit,
 } from "./document.ts";
-export { acceptsInput, isAgentModel, isChatModel, normalizeModel, pricePerMillion, toCanonical } from "./model.ts";
-export type { CatalogModel, ModelPricing, ReasoningSupport } from "./model.ts";
+export {
+  acceptsInput,
+  inputOf,
+  isAgentModel,
+  isChatModel,
+  normalizeModel,
+  outputOf,
+  pricePerMillion,
+  toCanonical,
+} from "./model.ts";
+export type { CatalogModel, InputSpec, ModelPricing, OutputSpec, ReasoningSupport } from "./model.ts";
 export { parseCatalog } from "./parse.ts";
 export type { CatalogIssue, ParsedCatalog } from "./parse.ts";
 export { usdPerMillion } from "./price.ts";
+export {
+  MEDIA_SOURCES,
+  buildMediaCatalog,
+  fetchMediaPayloads,
+  loadMediaCatalog,
+  speechModelIds,
+  toCanonicalMedia,
+} from "./media.ts";
+export type {
+  ImageModelRecord,
+  MediaCatalog,
+  MediaIssue,
+  MediaLoadOptions,
+  MediaPayloads,
+  MediaSourceName,
+  ModelMedia,
+  MusicModelRecord,
+  RateLimit,
+  SpeechRecord,
+  VideoModelRecord,
+  Voice,
+} from "./media.ts";

@@ -1,4 +1,12 @@
-import type { Limit, ModelDocument, ModelReasoning, ParameterDescriptor, PricingEntry } from "./document.ts";
+import type {
+  InputModality,
+  Limit,
+  ModelDocument,
+  ModelReasoning,
+  OutputModality,
+  ParameterDescriptor,
+  PricingEntry,
+} from "./document.ts";
 import { usdPerMillion } from "./price.ts";
 
 // Exact decimal strings, USD per token (request: USD per request). null when unpriced.
@@ -18,6 +26,26 @@ export interface ReasoningSupport {
   // Descending order. null means the model has no effort allowlist.
   supportedEfforts: string[] | null;
   supportsMaxTokens: boolean;
+}
+
+// One output modality of the document as it states it: what the model makes of that type, the
+// parameters a request for it takes (supported, and the model's own as passthrough), its prices
+// and whether it streams. Media models live here: an image model's sizes, a speech model's voices.
+export interface OutputSpec {
+  type: string;
+  streaming: boolean | null;
+  maxLength: Limit | null;
+  parameters: Record<string, ParameterDescriptor>;
+  passthroughParameters: Record<string, ParameterDescriptor>;
+  pricing: PricingEntry[];
+}
+
+// One input modality: what a request may carry of that type (supported_inputs as the document
+// states them, e.g. formats, references, max_prompt_length with its unit) and its prices.
+export interface InputSpec {
+  type: string;
+  supportedInputs: Record<string, unknown>;
+  pricing: PricingEntry[];
 }
 
 export interface CatalogModel {
@@ -41,6 +69,9 @@ export interface CatalogModel {
   reasoning: ReasoningSupport | null;
   isReady: boolean;
   deprecationDate: string | null;
+  // Every modality, in the document's order
+  outputs: OutputSpec[];
+  inputs: InputSpec[];
 }
 
 function limit(value: Limit | undefined): number | null {
@@ -102,6 +133,43 @@ function reasoningSupport(
   };
 }
 
+function records(value: unknown): Record<string, ParameterDescriptor> {
+  return isRecord(value) ? (value as Record<string, ParameterDescriptor>) : {};
+}
+
+function entries(value: unknown): PricingEntry[] {
+  return Array.isArray(value) ? value.filter((entry): entry is PricingEntry => isRecord(entry)) : [];
+}
+
+function outputSpec(modality: OutputModality): OutputSpec {
+  return {
+    type: modality.type,
+    streaming: typeof modality.streaming === "boolean" ? modality.streaming : null,
+    maxLength: limit(modality.max_length) === null ? null : (modality.max_length as Limit),
+    parameters: records(modality.supported_parameters),
+    passthroughParameters: records(modality["passthrough_parameters"]),
+    pricing: entries(modality.pricing),
+  };
+}
+
+function inputSpec(modality: InputModality): InputSpec {
+  return {
+    type: modality.type,
+    supportedInputs: isRecord(modality.supported_inputs) ? modality.supported_inputs : {},
+    pricing: entries(modality.pricing),
+  };
+}
+
+// The output of a type, or null when the model makes none
+export function outputOf(model: CatalogModel, type: string): OutputSpec | null {
+  return model.outputs.find((output) => output.type === type) ?? null;
+}
+
+// The input of a type, or null when the model reads none
+export function inputOf(model: CatalogModel, type: string): InputSpec | null {
+  return model.inputs.find((input) => input.type === type) ?? null;
+}
+
 export function normalizeModel(document: ModelDocument): CatalogModel {
   const textIn = document.input_modalities.find((modality) => modality.type === "text");
   const textOut = document.output_modalities.find((modality) => modality.type === "text");
@@ -135,6 +203,8 @@ export function normalizeModel(document: ModelDocument): CatalogModel {
     reasoning: reasoningSupport(parameters, document.reasoning),
     isReady: document.is_ready !== false,
     deprecationDate: document.deprecation_date ?? null,
+    outputs: document.output_modalities.map(outputSpec),
+    inputs: document.input_modalities.map(inputSpec),
   };
 }
 
@@ -202,5 +272,18 @@ export function toCanonical(model: CatalogModel): Record<string, unknown> {
     },
     is_ready: model.isReady,
     deprecation_date: model.deprecationDate,
+    outputs: model.outputs.map((output) => ({
+      type: output.type,
+      streaming: output.streaming,
+      max_length: output.maxLength,
+      parameters: output.parameters,
+      passthrough_parameters: output.passthroughParameters,
+      pricing: output.pricing,
+    })),
+    inputs: model.inputs.map((input) => ({
+      type: input.type,
+      supported_inputs: input.supportedInputs,
+      pricing: input.pricing,
+    })),
   };
 }

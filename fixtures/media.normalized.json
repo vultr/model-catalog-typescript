@@ -1,0 +1,2307 @@
+[
+  {
+    "id": "auk",
+    "image": null,
+    "video": null,
+    "music": null,
+    "speech": {
+      "voices": [
+        {
+          "description": "A calm middle-aged woman with a low, clear voice. It is designed afresh from that description on every request, so it varies a little unless the seed is fixed.",
+          "id": "default",
+          "mode": "builtin",
+          "name": "Default"
+        },
+        {
+          "description": "A new voice designed from the description in instructions, such as \"A deep, calm middle-aged man with a low voice.\" It varies with the seed.",
+          "id": "design",
+          "mode": "design",
+          "name": "Voice design"
+        },
+        {
+          "description": "The voice of a reference clip, about 5 to 15 seconds of clean speech. No transcript is needed.",
+          "id": "clone",
+          "mode": "clone",
+          "name": "Voice clone"
+        }
+      ],
+      "languages": [
+        "English",
+        "Chinese"
+      ]
+    },
+    "quality_tiers": {},
+    "price_options": {},
+    "rate_limits": {
+      "speech": {
+        "requests_per_minute": 10,
+        "concurrent_requests": 1
+      }
+    }
+  },
+  {
+    "id": "bge-reranker-v2-m3",
+    "image": null,
+    "video": null,
+    "music": null,
+    "speech": null,
+    "quality_tiers": {},
+    "price_options": {},
+    "rate_limits": {
+      "rerank": {
+        "requests_per_minute": 120,
+        "concurrent_requests": 16
+      }
+    }
+  },
+  {
+    "id": "chatterbox",
+    "image": null,
+    "video": null,
+    "music": null,
+    "speech": {
+      "voices": [
+        {
+          "description": "The checkpoints' built-in voice, an English speaker. Outside English it speaks without guidance (cfg_weight 0) unless the request sets one, so its accent carries less.",
+          "id": "default",
+          "mode": "builtin",
+          "name": "Default",
+          "native_language": "English"
+        },
+        {
+          "description": "The voice of a reference clip, about 6 to 10 seconds of clean speech. No transcript is needed.",
+          "id": "clone",
+          "mode": "clone",
+          "name": "Voice clone"
+        }
+      ],
+      "languages": [
+        "Arabic",
+        "Danish",
+        "German",
+        "Greek",
+        "English",
+        "Spanish",
+        "Finnish",
+        "French",
+        "Hebrew",
+        "Hindi",
+        "Italian",
+        "Japanese",
+        "Korean",
+        "Malay",
+        "Dutch",
+        "Norwegian",
+        "Polish",
+        "Portuguese",
+        "Russian",
+        "Swedish",
+        "Swahili",
+        "Turkish",
+        "Chinese"
+      ]
+    },
+    "quality_tiers": {},
+    "price_options": {},
+    "rate_limits": {
+      "speech": {
+        "requests_per_minute": 20,
+        "concurrent_requests": 5
+      }
+    }
+  },
+  {
+    "id": "clef",
+    "image": null,
+    "video": null,
+    "music": null,
+    "speech": null,
+    "quality_tiers": {},
+    "price_options": {},
+    "rate_limits": {
+      "decisions": {
+        "requests_per_minute": 600,
+        "concurrent_requests": 16
+      }
+    }
+  },
+  {
+    "id": "clef-flash",
+    "image": null,
+    "video": null,
+    "music": null,
+    "speech": null,
+    "quality_tiers": {},
+    "price_options": {},
+    "rate_limits": {
+      "decisions": {
+        "requests_per_minute": 600,
+        "concurrent_requests": 16
+      }
+    }
+  },
+  {
+    "id": "d3",
+    "image": null,
+    "video": null,
+    "music": null,
+    "speech": null,
+    "quality_tiers": {},
+    "price_options": {},
+    "rate_limits": {
+      "decisions": {
+        "requests_per_minute": 600,
+        "concurrent_requests": 16
+      }
+    }
+  },
+  {
+    "id": "deepseek-v4.1-flash-1017",
+    "image": null,
+    "video": null,
+    "music": null,
+    "speech": null,
+    "quality_tiers": {},
+    "price_options": {},
+    "rate_limits": {
+      "text": {
+        "requests_per_minute": 120,
+        "concurrent_requests": 16
+      }
+    }
+  },
+  {
+    "id": "glm-5.2",
+    "image": null,
+    "video": null,
+    "music": null,
+    "speech": null,
+    "quality_tiers": {},
+    "price_options": {},
+    "rate_limits": {
+      "text": {
+        "requests_per_minute": 30,
+        "concurrent_requests": 8
+      }
+    }
+  },
+  {
+    "id": "glm-5.3",
+    "image": null,
+    "video": null,
+    "music": null,
+    "speech": null,
+    "quality_tiers": {},
+    "price_options": {},
+    "rate_limits": {
+      "text": {
+        "requests_per_minute": 30,
+        "concurrent_requests": 8
+      }
+    }
+  },
+  {
+    "id": "glm-5.3-flash",
+    "image": null,
+    "video": null,
+    "music": null,
+    "speech": null,
+    "quality_tiers": {},
+    "price_options": {},
+    "rate_limits": {
+      "text": {
+        "requests_per_minute": 120,
+        "concurrent_requests": 16
+      }
+    }
+  },
+  {
+    "id": "mimo-v2.6-flash",
+    "image": null,
+    "video": null,
+    "music": null,
+    "speech": null,
+    "quality_tiers": {},
+    "price_options": {},
+    "rate_limits": {
+      "text": {
+        "requests_per_minute": 120,
+        "concurrent_requests": 16
+      }
+    }
+  },
+  {
+    "id": "mimo-v2.6-pro",
+    "image": null,
+    "video": null,
+    "music": null,
+    "speech": null,
+    "quality_tiers": {},
+    "price_options": {},
+    "rate_limits": {
+      "text": {
+        "requests_per_minute": 120,
+        "concurrent_requests": 16
+      }
+    }
+  },
+  {
+    "id": "minimax-h3",
+    "image": {
+      "id": "minimax-h3",
+      "name": "MiniMax H3",
+      "description": "Still images from MiniMax H3's text-to-video weights, 4-step Turbo by default, up to 1344x768.",
+      "created": 1791535446,
+      "endpoints": "/v1/images/models/vultr/minimax-h3/endpoints",
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "image"
+        ]
+      },
+      "supported_parameters": {
+        "size": {
+          "type": "boolean",
+          "format": "WxH",
+          "multiple_of": 32,
+          "min_area": 262144,
+          "max_area": 1032192,
+          "max_ratio": 4
+        },
+        "aspect_ratio": {
+          "type": "enum",
+          "values": [
+            "1:1",
+            "4:3",
+            "3:4",
+            "7:4",
+            "4:7",
+            "16:7"
+          ],
+          "default": "1:1"
+        },
+        "resolution": {
+          "type": "enum",
+          "values": [
+            "768",
+            "2K",
+            "4K"
+          ],
+          "sizes": {
+            "1:1": {
+              "768": "768x768",
+              "2K": "1536x1536",
+              "4K": "3072x3072"
+            },
+            "4:3": {
+              "768": "1024x768",
+              "2K": "2048x1536",
+              "4K": "4096x3072"
+            },
+            "3:4": {
+              "768": "768x1024",
+              "2K": "1536x2048",
+              "4K": "3072x4096"
+            },
+            "7:4": {
+              "768": "1344x768",
+              "2K": "2688x1536",
+              "4K": "5376x3072"
+            },
+            "4:7": {
+              "768": "768x1344",
+              "2K": "1536x2688",
+              "4K": "3072x5376"
+            },
+            "16:7": {
+              "768": "1536x672",
+              "2K": "3072x1344",
+              "4K": "6144x2688"
+            }
+          },
+          "upscaled": {
+            "2K": {
+              "upscaler": "engine",
+              "max_n": null
+            },
+            "4K": {
+              "upscaler": "seedvr2-7b-sharp",
+              "max_n": null
+            }
+          }
+        },
+        "n": {
+          "type": "range",
+          "min": 1,
+          "max": 4,
+          "default": 1
+        },
+        "response_format": {
+          "type": "enum",
+          "values": [
+            "url",
+            "b64_json"
+          ],
+          "default": "url"
+        },
+        "seed": {
+          "type": "boolean"
+        },
+        "steps": {
+          "type": "range",
+          "min": 10,
+          "max": 50,
+          "default": 4,
+          "also": [
+            4
+          ]
+        },
+        "quality": {
+          "type": "enum",
+          "values": [
+            "turbo",
+            "auto",
+            "low",
+            "standard",
+            "medium",
+            "max",
+            "high",
+            "hd",
+            "ultra"
+          ]
+        },
+        "output_format": {
+          "type": "enum",
+          "values": [
+            "png",
+            "jpeg",
+            "webp"
+          ],
+          "default": "png"
+        },
+        "output_compression": {
+          "type": "range",
+          "min": 0,
+          "max": 100
+        },
+        "background": {
+          "type": "enum",
+          "values": [
+            "auto",
+            "opaque"
+          ],
+          "default": "auto"
+        }
+      },
+      "supports_streaming": true,
+      "prompt_max_length": 7000,
+      "inputs": {
+        "reference": {
+          "image": 9,
+          "formats": [
+            "image/png",
+            "image/jpeg",
+            "image/webp"
+          ],
+          "max_megapixels": 1,
+          "max_bytes": 20971520,
+          "max_total_bytes": 67108864
+        }
+      },
+      "modes": [
+        {
+          "mode": "ref",
+          "when": {
+            "inputs": [
+              "image"
+            ]
+          },
+          "defaults": {
+            "steps": 8
+          },
+          "also": {
+            "steps": [
+              8
+            ]
+          },
+          "only": {},
+          "bill_multiplier": {
+            "base": 1.5,
+            "per_reference": 0.75
+          }
+        },
+        {
+          "mode": "generate",
+          "when": {},
+          "defaults": {},
+          "also": {
+            "steps": [
+              4
+            ]
+          },
+          "only": {},
+          "bill_multiplier": null
+        }
+      ],
+      "rules": []
+    },
+    "video": {
+      "id": "minimax-h3",
+      "name": "MiniMax H3",
+      "canonical_slug": "minimax-h3",
+      "hugging_face_id": null,
+      "description": "Text, frames or reference media to video with a generated soundtrack, 4-15 seconds at 768p.",
+      "created": 1791354619,
+      "supported_durations": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "supported_resolutions": [
+        "768p",
+        "2K"
+      ],
+      "supported_aspect_ratios": [
+        "16:9",
+        "9:16",
+        "4:3",
+        "3:4",
+        "1:1",
+        "21:9"
+      ],
+      "supported_sizes": [
+        "1344x768",
+        "2688x1536",
+        "768x1344",
+        "1536x2688",
+        "1024x768",
+        "2048x1536",
+        "768x1024",
+        "1536x2048",
+        "768x768",
+        "1536x1536",
+        "1536x672",
+        "3072x1344"
+      ],
+      "supported_frame_images": [
+        "first_frame",
+        "last_frame"
+      ],
+      "generate_audio": true,
+      "generates_audio": true,
+      "seed": true,
+      "upscale_factor": null,
+      "creativity": null,
+      "allowed_passthrough_parameters": [
+        "num_inference_steps",
+        "start_time_seconds",
+        "quality"
+      ],
+      "pricing_skus": {
+        "generate_per_second": "0.06",
+        "reference_per_second": "0.06",
+        "standard_per_second": "0.09",
+        "max_per_second": "0.18",
+        "ultra_per_second": "0.3",
+        "2K_per_second": "0.18"
+      },
+      "operations": [
+        "generate"
+      ],
+      "inputs": {
+        "first_frame": {
+          "image": 1
+        },
+        "last_frame": {
+          "image": 1
+        },
+        "reference": {
+          "image": 9,
+          "video": 3,
+          "audio": 3,
+          "total": 12
+        }
+      },
+      "supported_fps": [
+        24
+      ],
+      "frame_grid": "17n+5",
+      "quality_tiers": [
+        {
+          "name": "turbo",
+          "steps": null,
+          "step_range": null,
+          "multiplier": 1,
+          "aliases": [
+            "auto",
+            "low"
+          ],
+          "price_per_second": "0.06"
+        },
+        {
+          "name": "standard",
+          "steps": 20,
+          "step_range": {
+            "min": 10,
+            "max": 20
+          },
+          "multiplier": 1.5,
+          "aliases": [
+            "medium"
+          ],
+          "price_per_second": "0.09"
+        },
+        {
+          "name": "max",
+          "steps": 40,
+          "step_range": {
+            "min": 21,
+            "max": 40
+          },
+          "multiplier": 3,
+          "aliases": [
+            "high"
+          ],
+          "price_per_second": "0.18"
+        },
+        {
+          "name": "ultra",
+          "steps": 50,
+          "step_range": {
+            "min": 41,
+            "max": 50
+          },
+          "multiplier": 5,
+          "aliases": [],
+          "price_per_second": "0.3"
+        }
+      ],
+      "prompt_max_length": 8000,
+      "defaults": {
+        "duration": 6,
+        "aspect_ratio": "16:9",
+        "resolution": "768p",
+        "generate_audio": true
+      },
+      "modes": [
+        {
+          "mode": "ref2va",
+          "when": {
+            "any_inputs": [
+              "image",
+              "video",
+              "audio"
+            ]
+          },
+          "schedule_steps": 8
+        },
+        {
+          "mode": "fl2va",
+          "when": {
+            "any_inputs": [
+              "first_frame",
+              "last_frame"
+            ]
+          },
+          "schedule_steps": 4
+        },
+        {
+          "mode": "t2va",
+          "when": {},
+          "schedule_steps": 4
+        }
+      ],
+      "resolution_rules": {
+        "2K": {
+          "upscale_factor": 2,
+          "bill_multiplier": 3,
+          "schedule_only": true
+        }
+      },
+      "media": {
+        "image": {
+          "formats": [
+            "image/jpeg",
+            "image/png",
+            "image/webp",
+            "image/heic",
+            "image/heif"
+          ],
+          "max_bytes": 31457280,
+          "sources": [
+            "url",
+            "base64"
+          ],
+          "requires_any": []
+        },
+        "video": {
+          "formats": [
+            "video/mp4",
+            "video/quicktime"
+          ],
+          "max_bytes": 52428800,
+          "sources": [
+            "url",
+            "base64"
+          ],
+          "requires_any": []
+        },
+        "audio": {
+          "formats": [
+            "audio/wav",
+            "audio/x-wav",
+            "audio/wave",
+            "audio/mpeg",
+            "audio/mp3"
+          ],
+          "max_bytes": 15728640,
+          "sources": [
+            "url",
+            "base64"
+          ],
+          "requires_any": [
+            "image",
+            "video"
+          ]
+        }
+      }
+    },
+    "music": null,
+    "speech": null,
+    "quality_tiers": {
+      "video": [
+        {
+          "name": "turbo",
+          "aliases": [
+            "auto",
+            "low"
+          ],
+          "steps": null,
+          "step_range": null,
+          "multiplier": 1,
+          "cost_usd": "0.06",
+          "unit": "second"
+        },
+        {
+          "name": "standard",
+          "aliases": [
+            "medium"
+          ],
+          "steps": 20,
+          "step_range": {
+            "min": 10,
+            "max": 20
+          },
+          "multiplier": 1.5,
+          "cost_usd": "0.09",
+          "unit": "second"
+        },
+        {
+          "name": "max",
+          "aliases": [
+            "high"
+          ],
+          "steps": 40,
+          "step_range": {
+            "min": 21,
+            "max": 40
+          },
+          "multiplier": 3,
+          "cost_usd": "0.18",
+          "unit": "second"
+        },
+        {
+          "name": "ultra",
+          "aliases": [],
+          "steps": 50,
+          "step_range": {
+            "min": 41,
+            "max": 50
+          },
+          "multiplier": 5,
+          "cost_usd": "0.3",
+          "unit": "second"
+        }
+      ],
+      "image": [
+        {
+          "name": "turbo",
+          "aliases": [
+            "auto",
+            "low"
+          ],
+          "steps": null,
+          "step_range": null,
+          "multiplier": 1,
+          "cost_usd": "0.02",
+          "unit": "megapixel"
+        },
+        {
+          "name": "standard",
+          "aliases": [
+            "medium"
+          ],
+          "steps": 20,
+          "step_range": {
+            "min": 10,
+            "max": 20
+          },
+          "multiplier": 1.5,
+          "cost_usd": "0.03",
+          "unit": "megapixel"
+        },
+        {
+          "name": "max",
+          "aliases": [
+            "high",
+            "hd"
+          ],
+          "steps": 40,
+          "step_range": {
+            "min": 21,
+            "max": 40
+          },
+          "multiplier": 3,
+          "cost_usd": "0.06",
+          "unit": "megapixel"
+        },
+        {
+          "name": "ultra",
+          "aliases": [],
+          "steps": 50,
+          "step_range": {
+            "min": 41,
+            "max": 50
+          },
+          "multiplier": 5,
+          "cost_usd": "0.1",
+          "unit": "megapixel"
+        }
+      ]
+    },
+    "price_options": {
+      "video": [
+        {
+          "settings": {
+            "quality": "turbo",
+            "resolution": "768p"
+          },
+          "multiplier": 1,
+          "cost_usd": "0.06",
+          "unit": "second"
+        },
+        {
+          "settings": {
+            "quality": "standard",
+            "resolution": "768p"
+          },
+          "multiplier": 1.5,
+          "cost_usd": "0.09",
+          "unit": "second"
+        },
+        {
+          "settings": {
+            "quality": "max",
+            "resolution": "768p"
+          },
+          "multiplier": 3,
+          "cost_usd": "0.18",
+          "unit": "second"
+        },
+        {
+          "settings": {
+            "quality": "ultra",
+            "resolution": "768p"
+          },
+          "multiplier": 5,
+          "cost_usd": "0.3",
+          "unit": "second"
+        },
+        {
+          "settings": {
+            "quality": "turbo",
+            "resolution": "2K"
+          },
+          "multiplier": 3,
+          "cost_usd": "0.18",
+          "unit": "second"
+        }
+      ],
+      "image": [
+        {
+          "settings": {
+            "quality": "turbo"
+          },
+          "multiplier": 1,
+          "cost_usd": "0.02",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "standard"
+          },
+          "multiplier": 1.5,
+          "cost_usd": "0.03",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "max"
+          },
+          "multiplier": 3,
+          "cost_usd": "0.06",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "ultra"
+          },
+          "multiplier": 5,
+          "cost_usd": "0.1",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "turbo",
+            "references": 1
+          },
+          "multiplier": 2.25,
+          "cost_usd": "0.045",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "standard",
+            "references": 1
+          },
+          "multiplier": 3.375,
+          "cost_usd": "0.0675",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "max",
+            "references": 1
+          },
+          "multiplier": 6.75,
+          "cost_usd": "0.135",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "ultra",
+            "references": 1
+          },
+          "multiplier": 11.25,
+          "cost_usd": "0.225",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "turbo",
+            "references": 2
+          },
+          "multiplier": 3,
+          "cost_usd": "0.06",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "standard",
+            "references": 2
+          },
+          "multiplier": 4.5,
+          "cost_usd": "0.09",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "max",
+            "references": 2
+          },
+          "multiplier": 9,
+          "cost_usd": "0.18",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "ultra",
+            "references": 2
+          },
+          "multiplier": 15,
+          "cost_usd": "0.3",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "turbo",
+            "references": 3
+          },
+          "multiplier": 3.75,
+          "cost_usd": "0.075",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "standard",
+            "references": 3
+          },
+          "multiplier": 5.625,
+          "cost_usd": "0.1125",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "max",
+            "references": 3
+          },
+          "multiplier": 11.25,
+          "cost_usd": "0.225",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "ultra",
+            "references": 3
+          },
+          "multiplier": 18.75,
+          "cost_usd": "0.375",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "turbo",
+            "references": 4
+          },
+          "multiplier": 4.5,
+          "cost_usd": "0.09",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "standard",
+            "references": 4
+          },
+          "multiplier": 6.75,
+          "cost_usd": "0.135",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "max",
+            "references": 4
+          },
+          "multiplier": 13.5,
+          "cost_usd": "0.27",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "ultra",
+            "references": 4
+          },
+          "multiplier": 22.5,
+          "cost_usd": "0.45",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "turbo",
+            "references": 5
+          },
+          "multiplier": 5.25,
+          "cost_usd": "0.105",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "standard",
+            "references": 5
+          },
+          "multiplier": 7.875,
+          "cost_usd": "0.1575",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "max",
+            "references": 5
+          },
+          "multiplier": 15.75,
+          "cost_usd": "0.315",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "ultra",
+            "references": 5
+          },
+          "multiplier": 26.25,
+          "cost_usd": "0.525",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "turbo",
+            "references": 6
+          },
+          "multiplier": 6,
+          "cost_usd": "0.12",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "standard",
+            "references": 6
+          },
+          "multiplier": 9,
+          "cost_usd": "0.18",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "max",
+            "references": 6
+          },
+          "multiplier": 18,
+          "cost_usd": "0.36",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "ultra",
+            "references": 6
+          },
+          "multiplier": 30,
+          "cost_usd": "0.6",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "turbo",
+            "references": 7
+          },
+          "multiplier": 6.75,
+          "cost_usd": "0.135",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "standard",
+            "references": 7
+          },
+          "multiplier": 10.125,
+          "cost_usd": "0.2025",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "max",
+            "references": 7
+          },
+          "multiplier": 20.25,
+          "cost_usd": "0.405",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "ultra",
+            "references": 7
+          },
+          "multiplier": 33.75,
+          "cost_usd": "0.675",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "turbo",
+            "references": 8
+          },
+          "multiplier": 7.5,
+          "cost_usd": "0.15",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "standard",
+            "references": 8
+          },
+          "multiplier": 11.25,
+          "cost_usd": "0.225",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "max",
+            "references": 8
+          },
+          "multiplier": 22.5,
+          "cost_usd": "0.45",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "ultra",
+            "references": 8
+          },
+          "multiplier": 37.5,
+          "cost_usd": "0.75",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "turbo",
+            "references": 9
+          },
+          "multiplier": 8.25,
+          "cost_usd": "0.165",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "standard",
+            "references": 9
+          },
+          "multiplier": 12.375,
+          "cost_usd": "0.2475",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "max",
+            "references": 9
+          },
+          "multiplier": 24.75,
+          "cost_usd": "0.495",
+          "unit": "megapixel"
+        },
+        {
+          "settings": {
+            "quality": "ultra",
+            "references": 9
+          },
+          "multiplier": 41.25,
+          "cost_usd": "0.825",
+          "unit": "megapixel"
+        }
+      ]
+    },
+    "rate_limits": {
+      "video": {
+        "requests_per_minute": 5,
+        "concurrent_requests": 2,
+        "active_jobs": 2
+      },
+      "image": {
+        "requests_per_minute": 20,
+        "concurrent_requests": 5
+      }
+    }
+  },
+  {
+    "id": "minimax-m3.1-flash",
+    "image": null,
+    "video": null,
+    "music": null,
+    "speech": null,
+    "quality_tiers": {},
+    "price_options": {},
+    "rate_limits": {
+      "text": {
+        "requests_per_minute": 120,
+        "concurrent_requests": 16
+      }
+    }
+  },
+  {
+    "id": "minimax-music3",
+    "image": null,
+    "video": null,
+    "music": {
+      "id": "minimax-music3",
+      "name": "MiniMax Music 3",
+      "canonical_slug": "minimax-music3",
+      "hugging_face_id": "MiniMaxAI/MiniMax-Music3",
+      "description": "Songs with vocals from lyrics and a style caption, up to six minutes, 44.1 kHz stereo.",
+      "created": 1791688323,
+      "output_modalities": [
+        "music"
+      ],
+      "interaction": "job",
+      "tasks": [
+        {
+          "task": "text2music",
+          "requires": [],
+          "parameters": []
+        }
+      ],
+      "duration": {
+        "semantics": "max",
+        "min": 30,
+        "max": 360,
+        "default": 300
+      },
+      "lyrics": "required",
+      "lyrics_max_length": 12000,
+      "lyrics_tags": {
+        "tags": [
+          "Intro",
+          "Verse",
+          "Pre-Chorus",
+          "Chorus",
+          "Post-Chorus",
+          "Bridge",
+          "Instrumental",
+          "Solo",
+          "Outro"
+        ],
+        "aliases": {
+          "Inst": "Instrumental",
+          "Interlude": "Instrumental"
+        }
+      },
+      "prompt_max_length": 6000,
+      "text_budget": {
+        "max_tokens": 5000,
+        "chars_per_token": 4
+      },
+      "controls": {
+        "bpm": {
+          "max": 300,
+          "min": 30,
+          "mode": "advisory"
+        },
+        "key": {
+          "mode": "advisory"
+        },
+        "time_signature": {
+          "mode": "advisory"
+        }
+      },
+      "outputs": {
+        "max_n": 1,
+        "kinds": [
+          "audio"
+        ],
+        "roles": [
+          "mix"
+        ],
+        "formats": [
+          "mp3",
+          "wav",
+          "flac",
+          "opus",
+          "aac",
+          "pcm"
+        ],
+        "default_format": "mp3",
+        "sample_rates": [
+          44100
+        ],
+        "channels": 2
+      },
+      "seed": true,
+      "adapters": false,
+      "streaming": {
+        "progressive": true
+      },
+      "allowed_passthrough_parameters": [
+        "steps",
+        "num_inference_steps",
+        "guidance_scale"
+      ],
+      "parameters": {
+        "steps": {
+          "max": 50,
+          "min": 12,
+          "type": "integer",
+          "default": 30
+        },
+        "guidance_scale": {
+          "max": 2.2,
+          "min": 1.3,
+          "type": "range",
+          "default": 1.7
+        }
+      },
+      "attribution": "MiniMax-Music3",
+      "pricing_skus": {
+        "generate_per_second": "0.001"
+      }
+    },
+    "speech": null,
+    "quality_tiers": {},
+    "price_options": {},
+    "rate_limits": {
+      "audio": {
+        "requests_per_minute": 10,
+        "concurrent_requests": 3,
+        "active_jobs": 3
+      }
+    }
+  },
+  {
+    "id": "moss-image",
+    "image": {
+      "id": "moss-image",
+      "name": "MOSS-Image",
+      "description": "Text to image with legible text in English and Chinese and JSON layouts for placing text and objects, 1024x1024 by default.",
+      "created": 1792387414,
+      "endpoints": "/v1/images/models/vultr/moss-image/endpoints",
+      "architecture": {
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "image"
+        ]
+      },
+      "supported_parameters": {
+        "size": {
+          "type": "boolean",
+          "format": "WxH",
+          "multiple_of": 16,
+          "min_area": 262144,
+          "max_area": 4194304,
+          "max_ratio": 4
+        },
+        "aspect_ratio": {
+          "type": "enum",
+          "values": [
+            "1:1",
+            "4:3",
+            "3:4",
+            "3:2",
+            "2:3",
+            "16:9",
+            "9:16",
+            "21:9",
+            "9:21"
+          ],
+          "default": "1:1"
+        },
+        "resolution": {
+          "type": "enum",
+          "values": [
+            "768",
+            "1K",
+            "1.5K",
+            "2K",
+            "4K"
+          ],
+          "sizes": {
+            "1:1": {
+              "768": "768x768",
+              "1K": "1024x1024",
+              "1.5K": "1536x1536",
+              "2K": "2048x2048",
+              "4K": "3072x3072"
+            },
+            "4:3": {
+              "768": "864x656",
+              "1K": "1152x864",
+              "1.5K": "1728x1296",
+              "2K": "2304x1728",
+              "4K": "3456x2592"
+            },
+            "3:4": {
+              "768": "656x864",
+              "1K": "864x1152",
+              "1.5K": "1296x1728",
+              "2K": "1728x2304",
+              "4K": "2592x3456"
+            },
+            "3:2": {
+              "768": "944x624",
+              "1K": "1248x832",
+              "1.5K": "1872x1248",
+              "2K": "2496x1664",
+              "4K": "3744x2496"
+            },
+            "2:3": {
+              "768": "624x944",
+              "1K": "832x1248",
+              "1.5K": "1248x1872",
+              "2K": "1664x2496",
+              "4K": "2496x3744"
+            },
+            "16:9": {
+              "768": "1024x576",
+              "1K": "1360x768",
+              "1.5K": "2048x1152",
+              "2K": "2720x1536",
+              "4K": "4096x2304"
+            },
+            "9:16": {
+              "768": "576x1024",
+              "1K": "768x1360",
+              "1.5K": "1152x2048",
+              "2K": "1536x2720",
+              "4K": "2304x4096"
+            },
+            "21:9": {
+              "768": "1184x512",
+              "1K": "1568x672",
+              "1.5K": "2336x1008",
+              "2K": "3120x1344",
+              "4K": "4672x2016"
+            },
+            "9:21": {
+              "768": "512x1184",
+              "1K": "672x1568",
+              "1.5K": "1008x2336",
+              "2K": "1344x3120",
+              "4K": "2016x4672"
+            }
+          },
+          "upscaled": {
+            "4K": {
+              "upscaler": "seedvr2-7b-sharp",
+              "max_n": null
+            }
+          }
+        },
+        "n": {
+          "type": "range",
+          "min": 1,
+          "max": 4,
+          "default": 1
+        },
+        "response_format": {
+          "type": "enum",
+          "values": [
+            "url",
+            "b64_json"
+          ],
+          "default": "url"
+        },
+        "seed": {
+          "type": "boolean"
+        },
+        "steps": {
+          "type": "range",
+          "min": 20,
+          "max": 50,
+          "default": 30,
+          "also": [
+            4
+          ]
+        },
+        "output_format": {
+          "type": "enum",
+          "values": [
+            "png",
+            "jpeg",
+            "webp"
+          ],
+          "default": "png"
+        },
+        "output_compression": {
+          "type": "range",
+          "min": 0,
+          "max": 100
+        },
+        "background": {
+          "type": "enum",
+          "values": [
+            "auto",
+            "opaque"
+          ],
+          "default": "auto"
+        },
+        "guidance_scale": {
+          "type": "range",
+          "min": 1,
+          "max": 10,
+          "default": 3
+        },
+        "negative_prompt": {
+          "type": "boolean"
+        }
+      },
+      "supports_streaming": true,
+      "prompt_max_length": 4000,
+      "inputs": null,
+      "modes": [
+        {
+          "mode": "generate",
+          "when": {},
+          "defaults": {},
+          "also": {
+            "steps": [
+              4
+            ]
+          },
+          "only": {},
+          "bill_multiplier": null
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "steps": 4
+          },
+          "require": {
+            "guidance_scale": [
+              1
+            ]
+          },
+          "refuse": [
+            "negative_prompt"
+          ]
+        }
+      ]
+    },
+    "video": null,
+    "music": null,
+    "speech": null,
+    "quality_tiers": {},
+    "price_options": {},
+    "rate_limits": {
+      "image": {
+        "requests_per_minute": 10,
+        "concurrent_requests": 1
+      }
+    }
+  },
+  {
+    "id": "muse-glimmer-30b",
+    "image": null,
+    "video": null,
+    "music": null,
+    "speech": null,
+    "quality_tiers": {},
+    "price_options": {},
+    "rate_limits": {
+      "text": {
+        "requests_per_minute": 120,
+        "concurrent_requests": 16
+      }
+    }
+  },
+  {
+    "id": "nemotron-3-nano-omni-30b-a3b-reasoning",
+    "image": null,
+    "video": null,
+    "music": null,
+    "speech": null,
+    "quality_tiers": {},
+    "price_options": {},
+    "rate_limits": {
+      "text": {
+        "requests_per_minute": 120,
+        "concurrent_requests": 16
+      }
+    }
+  },
+  {
+    "id": "nemotron-3.5-content-safety",
+    "image": null,
+    "video": null,
+    "music": null,
+    "speech": null,
+    "quality_tiers": {},
+    "price_options": {},
+    "rate_limits": {
+      "text": {
+        "requests_per_minute": 120,
+        "concurrent_requests": 16
+      }
+    }
+  },
+  {
+    "id": "pplx-decider-v1.2",
+    "image": null,
+    "video": null,
+    "music": null,
+    "speech": null,
+    "quality_tiers": {},
+    "price_options": {},
+    "rate_limits": {
+      "decisions": {
+        "requests_per_minute": 600,
+        "concurrent_requests": 16
+      }
+    }
+  },
+  {
+    "id": "qwen-image-2.1",
+    "image": {
+      "id": "qwen-image-2.1",
+      "name": "Qwen-Image 2.1 (evaluation)",
+      "description": "Evaluation only (Qwen Research License): text to image and editing with up to 10 reference images and a mask, native transparent output, 2048x2048 by default.",
+      "created": 1791437894,
+      "endpoints": "/v1/images/models/vultr/qwen-image-2.1/endpoints",
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "image"
+        ]
+      },
+      "supported_parameters": {
+        "size": {
+          "type": "boolean",
+          "format": "WxH",
+          "multiple_of": 32,
+          "min_area": 262144,
+          "max_area": 4300800,
+          "max_ratio": 4,
+          "max_total_area": 4300800
+        },
+        "aspect_ratio": {
+          "type": "enum",
+          "values": [
+            "1:1",
+            "4:3",
+            "3:4",
+            "3:2",
+            "2:3",
+            "16:9",
+            "9:16"
+          ],
+          "default": "1:1"
+        },
+        "resolution": {
+          "type": "enum",
+          "values": [
+            "768",
+            "1K",
+            "1.5K",
+            "2K",
+            "4K"
+          ],
+          "sizes": {
+            "1:1": {
+              "768": "768x768",
+              "1K": "1024x1024",
+              "1.5K": "1536x1536",
+              "2K": "2048x2048",
+              "4K": "3072x3072"
+            },
+            "4:3": {
+              "768": "864x640",
+              "1K": "1152x864",
+              "1.5K": "1792x1344",
+              "2K": "2400x1792",
+              "4K": "3584x2688"
+            },
+            "3:4": {
+              "768": "640x864",
+              "1K": "864x1152",
+              "1.5K": "1344x1792",
+              "2K": "1792x2400",
+              "4K": "2688x3584"
+            },
+            "3:2": {
+              "768": "928x640",
+              "1K": "1248x832",
+              "1.5K": "1888x1280",
+              "2K": "2528x1696",
+              "4K": "3840x2560"
+            },
+            "2:3": {
+              "768": "640x928",
+              "1K": "832x1248",
+              "1.5K": "1280x1888",
+              "2K": "1696x2528",
+              "4K": "2560x3840"
+            },
+            "16:9": {
+              "768": "1024x576",
+              "1K": "1376x768",
+              "1.5K": "2080x1152",
+              "2K": "2752x1536",
+              "4K": "4096x2304"
+            },
+            "9:16": {
+              "768": "576x1024",
+              "1K": "768x1376",
+              "1.5K": "1152x2080",
+              "2K": "1536x2752",
+              "4K": "2304x4096"
+            }
+          },
+          "upscaled": {
+            "4K": {
+              "upscaler": "seedvr2-7b-sharp",
+              "max_n": null
+            }
+          }
+        },
+        "n": {
+          "type": "range",
+          "min": 1,
+          "max": 4,
+          "default": 1
+        },
+        "response_format": {
+          "type": "enum",
+          "values": [
+            "url",
+            "b64_json"
+          ],
+          "default": "url"
+        },
+        "seed": {
+          "type": "boolean"
+        },
+        "steps": {
+          "type": "range",
+          "min": 20,
+          "max": 50,
+          "default": 6,
+          "also": [
+            6
+          ]
+        },
+        "output_format": {
+          "type": "enum",
+          "values": [
+            "png",
+            "jpeg",
+            "webp"
+          ],
+          "default": "png"
+        },
+        "background": {
+          "type": "enum",
+          "values": [
+            "auto",
+            "opaque",
+            "transparent"
+          ],
+          "default": "auto"
+        },
+        "output_compression": {
+          "type": "range",
+          "min": 0,
+          "max": 100
+        },
+        "guidance_scale": {
+          "type": "range",
+          "min": 1,
+          "max": 10,
+          "default": 1
+        },
+        "negative_prompt": {
+          "type": "boolean"
+        }
+      },
+      "supports_streaming": true,
+      "prompt_max_length": 4000,
+      "inputs": {
+        "reference": {
+          "image": 10,
+          "formats": [
+            "image/png",
+            "image/jpeg",
+            "image/webp"
+          ],
+          "max_megapixels": null,
+          "max_bytes": 20971520,
+          "max_total_bytes": 67108864
+        },
+        "mask": {
+          "formats": [
+            "image/png"
+          ]
+        }
+      },
+      "modes": [
+        {
+          "mode": "edit",
+          "when": {
+            "inputs": [
+              "image"
+            ]
+          },
+          "defaults": {},
+          "also": {
+            "steps": [
+              6
+            ]
+          },
+          "only": {},
+          "bill_multiplier": null
+        },
+        {
+          "mode": "generate",
+          "when": {},
+          "defaults": {},
+          "also": {
+            "steps": [
+              6
+            ]
+          },
+          "only": {},
+          "bill_multiplier": null
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "background": "transparent"
+          },
+          "require": {
+            "output_format": [
+              "png",
+              "webp"
+            ]
+          }
+        }
+      ]
+    },
+    "video": null,
+    "music": null,
+    "speech": null,
+    "quality_tiers": {},
+    "price_options": {},
+    "rate_limits": {
+      "image": {
+        "requests_per_minute": 10,
+        "concurrent_requests": 2
+      }
+    }
+  },
+  {
+    "id": "qwen3-embedding-4b",
+    "image": null,
+    "video": null,
+    "music": null,
+    "speech": null,
+    "quality_tiers": {},
+    "price_options": {},
+    "rate_limits": {
+      "embeddings": {
+        "requests_per_minute": 120,
+        "concurrent_requests": 16
+      }
+    }
+  },
+  {
+    "id": "qwen3-tts-12hz-1.7b",
+    "image": null,
+    "video": null,
+    "music": null,
+    "speech": {
+      "voices": [
+        {
+          "description": "Bright, slightly edgy young female voice.",
+          "id": "vivian",
+          "mode": "custom_voice",
+          "name": "Vivian",
+          "native_language": "Chinese"
+        },
+        {
+          "description": "Warm, gentle young female voice.",
+          "id": "serena",
+          "mode": "custom_voice",
+          "name": "Serena",
+          "native_language": "Chinese"
+        },
+        {
+          "description": "Seasoned male voice with a low, mellow timbre.",
+          "id": "uncle_fu",
+          "mode": "custom_voice",
+          "name": "Uncle Fu",
+          "native_language": "Chinese"
+        },
+        {
+          "description": "Youthful Beijing male voice with a clear, natural timbre.",
+          "id": "dylan",
+          "mode": "custom_voice",
+          "name": "Dylan",
+          "native_language": "Chinese (Beijing dialect)"
+        },
+        {
+          "description": "Lively Chengdu male voice with a slightly husky brightness.",
+          "id": "eric",
+          "mode": "custom_voice",
+          "name": "Eric",
+          "native_language": "Chinese (Sichuan dialect)"
+        },
+        {
+          "description": "Dynamic male voice with strong rhythmic drive.",
+          "id": "ryan",
+          "mode": "custom_voice",
+          "name": "Ryan",
+          "native_language": "English"
+        },
+        {
+          "description": "Sunny American male voice with a clear midrange.",
+          "id": "aiden",
+          "mode": "custom_voice",
+          "name": "Aiden",
+          "native_language": "English"
+        },
+        {
+          "description": "Playful Japanese female voice with a light, nimble timbre.",
+          "id": "ono_anna",
+          "mode": "custom_voice",
+          "name": "Ono Anna",
+          "native_language": "Japanese"
+        },
+        {
+          "description": "Warm Korean female voice with rich emotion.",
+          "id": "sohee",
+          "mode": "custom_voice",
+          "name": "Sohee",
+          "native_language": "Korean"
+        },
+        {
+          "description": "A new voice designed from the description in instructions.",
+          "id": "design",
+          "mode": "voice_design",
+          "name": "Voice design"
+        },
+        {
+          "description": "The voice of a reference clip, with its transcript when known.",
+          "id": "clone",
+          "mode": "base",
+          "name": "Voice clone"
+        }
+      ],
+      "languages": [
+        "Chinese",
+        "English",
+        "Japanese",
+        "Korean",
+        "German",
+        "French",
+        "Russian",
+        "Portuguese",
+        "Spanish",
+        "Italian"
+      ]
+    },
+    "quality_tiers": {},
+    "price_options": {},
+    "rate_limits": {
+      "speech": {
+        "requests_per_minute": 20,
+        "concurrent_requests": 5
+      }
+    }
+  },
+  {
+    "id": "qwen3.8-27b",
+    "image": null,
+    "video": null,
+    "music": null,
+    "speech": null,
+    "quality_tiers": {},
+    "price_options": {},
+    "rate_limits": {
+      "text": {
+        "requests_per_minute": 120,
+        "concurrent_requests": 16
+      }
+    }
+  },
+  {
+    "id": "qwen3.8-flash-next",
+    "image": null,
+    "video": null,
+    "music": null,
+    "speech": null,
+    "quality_tiers": {},
+    "price_options": {},
+    "rate_limits": {
+      "text": {
+        "requests_per_minute": 120,
+        "concurrent_requests": 16
+      }
+    }
+  },
+  {
+    "id": "vultron-retriever-core-qwen3.5-4.5b",
+    "image": null,
+    "video": null,
+    "music": null,
+    "speech": null,
+    "quality_tiers": {},
+    "price_options": {},
+    "rate_limits": {
+      "rerank": {
+        "requests_per_minute": 120,
+        "concurrent_requests": 16
+      }
+    }
+  },
+  {
+    "id": "vultron-retriever-flash-qwen3.5-0.8b",
+    "image": null,
+    "video": null,
+    "music": null,
+    "speech": null,
+    "quality_tiers": {},
+    "price_options": {},
+    "rate_limits": {
+      "rerank": {
+        "requests_per_minute": 120,
+        "concurrent_requests": 16
+      }
+    }
+  },
+  {
+    "id": "whisper-large-v3-turbo",
+    "image": null,
+    "video": null,
+    "music": null,
+    "speech": null,
+    "quality_tiers": {},
+    "price_options": {},
+    "rate_limits": {
+      "transcription": {
+        "requests_per_minute": 30,
+        "concurrent_requests": 5
+      }
+    }
+  },
+  {
+    "id": "z-image-turbo",
+    "image": {
+      "id": "z-image-turbo",
+      "name": "Z-Image Turbo",
+      "description": "Efficient text-to-image diffusion model that produces quality images in as few as 8 steps.",
+      "created": 1787526201,
+      "endpoints": "/v1/images/models/vultr/z-image-turbo/endpoints",
+      "architecture": {
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "image"
+        ]
+      },
+      "supported_parameters": {
+        "size": {
+          "type": "boolean",
+          "format": "WxH",
+          "multiple_of": 16,
+          "min_area": 65536,
+          "max_area": 4194304,
+          "max_ratio": 4
+        },
+        "aspect_ratio": {
+          "type": "enum",
+          "values": [
+            "1:1",
+            "9:7",
+            "7:9",
+            "4:3",
+            "3:4",
+            "3:2",
+            "2:3",
+            "16:9",
+            "9:16",
+            "21:9",
+            "9:21"
+          ],
+          "default": "1:1"
+        },
+        "resolution": {
+          "type": "enum",
+          "values": [
+            "512",
+            "768",
+            "1K",
+            "1.5K",
+            "2K",
+            "4K"
+          ],
+          "sizes": {
+            "1:1": {
+              "512": "512x512",
+              "768": "768x768",
+              "1K": "1024x1024",
+              "1.5K": "1536x1536",
+              "2K": "1536x1536",
+              "4K": "3072x3072"
+            },
+            "9:7": {
+              "512": "576x448",
+              "768": "864x672",
+              "1K": "1152x896",
+              "1.5K": "1728x1344",
+              "2K": "1728x1344",
+              "4K": "3456x2688"
+            },
+            "7:9": {
+              "512": "448x576",
+              "768": "672x864",
+              "1K": "896x1152",
+              "1.5K": "1344x1728",
+              "2K": "1344x1728",
+              "4K": "2688x3456"
+            },
+            "4:3": {
+              "512": "576x432",
+              "768": "864x656",
+              "1K": "1152x864",
+              "1.5K": "1728x1296",
+              "2K": "1728x1296",
+              "4K": "3456x2592"
+            },
+            "3:4": {
+              "512": "432x576",
+              "768": "656x864",
+              "1K": "864x1152",
+              "1.5K": "1296x1728",
+              "2K": "1296x1728",
+              "4K": "2592x3456"
+            },
+            "3:2": {
+              "512": "624x416",
+              "768": "944x624",
+              "1K": "1248x832",
+              "1.5K": "1872x1248",
+              "2K": "1872x1248",
+              "4K": "3744x2496"
+            },
+            "2:3": {
+              "512": "416x624",
+              "768": "624x944",
+              "1K": "832x1248",
+              "1.5K": "1248x1872",
+              "2K": "1248x1872",
+              "4K": "2496x3744"
+            },
+            "16:9": {
+              "512": "640x368",
+              "768": "960x544",
+              "1K": "1280x720",
+              "1.5K": "2048x1152",
+              "2K": "2048x1152",
+              "4K": "4096x2304"
+            },
+            "9:16": {
+              "512": "368x640",
+              "768": "544x960",
+              "1K": "720x1280",
+              "1.5K": "1152x2048",
+              "2K": "1152x2048",
+              "4K": "2304x4096"
+            },
+            "21:9": {
+              "512": "672x288",
+              "768": "1008x432",
+              "1K": "1344x576",
+              "1.5K": "2016x864",
+              "2K": "2016x864",
+              "4K": "4032x1728"
+            },
+            "9:21": {
+              "512": "288x672",
+              "768": "432x1008",
+              "1K": "576x1344",
+              "1.5K": "864x2016",
+              "2K": "864x2016",
+              "4K": "1728x4032"
+            }
+          },
+          "upscaled": {
+            "4K": {
+              "upscaler": "seedvr2-7b-sharp",
+              "max_n": 4
+            }
+          }
+        },
+        "n": {
+          "type": "range",
+          "min": 1,
+          "max": 10,
+          "default": 1
+        },
+        "response_format": {
+          "type": "enum",
+          "values": [
+            "url",
+            "b64_json"
+          ],
+          "default": "url"
+        },
+        "seed": {
+          "type": "boolean"
+        },
+        "steps": {
+          "type": "range",
+          "min": 1,
+          "max": 50,
+          "default": 8
+        },
+        "output_format": {
+          "type": "enum",
+          "values": [
+            "png",
+            "jpeg",
+            "webp"
+          ],
+          "default": "png"
+        },
+        "output_compression": {
+          "type": "range",
+          "min": 0,
+          "max": 100
+        },
+        "background": {
+          "type": "enum",
+          "values": [
+            "auto",
+            "opaque"
+          ],
+          "default": "auto"
+        },
+        "guidance_scale": {
+          "type": "range",
+          "min": 0,
+          "max": 20,
+          "default": 0
+        },
+        "negative_prompt": {
+          "type": "boolean"
+        }
+      },
+      "supports_streaming": true,
+      "prompt_max_length": 4000,
+      "inputs": null,
+      "modes": [
+        {
+          "mode": "generate",
+          "when": {},
+          "defaults": {},
+          "also": {},
+          "only": {},
+          "bill_multiplier": null
+        }
+      ],
+      "rules": []
+    },
+    "video": null,
+    "music": null,
+    "speech": null,
+    "quality_tiers": {},
+    "price_options": {},
+    "rate_limits": {
+      "image": {
+        "requests_per_minute": 20,
+        "concurrent_requests": 5
+      }
+    }
+  }
+]
