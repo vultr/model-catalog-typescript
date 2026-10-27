@@ -52,6 +52,7 @@ export type {
   MediaSourceName,
   ModelMedia,
   MusicModelRecord,
+  InputLimit,
   RateLimit,
   SpeechRecord,
   VideoModelRecord,

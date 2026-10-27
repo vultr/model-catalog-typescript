@@ -59,6 +59,12 @@ export interface RateLimit {
   [key: string]: unknown;
 }
 
+export interface InputLimit {
+  max_items?: number;
+  max_bytes?: number;
+  [key: string]: unknown;
+}
+
 export interface ModelMedia {
   id: string;
   image: ImageModelRecord | null;
@@ -69,6 +75,8 @@ export interface ModelMedia {
   qualityTiers: Record<string, Record<string, unknown>[]>;
   priceOptions: Record<string, Record<string, unknown>[]>;
   rateLimits: Record<string, RateLimit>;
+  // By input modality (image, video, audio), from the public shape: what one chat request may carry
+  inputLimits: Record<string, InputLimit>;
 }
 
 export interface MediaIssue {
@@ -190,7 +198,7 @@ export function buildMediaCatalog(payloads: MediaPayloads, source: CatalogSource
   const ids = new Set([...images.keys(), ...videos.keys(), ...music.keys(), ...speech.keys()]);
   const hasEntries = (value: unknown) => isRecord(value) && Object.keys(value).length > 0;
   for (const [id, entry] of publicEntries) {
-    if (["quality_tiers", "price_options", "rate_limits"].some((key) => hasEntries(entry[key]))) ids.add(id);
+    if (["quality_tiers", "price_options", "rate_limits", "input_limits"].some((key) => hasEntries(entry[key]))) ids.add(id);
   }
 
   const models = [...ids].sort().map((id): ModelMedia => {
@@ -199,6 +207,12 @@ export function buildMediaCatalog(payloads: MediaPayloads, source: CatalogSource
     if (isRecord(entry?.["rate_limits"])) {
       for (const [type, limits] of Object.entries(entry["rate_limits"])) {
         if (isRecord(limits)) rateLimits[type] = limits;
+      }
+    }
+    const inputLimits: Record<string, InputLimit> = {};
+    if (isRecord(entry?.["input_limits"])) {
+      for (const [type, limits] of Object.entries(entry["input_limits"])) {
+        if (isRecord(limits)) inputLimits[type] = limits;
       }
     }
     return {
@@ -210,6 +224,7 @@ export function buildMediaCatalog(payloads: MediaPayloads, source: CatalogSource
       qualityTiers: keyedLists(entry?.["quality_tiers"]),
       priceOptions: keyedLists(entry?.["price_options"]),
       rateLimits,
+      inputLimits,
     };
   });
   return { models, issues, source, fetchedAt };
@@ -317,5 +332,6 @@ export function toCanonicalMedia(model: ModelMedia): Record<string, unknown> {
     quality_tiers: model.qualityTiers,
     price_options: model.priceOptions,
     rate_limits: model.rateLimits,
+    input_limits: model.inputLimits,
   };
 }

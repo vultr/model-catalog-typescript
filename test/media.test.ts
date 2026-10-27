@@ -61,6 +61,13 @@ test("one record per model, with each surface's entry", () => {
   // A chat model has limits but no media record
   assert.equal(byId.get("glm-5.3")?.image ?? null, null);
   assert.ok(byId.get("glm-5.3")?.rateLimits["text"]);
+  // ... and what one request may carry of each media input, with a count where its engine sets one
+  assert.deepEqual(byId.get("nemotron-3-nano-omni-30b-a3b-reasoning")?.inputLimits, {
+    image: { max_items: 1, max_bytes: 20971520 },
+    audio: { max_items: 1, max_bytes: 52428800 },
+    video: { max_items: 1, max_bytes: 52428800 },
+  });
+  assert.deepEqual(byId.get("glm-5.3")?.inputLimits["image"], { max_bytes: 20971520 });
 });
 
 test("the speech models are the public shape's entries with voices", () => {

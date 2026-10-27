@@ -37,7 +37,8 @@
         "requests_per_minute": 10,
         "concurrent_requests": 1
       }
-    }
+    },
+    "input_limits": {}
   },
   {
     "id": "bge-reranker-v2-m3",
@@ -52,7 +53,8 @@
         "requests_per_minute": 120,
         "concurrent_requests": 16
       }
-    }
+    },
+    "input_limits": {}
   },
   {
     "id": "chatterbox",
@@ -108,7 +110,8 @@
         "requests_per_minute": 20,
         "concurrent_requests": 5
       }
-    }
+    },
+    "input_limits": {}
   },
   {
     "id": "clef",
@@ -123,7 +126,8 @@
         "requests_per_minute": 600,
         "concurrent_requests": 16
       }
-    }
+    },
+    "input_limits": {}
   },
   {
     "id": "clef-flash",
@@ -138,7 +142,8 @@
         "requests_per_minute": 600,
         "concurrent_requests": 16
       }
-    }
+    },
+    "input_limits": {}
   },
   {
     "id": "d3",
@@ -153,7 +158,8 @@
         "requests_per_minute": 600,
         "concurrent_requests": 16
       }
-    }
+    },
+    "input_limits": {}
   },
   {
     "id": "deepseek-v4.1-flash-1017",
@@ -167,6 +173,11 @@
       "text": {
         "requests_per_minute": 120,
         "concurrent_requests": 16
+      }
+    },
+    "input_limits": {
+      "image": {
+        "max_bytes": 20971520
       }
     }
   },
@@ -183,6 +194,11 @@
         "requests_per_minute": 30,
         "concurrent_requests": 8
       }
+    },
+    "input_limits": {
+      "image": {
+        "max_bytes": 20971520
+      }
     }
   },
   {
@@ -197,6 +213,11 @@
       "text": {
         "requests_per_minute": 30,
         "concurrent_requests": 8
+      }
+    },
+    "input_limits": {
+      "image": {
+        "max_bytes": 20971520
       }
     }
   },
@@ -213,6 +234,14 @@
         "requests_per_minute": 120,
         "concurrent_requests": 16
       }
+    },
+    "input_limits": {
+      "image": {
+        "max_bytes": 20971520
+      },
+      "video": {
+        "max_bytes": 52428800
+      }
     }
   },
   {
@@ -228,6 +257,17 @@
         "requests_per_minute": 120,
         "concurrent_requests": 16
       }
+    },
+    "input_limits": {
+      "image": {
+        "max_bytes": 20971520
+      },
+      "audio": {
+        "max_bytes": 52428800
+      },
+      "video": {
+        "max_bytes": 52428800
+      }
     }
   },
   {
@@ -242,6 +282,17 @@
       "text": {
         "requests_per_minute": 120,
         "concurrent_requests": 16
+      }
+    },
+    "input_limits": {
+      "image": {
+        "max_bytes": 20971520
+      },
+      "audio": {
+        "max_bytes": 52428800
+      },
+      "video": {
+        "max_bytes": 52428800
       }
     }
   },
@@ -1208,7 +1259,8 @@
         "requests_per_minute": 20,
         "concurrent_requests": 5
       }
-    }
+    },
+    "input_limits": {}
   },
   {
     "id": "minimax-m3.1-flash",
@@ -1222,6 +1274,14 @@
       "text": {
         "requests_per_minute": 120,
         "concurrent_requests": 16
+      }
+    },
+    "input_limits": {
+      "image": {
+        "max_bytes": 20971520
+      },
+      "video": {
+        "max_bytes": 52428800
       }
     }
   },
@@ -1350,7 +1410,8 @@
         "concurrent_requests": 3,
         "active_jobs": 3
       }
-    }
+    },
+    "input_limits": {}
   },
   {
     "id": "moss-image",
@@ -1574,7 +1635,8 @@
         "requests_per_minute": 10,
         "concurrent_requests": 1
       }
-    }
+    },
+    "input_limits": {}
   },
   {
     "id": "muse-glimmer-30b",
@@ -1588,6 +1650,14 @@
       "text": {
         "requests_per_minute": 120,
         "concurrent_requests": 16
+      }
+    },
+    "input_limits": {
+      "image": {
+        "max_bytes": 20971520
+      },
+      "video": {
+        "max_bytes": 52428800
       }
     }
   },
@@ -1604,6 +1674,20 @@
         "requests_per_minute": 120,
         "concurrent_requests": 16
       }
+    },
+    "input_limits": {
+      "image": {
+        "max_items": 1,
+        "max_bytes": 20971520
+      },
+      "audio": {
+        "max_items": 1,
+        "max_bytes": 52428800
+      },
+      "video": {
+        "max_items": 1,
+        "max_bytes": 52428800
+      }
     }
   },
   {
@@ -1618,6 +1702,11 @@
       "text": {
         "requests_per_minute": 120,
         "concurrent_requests": 16
+      }
+    },
+    "input_limits": {
+      "image": {
+        "max_bytes": 20971520
       }
     }
   },
@@ -1634,7 +1723,8 @@
         "requests_per_minute": 600,
         "concurrent_requests": 16
       }
-    }
+    },
+    "input_limits": {}
   },
   {
     "id": "qwen-image-2.1",
@@ -1876,7 +1966,8 @@
         "requests_per_minute": 10,
         "concurrent_requests": 2
       }
-    }
+    },
+    "input_limits": {}
   },
   {
     "id": "qwen3-embedding-4b",
@@ -1891,7 +1982,8 @@
         "requests_per_minute": 120,
         "concurrent_requests": 16
       }
-    }
+    },
+    "input_limits": {}
   },
   {
     "id": "qwen3-tts-12hz-1.7b",
@@ -1996,7 +2088,8 @@
         "requests_per_minute": 20,
         "concurrent_requests": 5
       }
-    }
+    },
+    "input_limits": {}
   },
   {
     "id": "qwen3.8-27b",
@@ -2010,6 +2103,14 @@
       "text": {
         "requests_per_minute": 120,
         "concurrent_requests": 16
+      }
+    },
+    "input_limits": {
+      "image": {
+        "max_bytes": 20971520
+      },
+      "video": {
+        "max_bytes": 52428800
       }
     }
   },
@@ -2026,6 +2127,14 @@
         "requests_per_minute": 120,
         "concurrent_requests": 16
       }
+    },
+    "input_limits": {
+      "image": {
+        "max_bytes": 20971520
+      },
+      "video": {
+        "max_bytes": 52428800
+      }
     }
   },
   {
@@ -2041,7 +2150,8 @@
         "requests_per_minute": 120,
         "concurrent_requests": 16
       }
-    }
+    },
+    "input_limits": {}
   },
   {
     "id": "vultron-retriever-flash-qwen3.5-0.8b",
@@ -2056,7 +2166,8 @@
         "requests_per_minute": 120,
         "concurrent_requests": 16
       }
-    }
+    },
+    "input_limits": {}
   },
   {
     "id": "whisper-large-v3-turbo",
@@ -2071,7 +2182,8 @@
         "requests_per_minute": 30,
         "concurrent_requests": 5
       }
-    }
+    },
+    "input_limits": {}
   },
   {
     "id": "z-image-turbo",
@@ -2302,6 +2414,7 @@
         "requests_per_minute": 20,
         "concurrent_requests": 5
       }
-    }
+    },
+    "input_limits": {}
   }
 ]

@@ -114,7 +114,7 @@ does not call it. No key is needed.
 
 | Source | Request | Gives |
 | --- | --- | --- |
-| `public` | `GET /models?format=openrouter&output_modalities=all` | `quality_tiers`, `price_options` and `rate_limits`, each keyed by output modality; which models speak (`supported_voices`) |
+| `public` | `GET /models?format=openrouter&output_modalities=all` | `quality_tiers`, `price_options` and `rate_limits`, each keyed by output modality; `input_limits` (a chat model's `max_items` and `max_bytes` of each media input), keyed by input modality; which models speak (`supported_voices`) |
 | `image` | `GET /images/models` | `image`: the entry, with its size rules and `resolution.sizes` table, `modes`, `rules`, `inputs` and `prompt_max_length` |
 | `video` | `GET /videos/models` | `video`: durations, sizes, `defaults`, `modes`, `resolution_rules`, `media`, `quality_tiers` and `pricing_skus` |
 | `music` | `GET /music/models` | `music`: tasks, duration, lyrics, controls, outputs and parameters |
@@ -123,7 +123,7 @@ does not call it. No key is needed.
 `image`, `video` and `music` are the surfaces' entries as served, not
 reshaped: they are the gateway's own documents, described in its API
 reference. A model is in the result when any source names it, so a chat
-model appears with only its `rate_limits`. A record is null where its
+model appears with only its `rate_limits` and `input_limits`. A record is null where its
 surface does not list the model.
 
 A malformed payload or entry is an issue (`{source, message}`), never a
