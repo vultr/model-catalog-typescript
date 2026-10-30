@@ -38,7 +38,8 @@
         "concurrent_requests": 1
       }
     },
-    "input_limits": {}
+    "input_limits": {},
+    "alignment": null
   },
   {
     "id": "bge-reranker-v2-m3",
@@ -54,7 +55,8 @@
         "concurrent_requests": 16
       }
     },
-    "input_limits": {}
+    "input_limits": {},
+    "alignment": null
   },
   {
     "id": "chatterbox",
@@ -111,7 +113,8 @@
         "concurrent_requests": 5
       }
     },
-    "input_limits": {}
+    "input_limits": {},
+    "alignment": null
   },
   {
     "id": "clef",
@@ -127,7 +130,8 @@
         "concurrent_requests": 16
       }
     },
-    "input_limits": {}
+    "input_limits": {},
+    "alignment": null
   },
   {
     "id": "clef-flash",
@@ -143,7 +147,8 @@
         "concurrent_requests": 16
       }
     },
-    "input_limits": {}
+    "input_limits": {},
+    "alignment": null
   },
   {
     "id": "d3",
@@ -159,7 +164,8 @@
         "concurrent_requests": 16
       }
     },
-    "input_limits": {}
+    "input_limits": {},
+    "alignment": null
   },
   {
     "id": "deepseek-v4.1-flash-1017",
@@ -179,7 +185,8 @@
       "image": {
         "max_bytes": 20971520
       }
-    }
+    },
+    "alignment": null
   },
   {
     "id": "glm-5.2",
@@ -199,7 +206,8 @@
       "image": {
         "max_bytes": 20971520
       }
-    }
+    },
+    "alignment": null
   },
   {
     "id": "glm-5.3",
@@ -219,7 +227,8 @@
       "image": {
         "max_bytes": 20971520
       }
-    }
+    },
+    "alignment": null
   },
   {
     "id": "glm-5.3-flash",
@@ -242,7 +251,8 @@
       "video": {
         "max_bytes": 52428800
       }
-    }
+    },
+    "alignment": null
   },
   {
     "id": "mimo-v2.6-flash",
@@ -268,7 +278,8 @@
       "video": {
         "max_bytes": 52428800
       }
-    }
+    },
+    "alignment": null
   },
   {
     "id": "mimo-v2.6-pro",
@@ -294,7 +305,8 @@
       "video": {
         "max_bytes": 52428800
       }
-    }
+    },
+    "alignment": null
   },
   {
     "id": "minimax-h3",
@@ -1260,7 +1272,8 @@
         "concurrent_requests": 5
       }
     },
-    "input_limits": {}
+    "input_limits": {},
+    "alignment": null
   },
   {
     "id": "minimax-m3.1-flash",
@@ -1283,7 +1296,8 @@
       "video": {
         "max_bytes": 52428800
       }
-    }
+    },
+    "alignment": null
   },
   {
     "id": "minimax-music3",
@@ -1411,7 +1425,8 @@
         "active_jobs": 3
       }
     },
-    "input_limits": {}
+    "input_limits": {},
+    "alignment": null
   },
   {
     "id": "moss-image",
@@ -1636,7 +1651,8 @@
         "concurrent_requests": 1
       }
     },
-    "input_limits": {}
+    "input_limits": {},
+    "alignment": null
   },
   {
     "id": "muse-glimmer-30b",
@@ -1659,7 +1675,8 @@
       "video": {
         "max_bytes": 52428800
       }
-    }
+    },
+    "alignment": null
   },
   {
     "id": "nemotron-3-nano-omni-30b-a3b-reasoning",
@@ -1688,7 +1705,8 @@
         "max_items": 1,
         "max_bytes": 52428800
       }
-    }
+    },
+    "alignment": null
   },
   {
     "id": "nemotron-3.5-content-safety",
@@ -1708,7 +1726,8 @@
       "image": {
         "max_bytes": 20971520
       }
-    }
+    },
+    "alignment": null
   },
   {
     "id": "pplx-decider-v1.2",
@@ -1724,7 +1743,8 @@
         "concurrent_requests": 16
       }
     },
-    "input_limits": {}
+    "input_limits": {},
+    "alignment": null
   },
   {
     "id": "qwen-image-2.1",
@@ -1967,7 +1987,8 @@
         "concurrent_requests": 2
       }
     },
-    "input_limits": {}
+    "input_limits": {},
+    "alignment": null
   },
   {
     "id": "qwen3-embedding-4b",
@@ -1983,7 +2004,8 @@
         "concurrent_requests": 16
       }
     },
-    "input_limits": {}
+    "input_limits": {},
+    "alignment": null
   },
   {
     "id": "qwen3-tts-12hz-1.7b",
@@ -2089,7 +2111,8 @@
         "concurrent_requests": 5
       }
     },
-    "input_limits": {}
+    "input_limits": {},
+    "alignment": null
   },
   {
     "id": "qwen3.8-27b",
@@ -2112,7 +2135,8 @@
       "video": {
         "max_bytes": 52428800
       }
-    }
+    },
+    "alignment": null
   },
   {
     "id": "qwen3.8-flash-next",
@@ -2135,7 +2159,8 @@
       "video": {
         "max_bytes": 52428800
       }
-    }
+    },
+    "alignment": null
   },
   {
     "id": "vultron-retriever-core-qwen3.5-4.5b",
@@ -2151,7 +2176,8 @@
         "concurrent_requests": 16
       }
     },
-    "input_limits": {}
+    "input_limits": {},
+    "alignment": null
   },
   {
     "id": "vultron-retriever-flash-qwen3.5-0.8b",
@@ -2167,7 +2193,8 @@
         "concurrent_requests": 16
       }
     },
-    "input_limits": {}
+    "input_limits": {},
+    "alignment": null
   },
   {
     "id": "whisper-large-v3-turbo",
@@ -2183,7 +2210,8 @@
         "concurrent_requests": 5
       }
     },
-    "input_limits": {}
+    "input_limits": {},
+    "alignment": null
   },
   {
     "id": "z-image-turbo",
@@ -2415,6 +2443,7 @@
         "concurrent_requests": 5
       }
     },
-    "input_limits": {}
+    "input_limits": {},
+    "alignment": null
   }
 ]

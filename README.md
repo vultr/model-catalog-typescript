@@ -38,7 +38,8 @@ for (const model of catalog.models.filter(isChatModel)) {
 - `outputOf(model, type)`, `inputOf(model, type)`: one modality of `outputs` /
   `inputs`, or null
 - `loadMediaCatalog(options)`: the per-surface catalogs (image, video, music,
-  voices, tiers, price options and limits), one `ModelMedia` per model;
+  voices, tiers, price options, limits and alignment languages), one
+  `ModelMedia` per model, its alignment an `AlignmentRecord`;
   `fetchMediaPayloads`, `buildMediaCatalog`, `speechModelIds`,
   `toCanonicalMedia` and `MEDIA_SOURCES` are its parts (`docs/catalog.md`,
   Media catalog)

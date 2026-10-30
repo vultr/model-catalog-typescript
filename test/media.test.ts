@@ -74,6 +74,17 @@ test("the speech models are the public shape's entries with voices", () => {
   assert.deepEqual(speechModelIds(load("media/public-models.json")), SPEECH);
 });
 
+test("an alignment model is named only by the public shape, with its languages", () => {
+  const aligner = {
+    id: "aligner-1",
+    architecture: { input_modalities: ["audio", "text"], output_modalities: ["alignment"] },
+    supported_languages: ["en", "ja", 3],
+  };
+  const chat = { id: "chat", architecture: { output_modalities: ["text"] }, supported_languages: ["en"] };
+  const { models } = buildMediaCatalog({ public: { data: [aligner, chat] } }, "network", 0);
+  assert.deepEqual(models.map((model) => [model.id, model.alignment]), [["aligner-1", { languages: ["en", "ja"] }]]);
+});
+
 test("a malformed payload or entry is an issue, never a failure", () => {
   const { models, issues } = buildMediaCatalog(
     { image: { data: [{ id: "ok", supported_parameters: {} }, { name: "no id" }] }, video: { nope: true }, voices: { x: [] } },

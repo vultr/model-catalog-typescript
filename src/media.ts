@@ -52,6 +52,11 @@ export interface SpeechRecord {
   languages: string[];
 }
 
+// The public shape's entry for a model whose output is an alignment (POST /v1/audio/alignments)
+export interface AlignmentRecord {
+  languages: string[];
+}
+
 export interface RateLimit {
   requests_per_minute?: number;
   concurrent_requests?: number;
@@ -77,6 +82,7 @@ export interface ModelMedia {
   rateLimits: Record<string, RateLimit>;
   // By input modality (image, video, audio), from the public shape: what one chat request may carry
   inputLimits: Record<string, InputLimit>;
+  alignment: AlignmentRecord | null;
 }
 
 export interface MediaIssue {
@@ -169,6 +175,16 @@ function speechRecord(payload: unknown, source: MediaSourceName, issues: MediaIs
   return { voices, languages };
 }
 
+function strings(value: unknown): string[] {
+  return Array.isArray(value) ? value.filter((item): item is string => typeof item === "string") : [];
+}
+
+function alignmentRecord(entry: Record<string, unknown> | undefined): AlignmentRecord | null {
+  const architecture = entry?.["architecture"];
+  if (!isRecord(architecture) || !strings(architecture["output_modalities"]).includes("alignment")) return null;
+  return { languages: strings(entry?.["supported_languages"]) };
+}
+
 // The speech models the public shape names: those with a voice list
 export function speechModelIds(publicPayload: unknown): string[] {
   const ids: string[] = [];
@@ -199,6 +215,7 @@ export function buildMediaCatalog(payloads: MediaPayloads, source: CatalogSource
   const hasEntries = (value: unknown) => isRecord(value) && Object.keys(value).length > 0;
   for (const [id, entry] of publicEntries) {
     if (["quality_tiers", "price_options", "rate_limits", "input_limits"].some((key) => hasEntries(entry[key]))) ids.add(id);
+    if (alignmentRecord(entry) !== null) ids.add(id);
   }
 
   const models = [...ids].sort().map((id): ModelMedia => {
@@ -225,6 +242,7 @@ export function buildMediaCatalog(payloads: MediaPayloads, source: CatalogSource
       priceOptions: keyedLists(entry?.["price_options"]),
       rateLimits,
       inputLimits,
+      alignment: alignmentRecord(entry),
     };
   });
   return { models, issues, source, fetchedAt };
@@ -333,5 +351,6 @@ export function toCanonicalMedia(model: ModelMedia): Record<string, unknown> {
     price_options: model.priceOptions,
     rate_limits: model.rateLimits,
     input_limits: model.inputLimits,
+    alignment: model.alignment,
   };
 }

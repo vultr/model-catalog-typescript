@@ -114,7 +114,7 @@ does not call it. No key is needed.
 
 | Source | Request | Gives |
 | --- | --- | --- |
-| `public` | `GET /models?format=openrouter&output_modalities=all` | `quality_tiers`, `price_options` and `rate_limits`, each keyed by output modality; `input_limits` (a chat model's `max_items` and `max_bytes` of each media input), keyed by input modality; which models speak (`supported_voices`) |
+| `public` | `GET /models?format=openrouter&output_modalities=all` | `quality_tiers`, `price_options` and `rate_limits`, each keyed by output modality; `input_limits` (a chat model's `max_items` and `max_bytes` of each media input), keyed by input modality; which models speak (`supported_voices`); `alignment` (`languages`, from `supported_languages`) for a model whose `architecture.output_modalities` names `alignment`, which only this shape lists |
 | `image` | `GET /images/models` | `image`: the entry, with its size rules and `resolution.sizes` table, `modes`, `rules`, `inputs` and `prompt_max_length` |
 | `video` | `GET /videos/models` | `video`: durations, sizes, `defaults`, `modes`, `resolution_rules`, `media`, `quality_tiers` and `pricing_skus` |
 | `music` | `GET /music/models` | `music`: tasks, duration, lyrics, controls, outputs and parameters |

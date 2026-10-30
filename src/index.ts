@@ -44,6 +44,7 @@ export {
   toCanonicalMedia,
 } from "./media.ts";
 export type {
+  AlignmentRecord,
   ImageModelRecord,
   MediaCatalog,
   MediaIssue,
