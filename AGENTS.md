@@ -51,10 +51,3 @@ Human overview: `README.md`. Field mapping, tolerance and cache format:
   change to both
 - `src/index.ts` is the public contract. A new export is deliberate; add it
   to the README surface list
-- Put lasting explanation in `docs/`, not in the source. If a comment is
-  needed, make it short. Docs describe current behavior, not history
-- Write commit messages to the Conventional Commits spec
-- No em dashes or en dashes anywhere: prose, comments, commit messages and
-  docs use plain hyphens, `·`, or `:`
-- No AI trailers on commits (`Co-Authored-By`, `Generated with`, ...)
-- Never force-push; never rewrite pushed history
