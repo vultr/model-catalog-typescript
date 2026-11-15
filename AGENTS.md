@@ -32,9 +32,19 @@ Human overview: `README.md`. Field mapping, tolerance and cache format:
   with `usdPerMillion`, which shifts the decimal point. Do not multiply
   floats: `0.0000001 * 1e6` is `0.09999999999999999`
 
+## Validation
+
+Fast (inner loop):
+- `node --test test/<name>.test.ts` - one test file. `npm test -- <path>`
+  does not narrow: the script's glob still runs every file
+- `node --test --test-name-pattern "<name>" test/<name>.test.ts` - one test
+- `npm run typecheck` - types only
+
+Full (once, before calling a change complete):
+- `npm run typecheck`, `npm test` and `npm run build` must pass
+
 ## Working here
 
-- `npm run typecheck`, `npm test` and `npm run build` must pass
 - The harness plugins install this repo as a git dependency. `prepare` builds
   `dist/` on install, so `dist/` stays out of git and `npm run build` must
   work from a clean clone with only `devDependencies`
